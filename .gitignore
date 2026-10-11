@@ -6,6 +6,7 @@
 !/.gitignore
 !/nuget.config
 !/make_release.ps1
+!/LICENSE
 
 # Mod source
 !/src/
