@@ -1,0 +1,44 @@
+# Allow-list: everything is ignored except the files needed to build the mod and its release zip.
+# (Notes, research, decompiled game code, downloads, backups, release output and any AI-assistant
+# files stay local.)
+
+/*
+!/.gitignore
+!/nuget.config
+!/make_release.ps1
+
+# Mod source
+!/src/
+/src/**/bin/
+/src/**/obj/
+
+# Shipped assets (Kenney glyphs, CC0)
+!/assets/
+/assets/*
+!/assets/glyphs/
+
+# Steam Deck Steam Input layout
+!/steam_input/
+
+# Tools: only what the build and release script need
+!/tools/
+/tools/*
+!/tools/build_kenney_glyphs.py
+!/tools/sdl2/
+/tools/sdl2/*
+!/tools/sdl2/SDL2.dll
+!/tools/sdl2/README-SDL.txt
+!/tools/bepinex/
+/tools/bepinex/*
+!/tools/bepinex/BepInEx_win_x64_5.4.23.2.zip
+
+# Never, anywhere
+*.md
+.claude/
+CLAUDE*
+*.claude*
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo

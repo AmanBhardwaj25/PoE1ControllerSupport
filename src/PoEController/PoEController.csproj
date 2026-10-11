@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>PoEController</AssemblyName>
+    <RootNamespace>PoEController</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GameDir>$(MSBuildThisFileDirectory)..\..\..\</GameDir>
+    <ManagedDir>$(GameDir)PillarsOfEternity_Data\Managed\</ManagedDir>
+    <BepInExDir>$(GameDir)BepInEx\</BepInExDir>
+    <PluginInstallDir>$(BepInExDir)plugins\PoEController\</PluginInstallDir>
+  </PropertyGroup>
+
+  <!-- Development builds log through ModLog; the release build (make_release.ps1: -p:NoModLogging=true) compiles every
+       log call out and does not deploy into the game folder. -->
+  <PropertyGroup Condition="'$(NoModLogging)' != 'true'">
+    <DefineConstants>$(DefineConstants);MOD_LOGGING</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(BepInExDir)core\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(BepInExDir)core\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(ManagedDir)Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(ManagedDir)UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(ManagedDir)UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(ManagedDir)UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(ManagedDir)UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ImageConversionModule"><HintPath>$(ManagedDir)UnityEngine.ImageConversionModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(ManagedDir)UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AIModule"><HintPath>$(ManagedDir)UnityEngine.AIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(ManagedDir)UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AudioModule"><HintPath>$(ManagedDir)UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+
+  <!-- Deploy the plugin, SDL2 and glyphs into BepInEx/plugins/PoEController after each build. -->
+  <Target Name="DeployPlugin" AfterTargets="Build" Condition="'$(NoModLogging)' != 'true'">
+    <ItemGroup>
+      <GlyphFiles Include="$(MSBuildThisFileDirectory)..\..\assets\glyphs\**\*.png" />
+    </ItemGroup>
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(PluginInstallDir)" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)..\..\tools\sdl2\SDL2.dll" DestinationFolder="$(PluginInstallDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(GlyphFiles)" DestinationFiles="@(GlyphFiles->'$(PluginInstallDir)glyphs\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>
