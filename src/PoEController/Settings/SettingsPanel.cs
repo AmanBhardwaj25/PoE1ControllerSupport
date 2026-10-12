@@ -39,6 +39,8 @@ namespace PoEController.Settings
             { "Input.CameraSpeed", "Camera speed" },
             { "Input.StickDeadzone", "Stick dead zone" },
             { "Input.AnalogMovementSpeed", "Analog movement speed" },
+            { "Input.Vibration", "Vibration" },
+            { "Input.VibrationStrength", "Vibration strength" },
             { "Input.PauseOnDisconnect", "Pause when the controller disconnects" },
             { "Menus.QuickTooltips", "Quick tooltips" },
             { "Menus.BrightTooltipWords", "Brighter tooltip words" },

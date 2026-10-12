@@ -40,6 +40,7 @@ namespace PoEController.Compat
         public const string WorldMap = "World map stepping (Console style)";
         public const string FocusFrameRule = "No focus frame on game buttons (Console style)";
         public const string LinkColors = "Brighter tooltip words";
+        public const string Rumble = "Controller vibration";
         public const string AnalogSpeed = "Analog movement speed";
         public const string ConversationScroll = "Scroll conversations with RS";
         public const string SlotCount = "Stack count out from under the cursor (Console style)";

@@ -43,7 +43,7 @@ namespace PoEController
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string Guid = "poe.controller";
-        public const string Version = "0.42.0";
+        public const string Version = "0.43.0";
 
         private ConfigEntry<ControlStyle> m_ControlStyle;
         private ConfigEntry<bool> m_ConsoleShortBar;
@@ -69,6 +69,8 @@ namespace PoEController
         private ConfigEntry<bool> m_QuickTooltips;
         private ConfigEntry<bool> m_BrightTooltipWords;
         private ConfigEntry<bool> m_AnalogSpeed;
+        private ConfigEntry<bool> m_Vibration;
+        private ConfigEntry<float> m_VibrationStrength;
         private ConfigEntry<float> m_TooltipDelay;
         private DeviceTransitions m_Transitions;
         private Harmony m_Harmony;
@@ -139,6 +141,8 @@ namespace PoEController
             m_QuickTooltips = Config.Bind("Menus", "QuickTooltips", true, "On the controller, show the game's hover tooltip once the cursor has rested on an element for Menus.TooltipDelay (the game's own Options delay still applies if it is shorter).");
             m_BrightTooltipWords = Config.Bind("Menus", "BrightTooltipWords", true, "Show the words that have a tooltip (character sheet, item and ability texts) in a clear blue instead of the game's dim colour. Applies the next time a text is shown.");
             m_AnalogSpeed = Config.Bind("Input", "AnalogMovementSpeed", true, "Left stick: a light tilt walks, a full push runs, and in between the party speeds up gradually. Off = always the game's normal running speed.");
+            m_Vibration = Config.Bind("Input", "Vibration", true, "Controller vibration when the camera shakes (scripted scenes, heavy hits, critical kills, big creatures), like the console version.");
+            m_VibrationStrength = Config.Bind("Input", "VibrationStrength", 1f, new ConfigDescription("Vibration strength: 1 = the console version's values.", new AcceptableValueRange<float>(0.25f, 3f)));
             m_TooltipDelay = Config.Bind("Menus", "TooltipDelay", 0.4f, new ConfigDescription("Seconds the controller cursor rests on an element before its tooltip shows.", new AcceptableValueRange<float>(0.1f, 3f)));
             m_TimedTutorials = Config.Bind("Tutorials", "Timed", true, "On the controller, tutorials the game does not pause for close by themselves after their reading time (L3 = read and pause, B = dismiss). Off = every tutorial pauses and takes the controls.");
             m_ReadingWpm = Config.Bind("Tutorials", "ReadingWordsPerMinute", 238f, new ConfigDescription("Reading speed for the timed tutorials: 2 s + words at this speed, at least 5 s. 238 = average adult silent reading (Brysbaert 2019).", new AcceptableValueRange<float>(80f, 600f)));
@@ -341,6 +345,8 @@ namespace PoEController
                 m_Transitions.PauseOnDisconnect = m_PauseOnDisconnect.Value;
                 Menus.TooltipAssist.Enabled = m_QuickTooltips.Value;
                 World.DirectMovement.AnalogSpeed = m_AnalogSpeed.Value;
+                Patches.RumblePatches.Enabled = m_Vibration.Value && Compat.Features.On(Compat.Features.Rumble);
+                Patches.RumblePatches.StrengthMultiplier = m_VibrationStrength.Value;
                 Patches.LinkColorPatches.Enabled = m_BrightTooltipWords.Value && Compat.Features.On(Compat.Features.LinkColors);
                 Menus.TooltipAssist.Delay = m_TooltipDelay.Value;
                 Tutorials.TutorialFlow.TimedEnabled = m_TimedTutorials.Value;

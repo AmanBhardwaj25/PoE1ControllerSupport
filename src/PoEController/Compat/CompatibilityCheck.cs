@@ -187,6 +187,8 @@ namespace PoEController.Compat
             F(Features.SlotCount, "UIInventoryGridItem", "QuantityLabel"),
             F(Features.ConversationScroll, "UIConversationManager", "ContentPanel"),
             M(Features.AnalogSpeed, "Mover", "UseCustomSpeed"),
+            M(Features.Rumble, "CameraControl", "ScreenShake"),
+            F(Features.Rumble, "CameraControl", "m_screenShakeStrength"),
             M(Features.AnalogSpeed, "Mover", "UseWalkSpeed"),
             M(Features.AnalogSpeed, "Mover", "UseRunSpeed"),
             M(Features.AnalogSpeed, "Mover", "GetWalkSpeed"),
