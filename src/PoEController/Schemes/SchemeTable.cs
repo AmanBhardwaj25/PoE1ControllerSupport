@@ -80,7 +80,7 @@ namespace PoEController.Schemes
                     new Binding(PadButton.East, MappedControl.MB_CANCEL, "Cancel"))
             },
             {
-                typeof(UIConversationManager), new BindingScheme("Conversation",
+                typeof(UIConversationManager), new ConversationScheme(
                     new Binding(PadButton.DpadUp, MappedControl.UI_UP, "Choose"),
                     new Binding(PadButton.DpadDown, MappedControl.UI_DOWN, "Choose"),
                     new Binding(PadButton.South, MappedControl.UI_SELECT, "Select / Continue"),

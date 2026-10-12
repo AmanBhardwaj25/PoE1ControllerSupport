@@ -43,7 +43,7 @@ namespace PoEController
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string Guid = "poe.controller";
-        public const string Version = "0.39.1";
+        public const string Version = "0.40.0";
 
         private ConfigEntry<ControlStyle> m_ControlStyle;
         private ConfigEntry<bool> m_ConsoleShortBar;

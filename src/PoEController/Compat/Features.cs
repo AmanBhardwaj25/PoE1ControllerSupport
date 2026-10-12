@@ -40,6 +40,7 @@ namespace PoEController.Compat
         public const string WorldMap = "World map stepping (Console style)";
         public const string FocusFrameRule = "No focus frame on game buttons (Console style)";
         public const string LinkColors = "Brighter tooltip words";
+        public const string ConversationScroll = "Scroll conversations with RS";
         public const string SlotCount = "Stack count out from under the cursor (Console style)";
 
         private static readonly Dictionary<string, string> s_Off = new Dictionary<string, string>();

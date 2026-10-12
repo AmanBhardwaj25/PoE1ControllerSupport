@@ -18,6 +18,8 @@ namespace PoEController.World
         private const float RefreshInterval = 0.15f;
         private const float RefreshAngle = 15f;
         private const float NavMeshSnapDistance = 1.5f;
+        /// <summary>The stop order sits this far ahead of the leader, only so the formation keeps the walking direction.</summary>
+        private const float StopNudge = 0.05f;
 
         private readonly List<PartyMemberAI> m_Anchored = new List<PartyMemberAI>();
         private float m_RefreshTimer;
@@ -73,10 +75,15 @@ namespace PoEController.World
             m_RefreshTimer = RefreshInterval;
         }
 
-        /// <summary>Stick released: gather the party in formation around where the leader is now.</summary>
+        /// <summary>
+        /// Stick released: gather the party in formation around where the leader is now, facing the way it was
+        /// walking. The game turns a formation from the leader towards the destination; ordering exactly to the
+        /// leader's own position gave it no direction, and the formation snapped to face north.
+        /// </summary>
         public void Stop()
         {
             m_Moving = false;
+            Vector3 heading = m_LastDirection;
             m_LastDirection = Vector3.zero;
             if (!CanMove())
             {
@@ -85,7 +92,7 @@ namespace PoEController.World
             GameObject leader = SelectedLeader();
             if (leader != null)
             {
-                OrderSelectedTo(leader.transform.position);
+                OrderSelectedTo(leader.transform.position + heading * StopNudge);
             }
         }
 
