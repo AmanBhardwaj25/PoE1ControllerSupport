@@ -39,7 +39,7 @@ namespace PoEController.Settings
             { "Input.CameraSpeed", "Camera speed" },
             { "Input.StickDeadzone", "Stick dead zone" },
             { "Input.AnalogMovementSpeed", "Analog movement speed" },
-            { "Input.Vibration", "Vibration" },
+            { "Input.VibrationMode", "Vibration" },
             { "Input.VibrationStrength", "Vibration strength" },
             { "Input.PauseOnDisconnect", "Pause when the controller disconnects" },
             { "Menus.QuickTooltips", "Quick tooltips" },
@@ -57,6 +57,8 @@ namespace PoEController.Settings
             { "SteamDeck", "Steam Deck" },
             { "GlyphOnly", "Glyph only" },
             { "PcLayout", "PC layout" },
+            { "Essential", "Essential only" },
+            { "Extended", "Aphatasia's extended" },
         };
 
         private static readonly string[] s_SectionOrder = { "Controls", "Prompts", "Input", "Menus", "Tutorials", "Glyphs" };
