@@ -9,7 +9,10 @@ namespace PoEController.World
     /// Left-stick movement. While the stick is held, the selected party is ordered toward a point a few metres
     /// ahead of the leader in the stick's (camera-relative) direction; the order is refreshed as the stick turns or
     /// the leader closes in. Orders are built the same way Player's click-to-move builds them (formation position,
-    /// then a Move state), using only public game APIs.
+    /// then a Move state), using only public game APIs. Letting go stops every walking member on the spot (the HUD
+    /// Stop button's per-member call), keeping the way they face. A stick springing back to the centre overshoots
+    /// a little to the opposite side; a small, falling push in a very different direction is taken as letting go,
+    /// not as a new direction.
     /// </summary>
     internal sealed class DirectMovement
     {
@@ -18,30 +21,63 @@ namespace PoEController.World
         private const float RefreshInterval = 0.15f;
         private const float RefreshAngle = 15f;
         private const float NavMeshSnapDistance = 1.5f;
-        /// <summary>The stop order sits this far ahead of the leader, only so the formation keeps the walking direction.</summary>
-        private const float StopNudge = 0.05f;
+        /// <summary>From rest, the stick has to reach this far before the party starts walking (no drift starts).</summary>
+        private const float StartMagnitude = 0.3f;
+        /// <summary>While walking, a push below this that is falling or points far away is the stick springing back.</summary>
+        private const float ReleaseMagnitude = 0.45f;
+        private const float ReleaseAngle = 90f;
+        /// <summary>A spring-back drops the push this fast (full to centre in a few hundredths of a second); a thumb
+        /// easing off or wobbling on a light tilt is far slower and keeps walking.</summary>
+        private const float FastFallPerSecond = 4f;
 
         private readonly List<PartyMemberAI> m_Anchored = new List<PartyMemberAI>();
         private float m_RefreshTimer;
         private Vector3 m_LastDirection;
         private bool m_Moving;
+        private float m_PrevMagnitude;
+        /// <summary>After a spring-back stop: ignore the stick until it rests or is pushed deliberately again.</summary>
+        private bool m_WaitForRest;
 
         public bool IsMoving => m_Moving;
 
         /// <summary>Feed the left stick each frame while the world scheme is active.</summary>
         public void Update(Vector2 stick, float dt)
         {
+            float magnitude = stick.magnitude;
+            float previous = m_PrevMagnitude;
+            m_PrevMagnitude = magnitude;
             if (stick == Vector2.zero || !CanMove())
             {
+                m_WaitForRest = false;
                 if (m_Moving)
                 {
-                    Stop();
+                    Stop("stick released");
                 }
                 return;
             }
 
             Vector3 direction = CameraRelative(stick);
             if (direction == Vector3.zero)
+            {
+                return;
+            }
+            if (m_Moving && magnitude < ReleaseMagnitude
+                && (previous - magnitude > FastFallPerSecond * dt || Vector3.Angle(direction, m_LastDirection) > ReleaseAngle))
+            {
+                // The stick springing back to the centre, not a new direction.
+                Stop("stick springing back");
+                m_WaitForRest = true;
+                return;
+            }
+            if (m_WaitForRest)
+            {
+                if (magnitude < StartMagnitude * 2f)
+                {
+                    return;
+                }
+                m_WaitForRest = false;
+            }
+            if (!m_Moving && magnitude < StartMagnitude)
             {
                 return;
             }
@@ -75,25 +111,39 @@ namespace PoEController.World
             m_RefreshTimer = RefreshInterval;
         }
 
+        /// <summary>Stops the walking party on the spot (other callers: modes that take over the stick).</summary>
+        public void Stop() => Stop("mode change");
+
         /// <summary>
-        /// Stick released: gather the party in formation around where the leader is now, facing the way it was
-        /// walking. The game turns a formation from the leader towards the destination; ordering exactly to the
-        /// leader's own position gave it no direction, and the formation snapped to face north.
+        /// Every selected member still walking (a Move state) stops where it is, facing the way it was going: the
+        /// game's own per-member stop (<c>Player.CancelAction</c>, what the HUD Stop button runs), which also steps a
+        /// member off another one's spot. Members doing something else (an attack A started) are left alone.
+        /// Earlier versions re-formed the formation around the leader instead, so the followers kept walking to
+        /// their new places and turned to wherever those were.
         /// </summary>
-        public void Stop()
+        private void Stop(string reason)
         {
             m_Moving = false;
-            Vector3 heading = m_LastDirection;
             m_LastDirection = Vector3.zero;
-            if (!CanMove())
+            if (!CanMove() || GameState.s_playerCharacter == null)
             {
                 return;
             }
-            GameObject leader = SelectedLeader();
-            if (leader != null)
+            int stopped = 0;
+            foreach (GameObject go in PartyMemberAI.SelectedPartyMembers)
             {
-                OrderSelectedTo(leader.transform.position + heading * StopNudge);
+                if (go == null)
+                {
+                    continue;
+                }
+                PartyMemberAI ai = go.GetComponent<PartyMemberAI>();
+                if (ai != null && ai.StateManager != null && ai.StateManager.CurrentState is Move)
+                {
+                    GameState.s_playerCharacter.CancelAction(go);
+                    stopped++;
+                }
             }
+            Plugin.Log.LogInfo($"Movement stop ({reason}): {stopped} stopped on the spot");
         }
 
         private static bool CanMove()
