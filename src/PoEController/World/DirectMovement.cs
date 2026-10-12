@@ -29,6 +29,13 @@ namespace PoEController.World
         /// <summary>A spring-back drops the push this fast (full to centre in a few hundredths of a second); a thumb
         /// easing off or wobbling on a light tilt is far slower and keeps walking.</summary>
         private const float FastFallPerSecond = 4f;
+        /// <summary>Analog speed: up to this tilt the party walks (the game's walk speed and animation)...</summary>
+        private const float WalkUpTo = 0.55f;
+        /// <summary>...from here it runs at the game's normal speed; in between it speeds up gradually.</summary>
+        private const float RunFrom = 0.9f;
+
+        /// <summary>Config Input.AnalogMovementSpeed: a light tilt walks, a full push runs. Off = always the game's run.</summary>
+        public static bool AnalogSpeed = true;
 
         private readonly List<PartyMemberAI> m_Anchored = new List<PartyMemberAI>();
         private float m_RefreshTimer;
@@ -42,6 +49,12 @@ namespace PoEController.World
 
         /// <summary>Feed the left stick each frame while the world scheme is active.</summary>
         public void Update(Vector2 stick, float dt)
+        {
+            UpdateOrders(stick, dt);
+            ApplySpeed(stick);
+        }
+
+        private void UpdateOrders(Vector2 stick, float dt)
         {
             float magnitude = stick.magnitude;
             float previous = m_PrevMagnitude;
@@ -109,6 +122,64 @@ namespace PoEController.World
             m_Moving = true;
             m_LastDirection = direction;
             m_RefreshTimer = RefreshInterval;
+        }
+
+        /// <summary>Every frame after the orders: keeps the walking party at the stick's speed.</summary>
+        private void ApplySpeed(Vector2 stick)
+        {
+            if (!m_Moving || !AnalogSpeed)
+            {
+                return;
+            }
+            float magnitude = stick.magnitude;
+            Compat.Features.Run(Compat.Features.AnalogSpeed, () => SetSpeed(magnitude));
+        }
+
+        /// <summary>
+        /// The game sets walk or run speed when a member gets a new destination (every refresh here), so the speed is
+        /// set again each frame after the orders. Below <see cref="WalkUpTo"/>: the game's walk speed (its own walk
+        /// animation); above <see cref="RunFrom"/>: its run speed (stats, buffs and turn-based stride included); in
+        /// between a custom speed, which the game animates as a slower run. Scouting keeps the game's sneaking pace.
+        /// </summary>
+        private static void SetSpeed(float magnitude)
+        {
+            foreach (GameObject go in PartyMemberAI.SelectedPartyMembers)
+            {
+                if (go == null)
+                {
+                    continue;
+                }
+                PartyMemberAI ai = go.GetComponent<PartyMemberAI>();
+                Mover mover = ai != null ? ai.Mover : null;
+                if (mover == null || ai.StateManager == null || !(ai.StateManager.CurrentState is Move) || Stealth.IsInStealthMode(go))
+                {
+                    continue;
+                }
+                float walk = mover.GetWalkSpeed();
+                float run = mover.GetRunSpeed();
+                if (magnitude >= RunFrom || run <= walk)
+                {
+                    if (mover.DesiredSpeed != run)
+                    {
+                        mover.UseRunSpeed();
+                    }
+                }
+                else if (magnitude <= WalkUpTo)
+                {
+                    if (mover.DesiredSpeed != walk)
+                    {
+                        mover.UseWalkSpeed();
+                    }
+                }
+                else
+                {
+                    float speed = Mathf.Lerp(walk, run, (magnitude - WalkUpTo) / (RunFrom - WalkUpTo));
+                    if (Mathf.Abs(mover.DesiredSpeed - speed) > 0.05f)
+                    {
+                        mover.UseCustomSpeed(speed);
+                    }
+                }
+            }
         }
 
         /// <summary>Stops the walking party on the spot (other callers: modes that take over the stick).</summary>

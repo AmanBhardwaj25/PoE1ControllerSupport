@@ -38,6 +38,7 @@ namespace PoEController.Settings
             { "Input.FollowCamera", "Follow camera (R3)" },
             { "Input.CameraSpeed", "Camera speed" },
             { "Input.StickDeadzone", "Stick dead zone" },
+            { "Input.AnalogMovementSpeed", "Analog movement speed" },
             { "Input.PauseOnDisconnect", "Pause when the controller disconnects" },
             { "Menus.QuickTooltips", "Quick tooltips" },
             { "Menus.BrightTooltipWords", "Brighter tooltip words" },
