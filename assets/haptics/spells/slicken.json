@@ -1,0 +1,45 @@
+{
+  "name": "Slicken",
+  "note": "A slip, a skid, a beat in the air, then the thud of the fall.",
+  "bucket": "earth_knockdown",
+  "motors": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 0.15,
+        "length": 0.25,
+        "flicker": 0.5
+      },
+      {
+        "motor": "low",
+        "amp": 0.9,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.1,
+        "delay": 0.35
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.105,
+        "length": 0.2,
+        "flicker": 0.5
+      },
+      {
+        "motor": "low",
+        "amp": 0.99,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.35
+      }
+    ]
+  }
+}

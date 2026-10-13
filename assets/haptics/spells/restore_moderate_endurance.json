@@ -1,0 +1,48 @@
+{
+  "name": "Restore Moderate Endurance",
+  "note": "A full warm swell with a soft glow on top.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0.18,
+        "fade": 0.4,
+        "length": 0.7
+      },
+      {
+        "motor": "high",
+        "amp": 0.15,
+        "attack": 0.2,
+        "fade": 0.4,
+        "length": 0.5
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.126,
+        "fade": 0.28,
+        "length": 0.56
+      },
+      {
+        "motor": "high",
+        "amp": 0.165,
+        "attack": 0.14,
+        "fade": 0.28,
+        "length": 0.4
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#3adeff",
+      "#0ab5ff",
+      "#7deaff"
+    ]
+  }
+}

@@ -90,6 +90,22 @@ namespace PoEController.Input
         [DllImport(Lib, CallingConvention = CallingConvention.Cdecl)]
         public static extern ControllerType SDL_GameControllerGetType(IntPtr controller);
 
+        /// <summary>Lightbar colour (PS4 / PS5 through HIDAPI). 0 = done, -1 = not supported.</summary>
+        [DllImport(Lib, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int SDL_GameControllerSetLED(IntPtr controller, byte red, byte green, byte blue);
+
+        /// <summary>A raw controller effect packet (PS5: the 47-byte DS5 effects state; SDL adds the report header / CRC).</summary>
+        [DllImport(Lib, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int SDL_GameControllerSendEffect(IntPtr controller, byte[] data, int size);
+
+        /// <summary>USB vendor id (0 if unknown).</summary>
+        [DllImport(Lib, CallingConvention = CallingConvention.Cdecl)]
+        public static extern ushort SDL_GameControllerGetVendor(IntPtr controller);
+
+        /// <summary>USB product id (0 if unknown).</summary>
+        [DllImport(Lib, CallingConvention = CallingConvention.Cdecl)]
+        public static extern ushort SDL_GameControllerGetProduct(IntPtr controller);
+
         [DllImport(Lib, CallingConvention = CallingConvention.Cdecl)]
         public static extern void SDL_GameControllerUpdate();
 

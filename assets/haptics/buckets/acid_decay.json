@@ -1,0 +1,123 @@
+{
+  "name": "acid_decay",
+  "note": "A weak, irregular fizz that eats in.",
+  "motors": {
+    "cast": [
+      {
+        "motor": "high",
+        "amp": 0.08,
+        "attack": 1.5,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.8
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.0,
+        "fade": 0.05,
+        "length": 0.1
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0.03,
+        "fade": 0.25,
+        "length": 0.4,
+        "flicker": 0.9
+      },
+      {
+        "motor": "low",
+        "amp": 0.2,
+        "attack": 0.05,
+        "fade": 0.2,
+        "length": 0.4
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "high",
+        "amp": 0.16,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.9
+      },
+      {
+        "motor": "low",
+        "amp": 0.12,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.0
+      }
+    ]
+  },
+  "haptic": {
+    "cast": [
+      {
+        "motor": "high",
+        "amp": 0.088,
+        "attack": 1.05,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.8
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.035,
+        "length": 0.08
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.021,
+        "fade": 0.175,
+        "length": 0.32,
+        "flicker": 0.9
+      },
+      {
+        "motor": "low",
+        "amp": 0.22,
+        "attack": 0.035,
+        "fade": 0.14,
+        "length": 0.32
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "high",
+        "amp": 0.176,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.9
+      },
+      {
+        "motor": "low",
+        "amp": 0.132,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.0
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#80ff40",
+      "#c0ff00",
+      "#20d0a0"
+    ]
+  }
+}

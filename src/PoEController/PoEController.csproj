@@ -38,16 +38,19 @@
     <Reference Include="UnityEngine.AIModule"><HintPath>$(ManagedDir)UnityEngine.AIModule.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(ManagedDir)UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="UnityEngine.AudioModule"><HintPath>$(ManagedDir)UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule"><HintPath>$(ManagedDir)UnityEngine.JSONSerializeModule.dll</HintPath><Private>false</Private></Reference>
   </ItemGroup>
 
-  <!-- Deploy the plugin, SDL2 and glyphs into BepInEx/plugins/PoEController after each build. -->
+  <!-- Deploy the plugin, SDL2, glyphs and vibration patterns into BepInEx/plugins/PoEController after each build. -->
   <Target Name="DeployPlugin" AfterTargets="Build" Condition="'$(NoModLogging)' != 'true'">
     <ItemGroup>
       <GlyphFiles Include="$(MSBuildThisFileDirectory)..\..\assets\glyphs\**\*.png" />
+      <HapticFiles Include="$(MSBuildThisFileDirectory)..\..\assets\haptics\**\*.json;$(MSBuildThisFileDirectory)..\..\assets\haptics\README.md" />
     </ItemGroup>
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(PluginInstallDir)" />
     <Copy SourceFiles="$(MSBuildThisFileDirectory)..\..\tools\sdl2\SDL2.dll" DestinationFolder="$(PluginInstallDir)" SkipUnchangedFiles="true" />
     <Copy SourceFiles="@(GlyphFiles)" DestinationFiles="@(GlyphFiles->'$(PluginInstallDir)glyphs\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(HapticFiles)" DestinationFiles="@(HapticFiles->'$(PluginInstallDir)haptics\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
   </Target>
 
 </Project>

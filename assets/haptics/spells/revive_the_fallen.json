@@ -1,0 +1,65 @@
+{
+  "name": "Revive the Fallen",
+  "note": "A warm swell, then a heartbeat comes back: lub-dub.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.45,
+        "attack": 0.2,
+        "fade": 0.3,
+        "length": 0.5
+      },
+      {
+        "motor": "low",
+        "amp": 0.6,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.5
+      },
+      {
+        "motor": "low",
+        "amp": 0.45,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.07,
+        "delay": 0.65
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.495,
+        "attack": 0.14,
+        "fade": 0.21,
+        "length": 0.4
+      },
+      {
+        "motor": "low",
+        "amp": 0.66,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064,
+        "delay": 0.5
+      },
+      {
+        "motor": "low",
+        "amp": 0.495,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.056,
+        "delay": 0.65
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#2baeff",
+      "#71e7ff"
+    ]
+  }
+}

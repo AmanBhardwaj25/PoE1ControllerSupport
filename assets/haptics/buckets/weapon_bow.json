@@ -1,0 +1,64 @@
+{
+  "name": "weapon_bow",
+  "note": "A soft string release, then a clean tap on the hit.",
+  "motors": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.04
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.7,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      },
+      {
+        "motor": "low",
+        "amp": 0.35,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      }
+    ]
+  },
+  "haptic": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.032
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.77,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      },
+      {
+        "motor": "low",
+        "amp": 0.385,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#e8e0c8",
+      "#c0a878"
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "name": "combat_start",
+  "note": "A fight begins: a sudden thump, two heartbeats coming faster, then a swell of tension.",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.9,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.12
+      },
+      {
+        "motor": "low",
+        "amp": 0.6,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.45
+      },
+      {
+        "motor": "low",
+        "amp": 0.7,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.72
+      },
+      {
+        "motor": "both",
+        "amp": 0.35,
+        "attack": 0.6,
+        "fade": 0.3,
+        "length": 1.2,
+        "delay": 0.9,
+        "flicker": 0.3
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.99,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.096
+      },
+      {
+        "motor": "low",
+        "amp": 0.66,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064,
+        "delay": 0.45
+      },
+      {
+        "motor": "low",
+        "amp": 0.77,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064,
+        "delay": 0.72
+      },
+      {
+        "motor": "both",
+        "amp": 0.385,
+        "attack": 0.42,
+        "fade": 0.21,
+        "length": 0.96,
+        "delay": 0.9,
+        "flicker": 0.3
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff2000",
+      "#ff7a00"
+    ]
+  }
+}

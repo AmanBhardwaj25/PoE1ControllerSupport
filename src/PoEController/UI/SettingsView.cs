@@ -14,6 +14,7 @@ namespace PoEController.UI
         private const int VisibleRows = 13;
         private static readonly Color TitleColor = new Color(0.95f, 0.85f, 0.6f);
         private static readonly Color HeaderColor = new Color(0.85f, 0.7f, 0.4f);
+        private static readonly Color WarningColor = new Color(1f, 0.55f, 0.35f);
         private static readonly Color TextColor = new Color(0.92f, 0.88f, 0.8f);
         private static readonly Color ValueColor = new Color(0.98f, 0.9f, 0.65f);
         private static readonly Color DescColor = new Color(0.8f, 0.77f, 0.7f);
@@ -56,7 +57,11 @@ namespace PoEController.UI
             {
                 SettingsPanel.Row row = SettingsPanel.Rows[i];
                 Rect r = new Rect(x, y, w, rowH);
-                if (row.Entry == null)
+                if (row.Warning)
+                {
+                    m_Text.DrawText(new Rect(r.x, r.y + 4f * s, r.width, r.height - 4f * s), row.Label, 0.68f, TextAnchor.MiddleCenter, WarningColor);
+                }
+                else if (row.Entry == null)
                 {
                     m_Text.DrawText(new Rect(r.x, r.y + 6f * s, r.width, r.height - 6f * s), row.Label, 0.8f, TextAnchor.MiddleLeft, HeaderColor);
                 }

@@ -1,0 +1,52 @@
+{
+  "name": "Woodskin",
+  "note": "Bark closing in a firm squeeze, a beat, then a creak.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.2
+      },
+      {
+        "motor": "high",
+        "amp": 0.2,
+        "attack": 0,
+        "fade": 0.2,
+        "length": 0.3,
+        "delay": 0.32,
+        "flicker": 0.7
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.16
+      },
+      {
+        "motor": "high",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 0.14,
+        "length": 0.24,
+        "delay": 0.32,
+        "flicker": 0.7
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#d1ff82",
+      "#b0ff3a",
+      "#ff9a26"
+    ]
+  }
+}

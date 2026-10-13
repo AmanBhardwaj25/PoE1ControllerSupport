@@ -64,6 +64,16 @@ Get-ChildItem $glyphs -Directory | ForEach-Object {
     New-Item -ItemType Directory -Force $dest | Out-Null
     Copy-Item (Join-Path $_.FullName '*.png') $dest
 }
+# Vibration patterns: spell index + shipped buckets / spells (players add their own under haptics\custom)
+$haptics = Join-Path $root 'assets\haptics'
+if (Test-Path $haptics) {
+    Get-ChildItem $haptics -Recurse -File | Where-Object { $_.Extension -eq '.json' -or $_.Name -eq 'README.md' } | ForEach-Object {
+        $rel = $_.FullName.Substring($haptics.Length).TrimStart('\')
+        $dest = Join-Path (Join-Path $pluginDir 'haptics') $rel
+        New-Item -ItemType Directory -Force (Split-Path $dest) | Out-Null
+        Copy-Item $_.FullName $dest
+    }
+}
 
 # 4. How to install.txt (plain ASCII, no long dashes)
 $install = @"
@@ -80,6 +90,11 @@ INSTALL ON WINDOWS (STEAM OR GOG)
    winhttp.dll must end up right next to PillarsOfEternity.exe.
 3. Start the game and pick up your controller.
 
+Steam players on PC: turn Steam Input off for Pillars of Eternity (right-click the game, Properties,
+Controller, Disable Steam Input). With Steam Input on, the game only sees a virtual Xbox pad: button
+glyphs may be wrong and controller features such as DualSense triggers, lightbar and haptics can't work.
+The mod's controller settings (View and Menu) show a warning while Steam Input is in the way.
+
 
 INSTALL ON STEAM DECK
 
@@ -92,6 +107,7 @@ INSTALL ON STEAM DECK
    and pick "PoE Controller mod (Deck)". Any Gamepad layout works too.
    Keyboard and mouse layouts hide the controller from the mod.
 5. Start the game.
+On the Steam Deck, leave Steam Input on: the Deck's own controls need it.
 
 
 SETTINGS

@@ -1,0 +1,66 @@
+{
+  "name": "Sunlance",
+  "note": "A spear of sunlight: a sharp stab, a heavy hit, then a bright ring.",
+  "bucket": "force_kinetic",
+  "motors": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.9,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      },
+      {
+        "motor": "low",
+        "amp": 0.8,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.1,
+        "delay": 0.1
+      },
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 0.4,
+        "length": 0.5,
+        "delay": 0.24,
+        "pulse": 12
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.99,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      },
+      {
+        "motor": "low",
+        "amp": 0.88,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.1
+      },
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.28,
+        "length": 0.4,
+        "delay": 0.24,
+        "pulse": 12
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffb906"
+    ]
+  }
+}

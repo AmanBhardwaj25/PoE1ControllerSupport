@@ -1,0 +1,50 @@
+{
+  "name": "Wall of Force",
+  "note": "One long flat press as the wall goes up, a pause, then it settles.",
+  "bucket": "force_kinetic",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.9,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.3
+      },
+      {
+        "motor": "low",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.42
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.99,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.24
+      },
+      {
+        "motor": "low",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064,
+        "delay": 0.42
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#15ffdd",
+      "#87f1ff",
+      "#4bffee"
+    ]
+  }
+}

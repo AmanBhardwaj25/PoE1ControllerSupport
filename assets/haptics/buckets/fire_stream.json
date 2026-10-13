@@ -1,0 +1,113 @@
+{
+  "name": "fire_stream",
+  "note": "A rushing wash of flame that flutters.",
+  "motors": {
+    "cast": [
+      {
+        "motor": "both",
+        "amp": 0.12,
+        "attack": 1.5,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.5
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.0,
+        "fade": 0.05,
+        "length": 0.1
+      }
+    ],
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.6,
+        "attack": 0.05,
+        "fade": 0.3,
+        "length": 0.5,
+        "pulse": 8,
+        "duty": 0.7,
+        "flicker": 0.6
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.6
+      },
+      {
+        "motor": "high",
+        "amp": 0.15,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.8
+      }
+    ]
+  },
+  "haptic": {
+    "cast": [
+      {
+        "motor": "both",
+        "amp": 0.132,
+        "attack": 1.05,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.5
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.035,
+        "length": 0.08
+      }
+    ],
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.66,
+        "attack": 0.035,
+        "fade": 0.21,
+        "length": 0.4,
+        "pulse": 8,
+        "duty": 0.7,
+        "flicker": 0.6
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.242,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.6
+      },
+      {
+        "motor": "high",
+        "amp": 0.165,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.8
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff7a00",
+      "#ff3000",
+      "#ffc060"
+    ]
+  }
+}

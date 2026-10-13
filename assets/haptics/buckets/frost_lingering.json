@@ -1,0 +1,177 @@
+{
+  "name": "frost_lingering",
+  "note": "A deep, slowly fading hum; each later tick two cold ticks.",
+  "motors": {
+    "cast": [
+      {
+        "motor": "low",
+        "amp": 0.1,
+        "attack": 1.5,
+        "fade": 1000,
+        "length": 0
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.0,
+        "fade": 0.05,
+        "length": 0.1
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.6,
+        "attack": 0.08,
+        "fade": 0.4,
+        "length": 0.6
+      },
+      {
+        "motor": "high",
+        "amp": 0.2,
+        "attack": 0,
+        "fade": 0.4,
+        "length": 0.5,
+        "delay": 0.1,
+        "pulse": 30,
+        "duty": 0.6
+      }
+    ],
+    "linger": [
+      {
+        "motor": "high",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      },
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.11
+      },
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.05,
+        "fade": 0.3,
+        "length": 0.4
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.2,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 0.9,
+        "duty": 0.7
+      },
+      {
+        "motor": "high",
+        "amp": 0.1,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 30,
+        "duty": 0.6
+      }
+    ]
+  },
+  "haptic": {
+    "cast": [
+      {
+        "motor": "low",
+        "amp": 0.11,
+        "attack": 1.05,
+        "fade": 1000,
+        "length": 0
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.035,
+        "length": 0.08
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.66,
+        "attack": 0.056,
+        "fade": 0.28,
+        "length": 0.48
+      },
+      {
+        "motor": "high",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 0.28,
+        "length": 0.4,
+        "delay": 0.1,
+        "pulse": 30,
+        "duty": 0.6
+      }
+    ],
+    "linger": [
+      {
+        "motor": "high",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      },
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.11
+      },
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.035,
+        "fade": 0.21,
+        "length": 0.32
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 0.9,
+        "duty": 0.7
+      },
+      {
+        "motor": "high",
+        "amp": 0.11,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 30,
+        "duty": 0.6
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#0070ff",
+      "#3a6aff",
+      "#80e8ff"
+    ]
+  }
+}

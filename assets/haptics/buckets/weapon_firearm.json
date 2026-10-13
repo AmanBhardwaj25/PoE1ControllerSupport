@@ -1,0 +1,50 @@
+{
+  "name": "weapon_firearm",
+  "note": "A hard kick on the shot, a punch on the hit.",
+  "motors": {
+    "launch": [
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.1
+      }
+    ],
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.8,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08
+      }
+    ]
+  },
+  "haptic": {
+    "launch": [
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.08
+      }
+    ],
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.88,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffd090",
+      "#ff8a30"
+    ]
+  }
+}

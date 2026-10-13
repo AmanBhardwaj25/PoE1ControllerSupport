@@ -1,0 +1,55 @@
+{
+  "name": "Cleansing Wind",
+  "note": "A rush of wind that washes through; each gust a lighter whoosh.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.45,
+        "attack": 0.15,
+        "fade": 0.3,
+        "length": 0.7,
+        "flicker": 0.5
+      }
+    ],
+    "linger": [
+      {
+        "motor": "both",
+        "amp": 0.3,
+        "attack": 0.1,
+        "fade": 0.2,
+        "length": 0.4,
+        "flicker": 0.5
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.495,
+        "attack": 0.105,
+        "fade": 0.21,
+        "length": 0.56,
+        "flicker": 0.5
+      }
+    ],
+    "linger": [
+      {
+        "motor": "both",
+        "amp": 0.33,
+        "attack": 0.07,
+        "fade": 0.14,
+        "length": 0.32,
+        "flicker": 0.5
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#00bdff",
+      "#35f7ff"
+    ]
+  }
+}

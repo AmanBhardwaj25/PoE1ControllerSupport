@@ -1,0 +1,100 @@
+{
+  "name": "Returning Storm",
+  "note": "A thunderclap with a double crack; every return a smaller one.",
+  "bucket": "lightning",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.8,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.1
+      },
+      {
+        "motor": "high",
+        "amp": 0.9,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.02
+      },
+      {
+        "motor": "high",
+        "amp": 0.6,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.12
+      }
+    ],
+    "linger": [
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08
+      },
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.11
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.88,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.08
+      },
+      {
+        "motor": "high",
+        "amp": 0.99,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.02
+      },
+      {
+        "motor": "high",
+        "amp": 0.66,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.12
+      }
+    ],
+    "linger": [
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064
+      },
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.11
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#9c85ff",
+      "#9845ff",
+      "#4649ff"
+    ]
+  }
+}

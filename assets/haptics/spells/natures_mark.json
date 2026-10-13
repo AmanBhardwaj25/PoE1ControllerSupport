@@ -1,0 +1,49 @@
+{
+  "name": "Nature's Mark",
+  "note": "A soft press, a beat, then a single tap: marked.",
+  "bucket": "curses_debuffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.05,
+        "fade": 0.2,
+        "length": 0.3
+      },
+      {
+        "motor": "high",
+        "amp": 0.35,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.32
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.035,
+        "fade": 0.14,
+        "length": 0.24
+      },
+      {
+        "motor": "high",
+        "amp": 0.385,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.32
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#c0ff00",
+      "#e4ff7d"
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Nature's Bounty",
+  "note": "A full, rich swell with a gentle pulse in it.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0.3,
+        "fade": 0.5,
+        "length": 1.0
+      },
+      {
+        "motor": "high",
+        "amp": 0.2,
+        "attack": 0.3,
+        "fade": 0.5,
+        "length": 0.9,
+        "pulse": 6
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.21,
+        "fade": 0.35,
+        "length": 0.8
+      },
+      {
+        "motor": "high",
+        "amp": 0.22,
+        "attack": 0.21,
+        "fade": 0.35,
+        "length": 0.72,
+        "pulse": 6
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#2cff0c",
+      "#c2ff80"
+    ]
+  }
+}

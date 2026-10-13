@@ -1,0 +1,84 @@
+{
+  "name": "Fireball",
+  "note": "A spark, a beat of silence, then a huge boom that rolls on, and one last aftershock.",
+  "bucket": "fire_blast",
+  "motors": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      },
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0.01,
+        "fade": 0.35,
+        "length": 1.0,
+        "delay": 0.12
+      },
+      {
+        "motor": "high",
+        "amp": 0.7,
+        "attack": 0,
+        "fade": 0.3,
+        "length": 0.8,
+        "delay": 0.13,
+        "flicker": 0.8
+      },
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.6
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      },
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0.007,
+        "fade": 0.245,
+        "length": 0.8,
+        "delay": 0.12
+      },
+      {
+        "motor": "high",
+        "amp": 0.77,
+        "attack": 0.0,
+        "fade": 0.21,
+        "length": 0.64,
+        "delay": 0.13,
+        "flicker": 0.8
+      },
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064,
+        "delay": 0.6
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff5c00",
+      "#ff942e",
+      "#ffc474"
+    ]
+  }
+}

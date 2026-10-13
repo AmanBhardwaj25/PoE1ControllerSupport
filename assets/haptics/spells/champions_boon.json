@@ -1,0 +1,50 @@
+{
+  "name": "Champion's Boon",
+  "note": "A confident push, a beat, then a bright ring.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.7,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.1
+      },
+      {
+        "motor": "high",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.06,
+        "delay": 0.2
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.77,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.08
+      },
+      {
+        "motor": "high",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.048,
+        "delay": 0.2
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffdd82",
+      "#ffba51",
+      "#ff6209"
+    ]
+  }
+}

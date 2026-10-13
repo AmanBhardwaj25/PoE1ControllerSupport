@@ -1,0 +1,82 @@
+{
+  "name": "Avenging Storm",
+  "note": "A furious strike: four cracks, the first one huge.",
+  "bucket": "lightning",
+  "motors": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08
+      },
+      {
+        "motor": "high",
+        "amp": 0.9,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.13
+      },
+      {
+        "motor": "both",
+        "amp": 0.8,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.06,
+        "delay": 0.23
+      },
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.33
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064
+      },
+      {
+        "motor": "high",
+        "amp": 0.99,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.13
+      },
+      {
+        "motor": "both",
+        "amp": 0.88,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.048,
+        "delay": 0.23
+      },
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.032,
+        "delay": 0.33
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#009eff",
+      "#71ccff",
+      "#ff84b7"
+    ]
+  }
+}

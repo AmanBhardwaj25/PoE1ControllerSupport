@@ -64,6 +64,8 @@ namespace PoEController.Input
             public int InstanceId;
             public string Name;
             public Sdl.ControllerType Type;
+            public ushort Vendor;
+            public ushort Product;
         }
 
         private readonly List<Device> m_Devices = new List<Device>();
@@ -77,6 +79,16 @@ namespace PoEController.Input
         public float RepeatInterval = 0.08f;
 
         public bool Connected => m_Controller != IntPtr.Zero;
+
+        /// <summary>
+        /// The controller in use is Steam Input's virtual pad (Valve 28DE:11FF, or named so): Steam sits between the
+        /// real controller and the game, so device features (DualSense triggers, lightbar, HD haptics) can't reach it.
+        /// </summary>
+        public bool IsSteamVirtual => m_Current != null && IsSteamVirtualDevice(m_Current);
+
+        private static bool IsSteamVirtualDevice(Device d) =>
+            (d.Vendor == 0x28DE && d.Product == 0x11FF)
+            || (d.Name != null && d.Name.IndexOf("Steam Virtual", StringComparison.OrdinalIgnoreCase) >= 0);
         public string Name { get; private set; } = string.Empty;
         public Sdl.ControllerType Type { get; private set; }
         public GlyphFamily DetectedFamily { get; private set; } = GlyphFamily.Xbox;
@@ -191,13 +203,59 @@ namespace PoEController.Input
             UpdateTimers(unscaledDeltaTime);
         }
 
+        /// <summary>A real DualSense (not Steam's virtual pad): lightbar, player LEDs, mute light, triggers.</summary>
+        public bool IsDualSense => m_Controller != IntPtr.Zero && Type == Sdl.ControllerType.PS5 && !IsSteamVirtual;
+
+        /// <summary>A real DualShock 4: lightbar only.</summary>
+        public bool IsDualShock4 => m_Controller != IntPtr.Zero && Type == Sdl.ControllerType.PS4 && !IsSteamVirtual;
+
+        /// <summary>Lightbar colour (DualShock 4 / DualSense). False if the controller refused it.</summary>
+        public bool SetLightbar(byte r, byte g, byte b) => m_Controller != IntPtr.Zero && Sdl.SDL_GameControllerSetLED(m_Controller, r, g, b) == 0;
+
+        /// <summary>A raw effect packet (see <see cref="Sdl.SDL_GameControllerSendEffect"/>). False if it was refused.</summary>
+        public bool SendEffect(byte[] data)
+        {
+            if (m_Controller == IntPtr.Zero || data == null)
+            {
+                return false;
+            }
+            int result = Sdl.SDL_GameControllerSendEffect(m_Controller, data, data.Length);
+            if (result != 0 && !m_EffectRefused)
+            {
+                m_EffectRefused = true;
+                Plugin.Log.LogWarning($"Lights: the controller refused the effect ({Sdl.SDL_GetError()})");
+            }
+            else if (result == 0)
+            {
+                m_EffectRefused = false;
+            }
+            return result == 0;
+        }
+
+        private bool m_EffectRefused;
+
+        /// <summary>Changes whenever another controller becomes the active one (lights re-send their state).</summary>
+        public IntPtr Handle => m_Controller;
+
         public void Rumble(float low, float high, float seconds)
         {
             if (m_Controller != IntPtr.Zero)
             {
-                Sdl.SDL_GameControllerRumble(m_Controller, (ushort)(Mathf.Clamp01(low) * 65535f), (ushort)(Mathf.Clamp01(high) * 65535f), (uint)(seconds * 1000f));
+                int result = Sdl.SDL_GameControllerRumble(m_Controller, (ushort)(Mathf.Clamp01(low) * 65535f), (ushort)(Mathf.Clamp01(high) * 65535f), (uint)(seconds * 1000f));
+                if (result != 0 && !m_RumbleRefused)
+                {
+                    m_RumbleRefused = true;
+                    Plugin.Log.LogWarning($"Rumble: the controller refused it ({Sdl.SDL_GetError()})");
+                }
+                else if (result == 0 && m_RumbleRefused)
+                {
+                    m_RumbleRefused = false;
+                    Plugin.Log.LogInfo("Rumble: the controller accepts it again");
+                }
             }
         }
+
+        private bool m_RumbleRefused;
 
         public void Dispose()
         {
@@ -275,9 +333,11 @@ namespace PoEController.Input
                     InstanceId = Sdl.SDL_JoystickInstanceID(Sdl.SDL_GameControllerGetJoystick(c)),
                     Name = Sdl.SDL_GameControllerName(c) ?? string.Empty,
                     Type = Sdl.SDL_GameControllerGetType(c),
+                    Vendor = Sdl.SDL_GameControllerGetVendor(c),
+                    Product = Sdl.SDL_GameControllerGetProduct(c),
                 };
                 m_Devices.Add(d);
-                m_Log.LogInfo($"Controller connected: '{d.Name}' type={d.Type} glyphs={FamilyFor(d.Type, d.Name)}");
+                m_Log.LogInfo($"Controller connected: '{d.Name}' type={d.Type} usb={d.Vendor:x4}:{d.Product:x4} glyphs={FamilyFor(d.Type, d.Name)}{(IsSteamVirtualDevice(d) ? " (Steam Input virtual pad)" : "")}");
             }
         }
 

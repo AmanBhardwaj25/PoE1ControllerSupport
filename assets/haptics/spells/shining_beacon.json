@@ -1,0 +1,68 @@
+{
+  "name": "Shining Beacon",
+  "note": "A blinding flash, a beat, then foes flinching in a sharp throb.",
+  "bucket": "curses_debuffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.6,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      },
+      {
+        "motor": "high",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 0.3,
+        "length": 0.4,
+        "delay": 0.13,
+        "pulse": 14
+      },
+      {
+        "motor": "low",
+        "amp": 0.25,
+        "attack": 0,
+        "fade": 0.2,
+        "length": 0.3,
+        "delay": 0.13
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.66,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      },
+      {
+        "motor": "high",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 0.21,
+        "length": 0.32,
+        "delay": 0.13,
+        "pulse": 14
+      },
+      {
+        "motor": "low",
+        "amp": 0.275,
+        "attack": 0.0,
+        "fade": 0.14,
+        "length": 0.24,
+        "delay": 0.13
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffe47f",
+      "#ffcd56",
+      "#ffa810"
+    ]
+  }
+}

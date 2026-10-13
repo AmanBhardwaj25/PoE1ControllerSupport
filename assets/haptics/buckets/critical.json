@@ -1,0 +1,34 @@
+{
+  "name": "critical",
+  "note": "On top of a critical hit: a beat of silence after the hit, then a second, full jolt.",
+  "motors": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.1,
+        "delay": 0.17
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.17
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffffff",
+      "#ff3020"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Pillar of Faith",
+  "note": "A pillar of light slams down, a beat of silence, then it rings out.",
+  "bucket": "radiant_holy",
+  "motors": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.12
+      },
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 0.5,
+        "length": 0.7,
+        "delay": 0.25,
+        "pulse": 12
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.096
+      },
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.35,
+        "length": 0.56,
+        "delay": 0.25,
+        "pulse": 12
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff2404",
+      "#ffda86",
+      "#ff823d"
+    ]
+  }
+}

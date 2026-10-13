@@ -1,0 +1,105 @@
+{
+  "name": "force_kinetic",
+  "note": "One clean, solid punch.",
+  "motors": {
+    "cast": [
+      {
+        "motor": "both",
+        "amp": 0.1,
+        "attack": 1.5,
+        "fade": 1000,
+        "length": 0
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.0,
+        "fade": 0.05,
+        "length": 0.1
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.9,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08
+      },
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.04
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.25,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 2.0,
+        "duty": 0.35
+      }
+    ]
+  },
+  "haptic": {
+    "cast": [
+      {
+        "motor": "both",
+        "amp": 0.11,
+        "attack": 1.05,
+        "fade": 1000,
+        "length": 0
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.035,
+        "length": 0.08
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.99,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064
+      },
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.032
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.275,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 2.0,
+        "duty": 0.35
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff4060",
+      "#c050ff",
+      "#7090ff"
+    ]
+  }
+}

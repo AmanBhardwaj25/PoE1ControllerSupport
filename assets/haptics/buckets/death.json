@@ -1,0 +1,60 @@
+{
+  "name": "death",
+  "note": "A party member dies: a slow, fading heartbeat.",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.1,
+        "repeat": 3,
+        "every": 0.75,
+        "falloff": 0.7
+      },
+      {
+        "motor": "low",
+        "amp": 0.6,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.2,
+        "repeat": 3,
+        "every": 0.75,
+        "falloff": 0.7
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.08,
+        "repeat": 3,
+        "every": 0.75,
+        "falloff": 0.7
+      },
+      {
+        "motor": "low",
+        "amp": 0.66,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064,
+        "delay": 0.2,
+        "repeat": 3,
+        "every": 0.75,
+        "falloff": 0.7
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#c00000",
+      "#500000"
+    ]
+  }
+}

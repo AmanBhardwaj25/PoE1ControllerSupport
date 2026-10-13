@@ -1,0 +1,48 @@
+{
+  "name": "Minor Intercession",
+  "note": "A quiet, long swell with a soft glow.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.35,
+        "attack": 0.3,
+        "fade": 0.5,
+        "length": 0.9
+      },
+      {
+        "motor": "high",
+        "amp": 0.15,
+        "attack": 0.3,
+        "fade": 0.5,
+        "length": 0.8
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.385,
+        "attack": 0.21,
+        "fade": 0.35,
+        "length": 0.72
+      },
+      {
+        "motor": "high",
+        "amp": 0.165,
+        "attack": 0.21,
+        "fade": 0.35,
+        "length": 0.64
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#0cc0ff",
+      "#86edff",
+      "#4dd0ff"
+    ]
+  }
+}

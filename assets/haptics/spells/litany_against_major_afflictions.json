@@ -1,0 +1,50 @@
+{
+  "name": "Litany Against Major Afflictions",
+  "note": "A swell, and something heavy is lifted off with one snap.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.4,
+        "attack": 0.2,
+        "fade": 0.4,
+        "length": 0.5
+      },
+      {
+        "motor": "high",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.38
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.44,
+        "attack": 0.14,
+        "fade": 0.28,
+        "length": 0.4
+      },
+      {
+        "motor": "high",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.38
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#80faff",
+      "#35b2ff",
+      "#dbff7a"
+    ]
+  }
+}

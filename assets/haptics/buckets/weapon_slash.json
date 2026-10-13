@@ -1,0 +1,64 @@
+{
+  "name": "weapon_slash",
+  "note": "A quick, sharp cut (swords, axes).",
+  "motors": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.12,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.04
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.06
+      },
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.06
+      }
+    ]
+  },
+  "haptic": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.132,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.032
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.048
+      },
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.048
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#e8eef8",
+      "#a8b8d0"
+    ]
+  }
+}

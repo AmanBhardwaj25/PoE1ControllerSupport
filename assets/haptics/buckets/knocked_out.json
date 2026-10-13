@@ -1,0 +1,46 @@
+{
+  "name": "knocked_out",
+  "note": "A party member goes down.",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 0.3,
+        "length": 0.6
+      },
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 0.2,
+        "length": 0.4
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 0.21,
+        "length": 0.48
+      },
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 0.14,
+        "length": 0.32
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff4020",
+      "#a01000"
+    ]
+  }
+}

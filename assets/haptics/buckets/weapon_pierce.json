@@ -1,0 +1,50 @@
+{
+  "name": "weapon_pierce",
+  "note": "A short, pointed tap (spears, daggers).",
+  "motors": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.1,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.04
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.9,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.045
+      }
+    ]
+  },
+  "haptic": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.11,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.032
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.99,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.036
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#f0f4ff",
+      "#b0c0e0"
+    ]
+  }
+}

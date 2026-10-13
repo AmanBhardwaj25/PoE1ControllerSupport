@@ -41,6 +41,7 @@ namespace PoEController.Compat
         public const string FocusFrameRule = "No focus frame on game buttons (Console style)";
         public const string LinkColors = "Brighter tooltip words";
         public const string Rumble = "Controller vibration";
+        public const string Lights = "Controller lights and adaptive triggers (DualSense / DualShock 4)";
         public const string AnalogSpeed = "Analog movement speed";
         public const string ConversationScroll = "Scroll conversations with RS";
         public const string SlotCount = "Stack count out from under the cursor (Console style)";

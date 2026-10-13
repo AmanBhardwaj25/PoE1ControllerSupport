@@ -1,0 +1,68 @@
+{
+  "name": "Consecrated Ground",
+  "note": "Holy ground under your feet: a warm swell; each pulse a soft wave.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.4,
+        "attack": 0.15,
+        "fade": 0.4,
+        "length": 0.7
+      },
+      {
+        "motor": "high",
+        "amp": 0.15,
+        "attack": 0,
+        "fade": 0.4,
+        "length": 0.6,
+        "pulse": 12
+      }
+    ],
+    "linger": [
+      {
+        "motor": "low",
+        "amp": 0.2,
+        "attack": 0.1,
+        "fade": 0.3,
+        "length": 0.4
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.44,
+        "attack": 0.105,
+        "fade": 0.28,
+        "length": 0.56
+      },
+      {
+        "motor": "high",
+        "amp": 0.165,
+        "attack": 0.0,
+        "fade": 0.28,
+        "length": 0.48,
+        "pulse": 12
+      }
+    ],
+    "linger": [
+      {
+        "motor": "low",
+        "amp": 0.22,
+        "attack": 0.07,
+        "fade": 0.21,
+        "length": 0.32
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#4376ff",
+      "#1158ff",
+      "#80bbff"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "Circle of Protection",
+  "note": "A ring closes around the party: a held press, then a soft hum.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.45,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.35
+      },
+      {
+        "motor": "low",
+        "amp": 0.25,
+        "attack": 0,
+        "fade": 0.3,
+        "length": 0.5,
+        "delay": 0.45
+      },
+      {
+        "motor": "high",
+        "amp": 0.15,
+        "attack": 0,
+        "fade": 0.5,
+        "length": 0.6,
+        "delay": 0.45,
+        "pulse": 12
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.495,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.28
+      },
+      {
+        "motor": "low",
+        "amp": 0.275,
+        "attack": 0.0,
+        "fade": 0.21,
+        "length": 0.4,
+        "delay": 0.45
+      },
+      {
+        "motor": "high",
+        "amp": 0.165,
+        "attack": 0.0,
+        "fade": 0.35,
+        "length": 0.48,
+        "delay": 0.45,
+        "pulse": 12
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#68e5ff",
+      "#95e5ff",
+      "#ffb78f"
+    ]
+  }
+}

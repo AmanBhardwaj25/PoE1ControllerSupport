@@ -1,0 +1,40 @@
+{
+  "name": "Dancing Bolts",
+  "note": "Three light zaps skipping about.",
+  "bucket": "lightning",
+  "motors": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.6,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.04,
+        "repeat": 2,
+        "every": 0.13,
+        "falloff": 0.8
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.66,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.032,
+        "repeat": 2,
+        "every": 0.13,
+        "falloff": 0.8
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#0060ff",
+      "#3176ff",
+      "#7ea4ff"
+    ]
+  }
+}

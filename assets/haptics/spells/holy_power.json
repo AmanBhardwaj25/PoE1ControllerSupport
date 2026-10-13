@@ -1,0 +1,49 @@
+{
+  "name": "Holy Power",
+  "note": "Power surging up, a beat, then it hits: a jolt of strength.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.7,
+        "attack": 0.3,
+        "fade": 1000,
+        "length": 0.3
+      },
+      {
+        "motor": "both",
+        "amp": 0.7,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.38
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.77,
+        "attack": 0.21,
+        "fade": 1000,
+        "length": 0.24
+      },
+      {
+        "motor": "both",
+        "amp": 0.77,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064,
+        "delay": 0.38
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffd456",
+      "#ffee89"
+    ]
+  }
+}

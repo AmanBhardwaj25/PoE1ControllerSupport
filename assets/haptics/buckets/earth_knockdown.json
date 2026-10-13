@@ -1,0 +1,107 @@
+{
+  "name": "earth_knockdown",
+  "note": "A heavy thud, a beat, then the ground settling.",
+  "motors": {
+    "cast": [
+      {
+        "motor": "low",
+        "amp": 0.12,
+        "attack": 1.5,
+        "fade": 1000,
+        "length": 0
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.0,
+        "fade": 0.05,
+        "length": 0.1
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.12
+      },
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0.05,
+        "fade": 0.3,
+        "length": 0.5,
+        "delay": 0.22
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.0,
+        "duty": 0.4
+      }
+    ]
+  },
+  "haptic": {
+    "cast": [
+      {
+        "motor": "low",
+        "amp": 0.132,
+        "attack": 1.05,
+        "fade": 1000,
+        "length": 0
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.035,
+        "length": 0.08
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.096
+      },
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.035,
+        "fade": 0.21,
+        "length": 0.4,
+        "delay": 0.22
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.0,
+        "duty": 0.4
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffa040",
+      "#c06020",
+      "#ffd090"
+    ]
+  }
+}

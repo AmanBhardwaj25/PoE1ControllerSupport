@@ -1,0 +1,54 @@
+{
+  "name": "Weather the Storm",
+  "note": "Calm in the storm: a steady swell with distant crackles.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.4,
+        "attack": 0.2,
+        "fade": 0.5,
+        "length": 0.8
+      },
+      {
+        "motor": "high",
+        "amp": 0.2,
+        "attack": 0,
+        "fade": 0.5,
+        "length": 0.6,
+        "pulse": 20,
+        "duty": 0.3,
+        "flicker": 0.4
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.44,
+        "attack": 0.14,
+        "fade": 0.35,
+        "length": 0.64
+      },
+      {
+        "motor": "high",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 0.35,
+        "length": 0.48,
+        "pulse": 20,
+        "duty": 0.3,
+        "flicker": 0.4
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#74ffde",
+      "#ff9b46",
+      "#8c82ff"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Armor of Faith",
+  "note": "A plate of faith pressed on, a beat, then a soft ring.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.15
+      },
+      {
+        "motor": "high",
+        "amp": 0.2,
+        "attack": 0,
+        "fade": 0.3,
+        "length": 0.4,
+        "delay": 0.25
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.605,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.12
+      },
+      {
+        "motor": "high",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 0.21,
+        "length": 0.32,
+        "delay": 0.25
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffe305",
+      "#fffe81",
+      "#96ff8b"
+    ]
+  }
+}

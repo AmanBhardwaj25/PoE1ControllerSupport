@@ -1,0 +1,70 @@
+{
+  "name": "Essential Phantom",
+  "note": "A ghostly shimmer gathers, then two faint taps as it steps out.",
+  "bucket": "summoning",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.45,
+        "attack": 0.5,
+        "fade": 1000,
+        "length": 0.6,
+        "pulse": 10,
+        "flicker": 0.3
+      },
+      {
+        "motor": "high",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.72
+      },
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.86
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.495,
+        "attack": 0.35,
+        "fade": 1000,
+        "length": 0.48,
+        "pulse": 10,
+        "flicker": 0.3
+      },
+      {
+        "motor": "high",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.72
+      },
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.86
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#8a95ff",
+      "#4766ff",
+      "#022dff"
+    ]
+  }
+}

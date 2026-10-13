@@ -1,0 +1,52 @@
+{
+  "name": "Minor Avatar",
+  "note": "The god rising in you, a beat of silence, then a full jolt as it takes hold.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.8,
+        "attack": 0.45,
+        "fade": 1000,
+        "length": 0.45,
+        "flicker": 0.2
+      },
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.1,
+        "delay": 0.55
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.88,
+        "attack": 0.315,
+        "fade": 1000,
+        "length": 0.36,
+        "flicker": 0.2
+      },
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.55
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#3380ff",
+      "#549dff",
+      "#8fb2ff"
+    ]
+  }
+}

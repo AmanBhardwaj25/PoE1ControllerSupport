@@ -1,0 +1,75 @@
+{
+  "name": "Minoletta's Concussive Missiles",
+  "note": "Five ticks on release; each missile a hard tap and, a beat later, a little pop.",
+  "bucket": "force_kinetic",
+  "motors": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.35,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.04,
+        "repeat": 4,
+        "every": 0.09,
+        "falloff": 0.9
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.9,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.07
+      },
+      {
+        "motor": "high",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 0.08,
+        "length": 0.15,
+        "delay": 0.12,
+        "flicker": 0.5
+      }
+    ]
+  },
+  "haptic": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.385,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.032,
+        "repeat": 4,
+        "every": 0.09,
+        "falloff": 0.9
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.99,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.056
+      },
+      {
+        "motor": "high",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 0.056,
+        "length": 0.12,
+        "delay": 0.12,
+        "flicker": 0.5
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff3761",
+      "#ff7c92"
+    ]
+  }
+}

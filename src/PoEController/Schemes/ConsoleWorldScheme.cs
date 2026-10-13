@@ -1088,9 +1088,11 @@ namespace PoEController.Schemes
                     return;
                 }
                 m_EndTurnHeld += dt;
+                Patches.RumblePatches.EndTurnHold(m_EndTurnHeld / EndTurnHoldSeconds);
                 if (m_EndTurnHeld >= EndTurnHoldSeconds)
                 {
                     m_EndTurnFired = true;
+                    Patches.RumblePatches.EndTurnRelease(confirmed: true);
                     m_Cursor.SetClick(false);
                     // The HUD End Turn button's hotkey: down now, up next frame = one click.
                     VirtualControls.Hold(MappedControl.PASS_TURN);
@@ -1102,6 +1104,7 @@ namespace PoEController.Schemes
             {
                 UISystemMessager.Instance.PostMessage("Hold to end turn", Color.white);
             }
+            Patches.RumblePatches.EndTurnRelease(confirmed: false);
             m_EndTurnHeld = 0f;
             m_EndTurnFired = false;
         }

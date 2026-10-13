@@ -1,0 +1,98 @@
+{
+  "name": "Arkemyr's Wondrous Torment",
+  "note": "Wrung back and forth: heavy and sharp beats taking turns, fading.",
+  "bucket": "curses_debuffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.07
+      },
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.07,
+        "delay": 0.13
+      },
+      {
+        "motor": "low",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.07,
+        "delay": 0.26
+      },
+      {
+        "motor": "high",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.07,
+        "delay": 0.39
+      },
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.07,
+        "delay": 0.52
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.056
+      },
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.056,
+        "delay": 0.13
+      },
+      {
+        "motor": "low",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.056,
+        "delay": 0.26
+      },
+      {
+        "motor": "high",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.056,
+        "delay": 0.39
+      },
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.056,
+        "delay": 0.52
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#817eff",
+      "#0f4fff",
+      "#ff87e6"
+    ]
+  }
+}

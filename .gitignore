@@ -17,6 +17,8 @@
 !/assets/
 /assets/*
 !/assets/glyphs/
+# Vibration patterns, spell index and light colours (shipped in the release zip)
+!/assets/haptics/
 
 # Steam Deck Steam Input layout
 !/steam_input/
@@ -35,6 +37,8 @@
 
 # Never, anywhere
 *.md
+# ...except the community guide to the vibration patterns (shipped in the release zip)
+!/assets/haptics/README.md
 .claude/
 CLAUDE*
 *.claude*

@@ -43,7 +43,7 @@ namespace PoEController
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string Guid = "poe.controller";
-        public const string Version = "0.44.0";
+        public const string Version = "0.45.0";
 
         private ConfigEntry<ControlStyle> m_ControlStyle;
         private ConfigEntry<bool> m_ConsoleShortBar;
@@ -71,6 +71,9 @@ namespace PoEController
         private ConfigEntry<bool> m_AnalogSpeed;
         private ConfigEntry<Patches.VibrationMode> m_Vibration;
         private ConfigEntry<float> m_VibrationStrength;
+        private ConfigEntry<bool> m_ControllerLights;
+        private ConfigEntry<bool> m_AdaptiveTriggers;
+        private ConfigEntry<int> m_VibrationTest;
         private ConfigEntry<float> m_TooltipDelay;
         private DeviceTransitions m_Transitions;
         private Harmony m_Harmony;
@@ -104,6 +107,10 @@ namespace PoEController
 
         /// <summary>Console style: list every world control in the bar (Prompts.ConsoleShortBar off).</summary>
         public bool ConsoleFullBar => !m_ConsoleShortBar.Value;
+
+        /// <summary>Running on SteamOS (Steam Deck): Steam sets these, and they reach the game under Proton too.</summary>
+        public static bool IsSteamOS =>
+            Environment.GetEnvironmentVariable("SteamOS") == "1" || Environment.GetEnvironmentVariable("SteamDeck") == "1";
 
         /// <summary>Console style: the move pointer comes up by itself when a real-time fight starts (Controls.ConsoleCombatPointer).</summary>
         public bool ConsoleCombatPointer => m_ConsoleCombatPointer.Value;
@@ -143,7 +150,10 @@ namespace PoEController
             m_AnalogSpeed = Config.Bind("Input", "AnalogMovementSpeed", true, "Left stick: a light tilt walks, a full push runs, and in between the party speeds up gradually. Off = always the game's normal running speed.");
             // New key: 0.43.0 had a plain on/off "Vibration".
             m_Vibration = Config.Bind("Input", "VibrationMode", Patches.VibrationMode.Essential, "Controller vibration. Off: never. Essential only: like the console version, when the camera shakes (scripted scenes, heavy hits, critical kills, big creatures). Aphatasia's extended: also when your party takes hits (main character medium, companions light), on critical hits dealt or taken, and when a party member is knocked out or dies.");
+            m_VibrationTest = Config.Bind("Input", "VibrationTest", 0, "Test bench: left / right choose a pattern file (haptics/buckets, haptics/spells, haptics/custom), A plays it at full strength for this controller (cast, launch, then impact). Files you add or edit show up straight away.");
             m_VibrationStrength = Config.Bind("Input", "VibrationStrength", 1f, new ConfigDescription("Vibration strength: 1 = the console version's values.", new AcceptableValueRange<float>(0.25f, 3f)));
+            m_AdaptiveTriggers = Config.Bind("Input", "AdaptiveTriggers", true, "DualSense adaptive triggers. Turn-based fights, RT (Combat Radial) on your party's turns: ready (resistance shaped by the weapon), strained (debuffs or low endurance: heavy), empowered (buffs: a light hum), locked (stunned, paralyzed, prone...: rigid); slack once the action is used; vibrates while a long cast is prepared. Out of combat both triggers show the worst-off party member (debuffs or low health: heavy; a buff: a light hum) Turn this off if the resistance gets tiring; vibration and lights are separate settings and stay as they are.");
+            m_ControllerLights = Config.Bind("Input", "ControllerLights", true, "DualSense / DualShock 4 lights: the lightbar takes the colours of the spells you see (from their in-game art), shows whose turn it is and low endurance; the DualSense player lights show the acting party slot and its mute light pulses while a spell is prepared. Flashes for hits and spells need Vibration on Aphatasia's extended.");
             m_TooltipDelay = Config.Bind("Menus", "TooltipDelay", 0.4f, new ConfigDescription("Seconds the controller cursor rests on an element before its tooltip shows.", new AcceptableValueRange<float>(0.1f, 3f)));
             m_TimedTutorials = Config.Bind("Tutorials", "Timed", true, "On the controller, tutorials the game does not pause for close by themselves after their reading time (L3 = read and pause, B = dismiss). Off = every tutorial pauses and takes the controls.");
             m_ReadingWpm = Config.Bind("Tutorials", "ReadingWordsPerMinute", 238f, new ConfigDescription("Reading speed for the timed tutorials: 2 s + words at this speed, at least 5 s. 238 = average adult silent reading (Brysbaert 2019).", new AcceptableValueRange<float>(80f, 600f)));
@@ -175,6 +185,50 @@ namespace PoEController
             Router.Changed += s => Log.LogInfo($"Scheme -> {(s != null ? s.Name : "none")}");
             m_Transitions = new DeviceTransitions(this);
             m_PromptBar = new PromptBar(Glyphs, m_PromptFont.Value);
+            // Vibration pattern files and the spell index (haptics/ next to the plugin).
+            Compat.Features.Run(Compat.Features.Rumble, () =>
+            {
+                Input.HapticLibrary.Init(pluginDir);
+                Input.HapticIndex.Load(Input.HapticLibrary.Root);
+            });
+            // Test bench row in the settings panel: left / right step through the pattern files, A plays one.
+            Settings.SettingsPanel.ChangeHook = (entry, dir) =>
+            {
+                if (entry != m_VibrationTest)
+                {
+                    return false;
+                }
+                var all = TestPatterns();
+                if (all.Count > 0)
+                {
+                    m_VibrationTest.Value = ((m_VibrationTest.Value + dir) % all.Count + all.Count) % all.Count;
+                }
+                return true;
+            };
+            Settings.SettingsPanel.ValueTextHook = entry =>
+            {
+                if (entry != m_VibrationTest)
+                {
+                    return null;
+                }
+                var all = TestPatterns();
+                return all.Count == 0 ? "(no pattern files)" : all[Mathf.Clamp(m_VibrationTest.Value, 0, all.Count - 1)];
+            };
+            Settings.SettingsPanel.ActivateHook = entry =>
+            {
+                if (entry != m_VibrationTest)
+                {
+                    return false;
+                }
+                var all = TestPatterns();
+                if (all.Count == 0)
+                {
+                    return true;
+                }
+                string pick = all[Mathf.Clamp(m_VibrationTest.Value, 0, all.Count - 1)];
+                Compat.Features.Run(Compat.Features.Rumble, () => PlayTest(pick));
+                return true;
+            };
             m_WheelView = new WheelView(m_PromptBar);
             m_RadialView = new RadialView(m_PromptBar);
             // Build the radials' generated frame art now (a hitch here is hidden by the game's start-up).
@@ -316,6 +370,39 @@ namespace PoEController
             }
         }
 
+        /// <summary>Test bench list: "bucket/x", "spell/x", "custom/x" for every pattern file found.</summary>
+        private static System.Collections.Generic.List<string> TestPatterns()
+        {
+            var all = new System.Collections.Generic.List<string>();
+            foreach (string n in Input.HapticLibrary.List("buckets")) all.Add("bucket/" + n);
+            foreach (string n in Input.HapticLibrary.List("spells")) all.Add("spell/" + n);
+            foreach (string n in Input.HapticLibrary.List("custom")) all.Add("custom/" + n);
+            return all;
+        }
+
+        /// <summary>Plays a pattern file on the test bench: cast (1 s), launch, then impact.</summary>
+        private static void PlayTest(string pick)
+        {
+            int slash = pick.IndexOf('/');
+            string kind = pick.Substring(0, slash);
+            string name = pick.Substring(slash + 1);
+            Input.HapticPattern p = kind == "bucket" ? Input.HapticLibrary.Bucket(name) : Input.HapticLibrary.Spell(name);
+            Input.HapticGroup group = Patches.RumblePatches.Group;
+            const float CastSeconds = 1f;
+            const float PrepareSeconds = 2.5f;
+            // Turn-based preparation pulse first (if the pattern or its bucket has one), then the build-up and the hit.
+            var prepare = Input.HapticLibrary.Layers(p, group, "prepare");
+            float prep = prepare != null ? PrepareSeconds : 0f;
+            Input.RumblePlayer.Play(prepare, 1f, PrepareSeconds);
+            var cast = Input.HapticLibrary.Layers(p, group, "cast");
+            float lead = prep + (cast != null ? CastSeconds : 0f);
+            Input.RumblePlayer.Play(cast, 1f, CastSeconds, prep);
+            Input.RumblePlayer.Play(Input.HapticLibrary.Layers(p, group, "launch"), 1f, 0f, lead);
+            Input.RumblePlayer.Play(Input.HapticLibrary.Layers(p, group, "impact"), 1f, 0f, lead);
+            int count = (prepare?.Length ?? 0) + (cast?.Length ?? 0) + (Input.HapticLibrary.Layers(p, group, "launch")?.Length ?? 0) + (Input.HapticLibrary.Layers(p, group, "impact")?.Length ?? 0);
+            Log.LogInfo($"Rumble test: {pick} [{group}] {count} layer(s){(p == null ? ", file not found" : "")}");
+        }
+
         private bool InitSdl(string pluginDir)
         {
             string sdlPath = Path.Combine(pluginDir, "SDL2.dll");
@@ -328,6 +415,10 @@ namespace PoEController
             // Positional face buttons: SDL 'A' is always the bottom button, even on Nintendo pads.
             Sdl.SDL_SetHint("SDL_GAMECONTROLLER_USE_BUTTON_LABELS", "0");
             Sdl.SDL_SetHint("SDL_JOYSTICK_ALLOW_BACKGROUND_EVENTS", "1");
+            // Xbox pads through XInput directly. Through RawInput, SDL has to match each pad to an XInput slot before it
+            // can vibrate it; until then (and when remapping tools add virtual pads, it can match the wrong one) the
+            // vibration is dropped or sent to another device while still reporting success.
+            Sdl.SDL_SetHint("SDL_JOYSTICK_RAWINPUT", "0");
             if (Sdl.SDL_Init(Sdl.INIT_GAMECONTROLLER | Sdl.INIT_JOYSTICK | Sdl.INIT_EVENTS) != 0)
             {
                 Log.LogError($"SDL_Init failed: {Sdl.SDL_GetError()}. Controller support disabled.");
@@ -347,7 +438,7 @@ namespace PoEController
                 Menus.TooltipAssist.Enabled = m_QuickTooltips.Value;
                 World.DirectMovement.AnalogSpeed = m_AnalogSpeed.Value;
                 Patches.RumblePatches.Mode = Compat.Features.On(Compat.Features.Rumble) ? m_Vibration.Value : Patches.VibrationMode.Off;
-                Patches.RumblePatches.StrengthMultiplier = m_VibrationStrength.Value;
+                Input.RumblePlayer.Multiplier = m_VibrationStrength.Value;
                 Patches.LinkColorPatches.Enabled = m_BrightTooltipWords.Value && Compat.Features.On(Compat.Features.LinkColors);
                 Menus.TooltipAssist.Delay = m_TooltipDelay.Value;
                 Tutorials.TutorialFlow.TimedEnabled = m_TimedTutorials.Value;
@@ -375,6 +466,27 @@ namespace PoEController
                     // Switched itself off: never leave a count in the corner.
                     try { Menus.SlotCountMover.Restore(); } catch (Exception) { }
                 }
+                bool rumbleAllowed = Mode.Active == InputDevice.Gamepad && Compat.Features.On(Compat.Features.Rumble);
+                Compat.Features.Run(Compat.Features.Rumble, () =>
+                {
+                    Patches.RumblePatches.Tick();
+                    Input.RumblePlayer.Update(Pad, rumbleAllowed);
+                });
+                bool padActive = Mode.Active == InputDevice.Gamepad && Compat.Features.On(Compat.Features.Lights);
+                bool lightsAllowed = m_ControllerLights.Value && padActive;
+                bool triggersAllowed = m_AdaptiveTriggers.Value && padActive;
+                Compat.Features.Run(Compat.Features.Lights, () =>
+                {
+                    if (lightsAllowed)
+                    {
+                        Patches.LightState.Update();
+                    }
+                    if (triggersAllowed)
+                    {
+                        Patches.TriggerState.Update();
+                    }
+                    Input.LightPlayer.Update(Pad, lightsAllowed, triggersAllowed);
+                });
                 if (m_DebugToggle.Value.IsDown())
                 {
                     m_ShowDebug = !m_ShowDebug;
@@ -392,6 +504,8 @@ namespace PoEController
                     m_Transitions?.Shutdown();
                     ConsoleHud.Restore();
                     Menus.SlotCountMover.Restore();
+                    Input.RumblePlayer.StopAll(Pad);
+                    Input.LightPlayer.Stop(Pad);
                     Menus.MouseEmulator.ReleaseAll();
                 }
                 catch (Exception)
@@ -497,6 +611,8 @@ namespace PoEController
             m_Transitions?.Shutdown();
             ConsoleHud.Restore();
             Menus.SlotCountMover.Restore();
+            try { Input.RumblePlayer.StopAll(Pad); } catch (Exception) { }
+            try { Input.LightPlayer.Stop(Pad); } catch (Exception) { }
             m_Harmony?.UnpatchSelf();
             Pad?.Dispose();
             Sdl.SDL_Quit();

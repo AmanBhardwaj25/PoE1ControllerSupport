@@ -20,6 +20,8 @@ namespace PoEController.Settings
             /// <summary>Null for a section header.</summary>
             public ConfigEntryBase Entry;
             public string Label;
+            /// <summary>A warning line (drawn in the warning colour, not selectable).</summary>
+            public bool Warning;
         }
 
         /// <summary>Readable names; anything not listed gets its key split into words.</summary>
@@ -41,6 +43,9 @@ namespace PoEController.Settings
             { "Input.AnalogMovementSpeed", "Analog movement speed" },
             { "Input.VibrationMode", "Vibration" },
             { "Input.VibrationStrength", "Vibration strength" },
+            { "Input.ControllerLights", "Controller lights (DualSense / DualShock 4)" },
+            { "Input.AdaptiveTriggers", "Adaptive triggers (DualSense)" },
+            { "Input.VibrationTest", "Test a vibration pattern (A)" },
             { "Input.PauseOnDisconnect", "Pause when the controller disconnects" },
             { "Menus.QuickTooltips", "Quick tooltips" },
             { "Menus.BrightTooltipWords", "Brighter tooltip words" },
@@ -127,9 +132,22 @@ namespace PoEController.Settings
         public static ConfigEntryBase FocusedEntry => Focus >= 0 && Focus < Rows.Count ? Rows[Focus].Entry : null;
 
         /// <summary>A on the focused row: flips on/off, next choice; numbers do nothing (use ←/→).</summary>
+        /// <summary>Lets a row do something else on A (the vibration test bench plays its pattern); true = handled.</summary>
+        public static Func<ConfigEntryBase, bool> ActivateHook;
+
+        /// <summary>Lets a row step its value itself (the test bench's list of files); true = handled.</summary>
+        public static Func<ConfigEntryBase, int, bool> ChangeHook;
+
+        /// <summary>Lets a row show its own value text (the test bench shows the file name); null = default.</summary>
+        public static Func<ConfigEntryBase, string> ValueTextHook;
+
         public static bool Activate()
         {
             ConfigEntryBase e = FocusedEntry;
+            if (e != null && ActivateHook != null && ActivateHook(e))
+            {
+                return true;
+            }
             if (e == null || !(e.SettingType == typeof(bool) || e.SettingType.IsEnum))
             {
                 return false;
@@ -138,7 +156,8 @@ namespace PoEController.Settings
             return true;
         }
 
-        public static bool CanActivate => FocusedEntry != null && (FocusedEntry.SettingType == typeof(bool) || FocusedEntry.SettingType.IsEnum);
+        public static bool CanActivate => FocusedEntry != null && (FocusedEntry.SettingType == typeof(bool) || FocusedEntry.SettingType.IsEnum
+            || (ActivateHook != null && FocusedEntry.Definition.Key == "VibrationTest"));
 
         /// <summary>←/→: previous / next value (wraps for choices, clamps for numbers).</summary>
         public static void Change(int dir)
@@ -146,6 +165,11 @@ namespace PoEController.Settings
             ConfigEntryBase e = FocusedEntry;
             if (e == null)
             {
+                return;
+            }
+            if (ChangeHook != null && ChangeHook(e, dir))
+            {
+                GlobalAudioPlayer.SPlay(UIAudioList.UIAudioType.ButtonUp);
                 return;
             }
             Type t = e.SettingType;
@@ -181,6 +205,11 @@ namespace PoEController.Settings
 
         public static string ValueText(ConfigEntryBase e)
         {
+            string custom = ValueTextHook != null ? ValueTextHook(e) : null;
+            if (custom != null)
+            {
+                return custom;
+            }
             object v = e.BoxedValue;
             if (v is bool b)
             {
@@ -200,9 +229,17 @@ namespace PoEController.Settings
 
         public static string Description(ConfigEntryBase e) => e?.Description?.Description ?? "";
 
+        public const string SteamInputWarning = "Steam Input is on: the controller can't use all features. Turn it off in Pillars' Steam properties.";
+
         private static void Build()
         {
             Rows.Clear();
+            // PC only: on SteamOS the Deck's own controls always come through Steam Input, so there is nothing to change.
+            Plugin plugin = Plugin.Instance;
+            if (plugin != null && plugin.Pad != null && plugin.Pad.IsSteamVirtual && !Plugin.IsSteamOS)
+            {
+                Rows.Add(new Row { Label = SteamInputWarning, Warning = true });
+            }
             ConfigFile config = Plugin.Instance != null ? Plugin.Instance.Config : null;
             if (config == null)
             {

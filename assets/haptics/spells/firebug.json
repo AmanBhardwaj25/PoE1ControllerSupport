@@ -1,0 +1,52 @@
+{
+  "name": "Firebug",
+  "note": "A burning bug bouncing from target to target: a knock and a crackle at each landing.",
+  "bucket": "fire_blast",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.06
+      },
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.09,
+        "flicker": 0.7
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.048
+      },
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.09,
+        "flicker": 0.7
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff4200",
+      "#ff7a32",
+      "#ffbf73"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "Moonwell",
+  "note": "A cool, calm well of light: a soft swell; each pulse a gentle wave.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.4,
+        "attack": 0.25,
+        "fade": 0.5,
+        "length": 0.9
+      },
+      {
+        "motor": "high",
+        "amp": 0.15,
+        "attack": 0.2,
+        "fade": 0.5,
+        "length": 0.9,
+        "pulse": 4
+      }
+    ],
+    "linger": [
+      {
+        "motor": "low",
+        "amp": 0.25,
+        "attack": 0.2,
+        "fade": 0.4,
+        "length": 0.6
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.44,
+        "attack": 0.175,
+        "fade": 0.35,
+        "length": 0.72
+      },
+      {
+        "motor": "high",
+        "amp": 0.165,
+        "attack": 0.14,
+        "fade": 0.35,
+        "length": 0.72,
+        "pulse": 4
+      }
+    ],
+    "linger": [
+      {
+        "motor": "low",
+        "amp": 0.275,
+        "attack": 0.14,
+        "fade": 0.28,
+        "length": 0.48
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#81e5ff",
+      "#007eff",
+      "#3eb3ff"
+    ]
+  }
+}

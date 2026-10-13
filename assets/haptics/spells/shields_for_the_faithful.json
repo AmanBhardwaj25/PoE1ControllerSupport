@@ -1,0 +1,66 @@
+{
+  "name": "Shields for the Faithful",
+  "note": "Two clicks as the shield locks in, then a soft ring.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.07
+      },
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.07,
+        "delay": 0.14
+      },
+      {
+        "motor": "high",
+        "amp": 0.2,
+        "attack": 0,
+        "fade": 0.3,
+        "length": 0.4,
+        "delay": 0.24
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.056
+      },
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.056,
+        "delay": 0.14
+      },
+      {
+        "motor": "high",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 0.21,
+        "length": 0.32,
+        "delay": 0.24
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffce5e",
+      "#ffa52e",
+      "#ffe184"
+    ]
+  }
+}

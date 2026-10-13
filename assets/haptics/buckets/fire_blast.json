@@ -1,0 +1,141 @@
+{
+  "name": "fire_blast",
+  "note": "A spark, a beat of silence, then the boom rolling out with a crackle.",
+  "motors": {
+    "cast": [
+      {
+        "motor": "both",
+        "amp": 0.12,
+        "attack": 1.5,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.5
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.0,
+        "fade": 0.05,
+        "length": 0.1
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      },
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0.01,
+        "fade": 0.3,
+        "length": 0.7,
+        "delay": 0.12
+      },
+      {
+        "motor": "high",
+        "amp": 0.6,
+        "attack": 0,
+        "fade": 0.25,
+        "length": 0.5,
+        "delay": 0.13,
+        "flicker": 0.7
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.25,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.6
+      },
+      {
+        "motor": "high",
+        "amp": 0.15,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.7
+      }
+    ]
+  },
+  "haptic": {
+    "cast": [
+      {
+        "motor": "both",
+        "amp": 0.132,
+        "attack": 1.05,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.5
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.035,
+        "length": 0.08
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      },
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0.007,
+        "fade": 0.21,
+        "length": 0.56,
+        "delay": 0.12
+      },
+      {
+        "motor": "high",
+        "amp": 0.66,
+        "attack": 0.0,
+        "fade": 0.175,
+        "length": 0.4,
+        "delay": 0.13,
+        "flicker": 0.7
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.275,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.6
+      },
+      {
+        "motor": "high",
+        "amp": 0.165,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.7
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff3a00",
+      "#ffa000",
+      "#ffd070"
+    ]
+  }
+}

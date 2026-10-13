@@ -1,0 +1,68 @@
+{
+  "name": "Chain Lightning",
+  "note": "A crack on release; each jump lands as a double crack.",
+  "bucket": "lightning",
+  "motors": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.7,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      },
+      {
+        "motor": "both",
+        "amp": 0.7,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.09
+      }
+    ]
+  },
+  "haptic": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.77,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      },
+      {
+        "motor": "both",
+        "amp": 0.77,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.09
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#3e94ff",
+      "#086dff",
+      "#7fbeff"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Call to the Primordials",
+  "note": "Something old and big answers: a deep swell, then three giant footfalls.",
+  "bucket": "summoning",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.6,
+        "attack": 0.4,
+        "fade": 1000,
+        "length": 0.6,
+        "flicker": 0.3
+      },
+      {
+        "motor": "low",
+        "amp": 0.9,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.12,
+        "delay": 0.7,
+        "repeat": 2,
+        "every": 0.32,
+        "falloff": 0.85
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.66,
+        "attack": 0.28,
+        "fade": 1000,
+        "length": 0.48,
+        "flicker": 0.3
+      },
+      {
+        "motor": "low",
+        "amp": 0.99,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.096,
+        "delay": 0.7,
+        "repeat": 2,
+        "every": 0.32,
+        "falloff": 0.85
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#5cb6ff",
+      "#6bffd6",
+      "#ccff7b"
+    ]
+  }
+}

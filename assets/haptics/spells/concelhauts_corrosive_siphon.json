@@ -1,0 +1,52 @@
+{
+  "name": "Concelhaut's Corrosive Siphon",
+  "note": "An acid fizz on the target, a gap, then a pull back towards the caster.",
+  "bucket": "curses_debuffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 0.2,
+        "length": 0.3,
+        "flicker": 0.9
+      },
+      {
+        "motor": "low",
+        "amp": 0.45,
+        "attack": 0.25,
+        "fade": 1000,
+        "length": 0.35,
+        "delay": 0.4
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 0.14,
+        "length": 0.24,
+        "flicker": 0.9
+      },
+      {
+        "motor": "low",
+        "amp": 0.495,
+        "attack": 0.175,
+        "fade": 1000,
+        "length": 0.28,
+        "delay": 0.4
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff6100",
+      "#ff8d1f",
+      "#ffc96e"
+    ]
+  }
+}

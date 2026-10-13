@@ -1,0 +1,52 @@
+{
+  "name": "Kalakoth's Minor Blights",
+  "note": "A small elemental spit: a crackle and a quick knock.",
+  "bucket": "fire_blast",
+  "motors": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.6,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "flicker": 0.6
+      },
+      {
+        "motor": "low",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.09
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.66,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "flicker": 0.6
+      },
+      {
+        "motor": "low",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.09
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffc43a",
+      "#1fff95",
+      "#82ff74"
+    ]
+  }
+}

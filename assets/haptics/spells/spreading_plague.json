@@ -1,0 +1,52 @@
+{
+  "name": "Spreading Plague",
+  "note": "A sick, crawling fizz that spreads.",
+  "bucket": "acid_decay",
+  "motors": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.45,
+        "attack": 0.05,
+        "fade": 0.4,
+        "length": 0.7,
+        "flicker": 0.9
+      },
+      {
+        "motor": "low",
+        "amp": 0.2,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.7,
+        "pulse": 3
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.495,
+        "attack": 0.035,
+        "fade": 0.28,
+        "length": 0.56,
+        "flicker": 0.9
+      },
+      {
+        "motor": "low",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.56,
+        "pulse": 3
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#c092ff",
+      "#8a61ff",
+      "#000bff"
+    ]
+  }
+}

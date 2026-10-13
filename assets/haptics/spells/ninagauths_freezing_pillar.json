@@ -1,0 +1,118 @@
+{
+  "name": "Ninagauth's Freezing Pillar",
+  "note": "Ice building up in three rising cracks, then a shiver; it keeps biting with cold ticks.",
+  "bucket": "frost_lingering",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.6,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      },
+      {
+        "motor": "low",
+        "amp": 0.8,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.1
+      },
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.2
+      },
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 0.3,
+        "length": 0.4,
+        "delay": 0.34,
+        "pulse": 35
+      }
+    ],
+    "linger": [
+      {
+        "motor": "high",
+        "amp": 0.35,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      },
+      {
+        "motor": "high",
+        "amp": 0.25,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.11
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.66,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      },
+      {
+        "motor": "low",
+        "amp": 0.88,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.1
+      },
+      {
+        "motor": "both",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064,
+        "delay": 0.2
+      },
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.21,
+        "length": 0.32,
+        "delay": 0.34,
+        "pulse": 35
+      }
+    ],
+    "linger": [
+      {
+        "motor": "high",
+        "amp": 0.385,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      },
+      {
+        "motor": "high",
+        "amp": 0.275,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.11
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#009aff",
+      "#31b9ff",
+      "#76d4ff"
+    ]
+  }
+}

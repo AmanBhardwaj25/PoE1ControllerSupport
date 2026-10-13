@@ -1,0 +1,70 @@
+{
+  "name": "Minoletta's Minor Missiles",
+  "note": "Three quick ticks as they leave the hand; each missile lands as its own crisp tap.",
+  "bucket": "force_kinetic",
+  "motors": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.04,
+        "repeat": 2,
+        "every": 0.11
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.7,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.06
+      },
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.04
+      }
+    ]
+  },
+  "haptic": {
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.032,
+        "repeat": 2,
+        "every": 0.11
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.77,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.048
+      },
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.032
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff000a",
+      "#ff767f",
+      "#ff203f"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Watchful Guardian",
+  "note": "A guardian forms over the party in a slow swell, then plants itself with one knock.",
+  "bucket": "summoning",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0.4,
+        "fade": 1000,
+        "length": 0.7,
+        "pulse": 8
+      },
+      {
+        "motor": "low",
+        "amp": 0.7,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.1,
+        "delay": 0.85
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.28,
+        "fade": 1000,
+        "length": 0.56,
+        "pulse": 8
+      },
+      {
+        "motor": "low",
+        "amp": 0.77,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 0.85
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffd48d",
+      "#ffa322",
+      "#ff8b80"
+    ]
+  }
+}

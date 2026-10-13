@@ -1,0 +1,65 @@
+{
+  "name": "Restore Critical Endurance",
+  "note": "A big wave of healing, a pause, then it comes back once more.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.75,
+        "attack": 0.2,
+        "fade": 0.4,
+        "length": 0.6
+      },
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0.25,
+        "fade": 0.4,
+        "length": 0.6,
+        "pulse": 8
+      },
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0.1,
+        "fade": 0.3,
+        "length": 0.5,
+        "delay": 0.75
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.825,
+        "attack": 0.14,
+        "fade": 0.28,
+        "length": 0.48
+      },
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.175,
+        "fade": 0.28,
+        "length": 0.48,
+        "pulse": 8
+      },
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.07,
+        "fade": 0.21,
+        "length": 0.4,
+        "delay": 0.75
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#09b5ff",
+      "#70dfff"
+    ]
+  }
+}

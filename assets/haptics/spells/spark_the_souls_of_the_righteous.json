@@ -1,0 +1,76 @@
+{
+  "name": "Spark the Souls of the Righteous",
+  "note": "Holy sparks: three quick zaps; each pulse two more.",
+  "bucket": "radiant_holy",
+  "motors": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.7,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.04,
+        "repeat": 2,
+        "every": 0.09,
+        "falloff": 0.8
+      },
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 0.1,
+        "length": 0.2
+      }
+    ],
+    "linger": [
+      {
+        "motor": "high",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.04,
+        "repeat": 1,
+        "every": 0.09
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.77,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.032,
+        "repeat": 2,
+        "every": 0.09,
+        "falloff": 0.8
+      },
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.07,
+        "length": 0.16
+      }
+    ],
+    "linger": [
+      {
+        "motor": "high",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.032,
+        "repeat": 1,
+        "every": 0.09
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffc240",
+      "#ffe084",
+      "#ffa604"
+    ]
+  }
+}

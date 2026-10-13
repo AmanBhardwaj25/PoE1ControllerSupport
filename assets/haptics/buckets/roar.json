@@ -1,0 +1,70 @@
+{
+  "name": "roar",
+  "note": "A low, wide rumble.",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.8,
+        "attack": 0.1,
+        "fade": 0.5,
+        "length": 0.6,
+        "flicker": 0.3
+      },
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0.1,
+        "fade": 0.4,
+        "length": 0.5
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.25,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.5,
+        "flicker": 0.3
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.88,
+        "attack": 0.07,
+        "fade": 0.35,
+        "length": 0.48,
+        "flicker": 0.3
+      },
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.07,
+        "fade": 0.28,
+        "length": 0.4
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.275,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.5,
+        "flicker": 0.3
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff6020",
+      "#a03000"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Restore Light Endurance",
+  "note": "A warm swell, a little fuller.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.4,
+        "attack": 0.15,
+        "fade": 0.35,
+        "length": 0.6
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.44,
+        "attack": 0.105,
+        "fade": 0.245,
+        "length": 0.48
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#00b1ff",
+      "#36dfff",
+      "#7cf1ff"
+    ]
+  }
+}

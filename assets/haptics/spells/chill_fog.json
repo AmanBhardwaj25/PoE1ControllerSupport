@@ -1,0 +1,99 @@
+{
+  "name": "Chill Fog",
+  "note": "A cold cloud settles: a smooth low hum with a shiver; each tick two cold ticks.",
+  "bucket": "frost_lingering",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.5,
+        "attack": 0.2,
+        "fade": 0.5,
+        "length": 0.8
+      },
+      {
+        "motor": "high",
+        "amp": 0.2,
+        "attack": 0.1,
+        "fade": 0.5,
+        "length": 0.8,
+        "pulse": 30,
+        "flicker": 0.3
+      }
+    ],
+    "linger": [
+      {
+        "motor": "high",
+        "amp": 0.35,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      },
+      {
+        "motor": "high",
+        "amp": 0.25,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.11
+      },
+      {
+        "motor": "low",
+        "amp": 0.25,
+        "attack": 0.1,
+        "fade": 0.3,
+        "length": 0.5
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.55,
+        "attack": 0.14,
+        "fade": 0.35,
+        "length": 0.64
+      },
+      {
+        "motor": "high",
+        "amp": 0.22,
+        "attack": 0.07,
+        "fade": 0.35,
+        "length": 0.64,
+        "pulse": 30,
+        "flicker": 0.3
+      }
+    ],
+    "linger": [
+      {
+        "motor": "high",
+        "amp": 0.385,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      },
+      {
+        "motor": "high",
+        "amp": 0.275,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.11
+      },
+      {
+        "motor": "low",
+        "amp": 0.275,
+        "attack": 0.07,
+        "fade": 0.21,
+        "length": 0.4
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#618aff",
+      "#8fbeff"
+    ]
+  }
+}

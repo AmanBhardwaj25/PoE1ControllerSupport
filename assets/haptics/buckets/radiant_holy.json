@@ -1,0 +1,129 @@
+{
+  "name": "radiant_holy",
+  "note": "A bright strike, a beat of silence, then a ringing bell.",
+  "motors": {
+    "cast": [
+      {
+        "motor": "both",
+        "amp": 0.1,
+        "attack": 1.5,
+        "fade": 1000,
+        "length": 0
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.0,
+        "fade": 0.05,
+        "length": 0.1
+      }
+    ],
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.8,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.07
+      },
+      {
+        "motor": "high",
+        "amp": 0.4,
+        "attack": 0,
+        "fade": 0.4,
+        "length": 0.7,
+        "delay": 0.14,
+        "pulse": 12,
+        "duty": 0.6
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.2,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.2,
+        "duty": 0.7
+      },
+      {
+        "motor": "high",
+        "amp": 0.12,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 12,
+        "duty": 0.6
+      }
+    ]
+  },
+  "haptic": {
+    "cast": [
+      {
+        "motor": "both",
+        "amp": 0.11,
+        "attack": 1.05,
+        "fade": 1000,
+        "length": 0
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.035,
+        "length": 0.08
+      }
+    ],
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.88,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.056
+      },
+      {
+        "motor": "high",
+        "amp": 0.44,
+        "attack": 0.0,
+        "fade": 0.28,
+        "length": 0.56,
+        "delay": 0.14,
+        "pulse": 12,
+        "duty": 0.6
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.2,
+        "duty": 0.7
+      },
+      {
+        "motor": "high",
+        "amp": 0.132,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 12,
+        "duty": 0.6
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffd040",
+      "#ffb000",
+      "#fff0a0"
+    ]
+  }
+}

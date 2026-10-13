@@ -1,0 +1,90 @@
+{
+  "name": "Symbol of Eothas",
+  "note": "A blazing sign slams down, then burning light; each pulse a knock and a crackle.",
+  "bucket": "radiant_holy",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.8,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.1
+      },
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 0.4,
+        "length": 0.6,
+        "delay": 0.15,
+        "pulse": 12,
+        "flicker": 0.5
+      }
+    ],
+    "linger": [
+      {
+        "motor": "both",
+        "amp": 0.35,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.06
+      },
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 0.3,
+        "length": 0.35,
+        "delay": 0.1,
+        "flicker": 0.5
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.88,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.08
+      },
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 0.28,
+        "length": 0.48,
+        "delay": 0.15,
+        "pulse": 12,
+        "flicker": 0.5
+      }
+    ],
+    "linger": [
+      {
+        "motor": "both",
+        "amp": 0.385,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.048
+      },
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.21,
+        "length": 0.28,
+        "delay": 0.1,
+        "flicker": 0.5
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#b5ff9f",
+      "#f285ff",
+      "#fb2bff"
+    ]
+  }
+}

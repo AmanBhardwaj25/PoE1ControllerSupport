@@ -1,0 +1,82 @@
+{
+  "name": "Resurrection",
+  "note": "A long rise of light, then the first strong heartbeat: lub-dub.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.6,
+        "attack": 0.5,
+        "fade": 0.4,
+        "length": 0.9
+      },
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0.5,
+        "fade": 0.4,
+        "length": 0.8,
+        "pulse": 6
+      },
+      {
+        "motor": "low",
+        "amp": 0.8,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.09,
+        "delay": 1.0
+      },
+      {
+        "motor": "low",
+        "amp": 0.6,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.08,
+        "delay": 1.16
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.66,
+        "attack": 0.35,
+        "fade": 0.28,
+        "length": 0.72
+      },
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.35,
+        "fade": 0.28,
+        "length": 0.64,
+        "pulse": 6
+      },
+      {
+        "motor": "low",
+        "amp": 0.88,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.072,
+        "delay": 1.0
+      },
+      {
+        "motor": "low",
+        "amp": 0.66,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.064,
+        "delay": 1.16
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#7ee3ff",
+      "#1e9aff",
+      "#fff48f"
+    ]
+  }
+}

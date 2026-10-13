@@ -1,0 +1,50 @@
+{
+  "name": "Devotions for the Faithful",
+  "note": "A steady, rising hum of faith.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.4,
+        "attack": 0.15,
+        "fade": 0.3,
+        "length": 0.6
+      },
+      {
+        "motor": "high",
+        "amp": 0.2,
+        "attack": 0,
+        "fade": 0.4,
+        "length": 0.5,
+        "pulse": 10
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.44,
+        "attack": 0.105,
+        "fade": 0.21,
+        "length": 0.48
+      },
+      {
+        "motor": "high",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 0.28,
+        "length": 0.4,
+        "pulse": 10
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ffda5d",
+      "#ffc62a",
+      "#ffe589"
+    ]
+  }
+}

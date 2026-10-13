@@ -1,0 +1,10288 @@
+{
+ "entries": [
+  {
+   "ids": [
+    170
+   ],
+   "name": "Returning Storm",
+   "file": "returning_storm",
+   "bucket": "lightning",
+   "popular": true,
+   "colors": [
+    "#9c85ff",
+    "#9845ff",
+    "#4649ff"
+   ]
+  },
+  {
+   "ids": [
+    520
+   ],
+   "name": "Autumn's Decay",
+   "file": "autumns_decay",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#ff9024"
+   ]
+  },
+  {
+   "ids": [
+    78
+   ],
+   "name": "Touch of Rot",
+   "file": "touch_of_rot",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#b9ff95",
+    "#7bff42",
+    "#50ff88"
+   ]
+  },
+  {
+   "ids": [
+    561
+   ],
+   "name": "Venombloom",
+   "file": "venombloom",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#ff783c",
+    "#9dff4f",
+    "#deff07"
+   ]
+  },
+  {
+   "ids": [
+    1407
+   ],
+   "name": "Call to the Primordials",
+   "file": "call_to_the_primordials",
+   "bucket": "curses_debuffs",
+   "popular": true,
+   "colors": [
+    "#5cb6ff",
+    "#6bffd6",
+    "#ccff7b"
+   ]
+  },
+  {
+   "ids": [
+    537
+   ],
+   "name": "Conjure Blight",
+   "file": "conjure_blight",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#b9ff24",
+    "#a6ff7e",
+    "#ffd97c"
+   ]
+  },
+  {
+   "ids": [
+    556
+   ],
+   "name": "Conjure Greater Blight",
+   "file": "conjure_greater_blight",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#bdff2a",
+    "#9fff84",
+    "#ffe181"
+   ]
+  },
+  {
+   "ids": [
+    524
+   ],
+   "name": "Hold Beasts",
+   "file": "hold_beasts",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff642c",
+    "#ff9c71",
+    "#ff2006"
+   ]
+  },
+  {
+   "ids": [
+    128,
+    151,
+    527
+   ],
+   "name": "Infestation of Maggots",
+   "file": "infestation_of_maggots",
+   "bucket": "curses_debuffs",
+   "popular": true,
+   "colors": [
+    "#ff0a00"
+   ]
+  },
+  {
+   "ids": [
+    80
+   ],
+   "name": "Insect Swarm",
+   "file": "insect_swarm",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ffcd2d",
+    "#ffc200"
+   ]
+  },
+  {
+   "ids": [
+    74
+   ],
+   "name": "Nature's Mark",
+   "file": "natures_mark",
+   "bucket": "curses_debuffs",
+   "popular": true,
+   "colors": [
+    "#c0ff00",
+    "#e4ff7d"
+   ]
+  },
+  {
+   "ids": [
+    507,
+    553
+   ],
+   "name": "Plague of Insects",
+   "file": "plague_of_insects",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ffc54c",
+    "#ff700c",
+    "#f9ff82"
+   ]
+  },
+  {
+   "ids": [
+    180
+   ],
+   "name": "Spreading Plague",
+   "file": "spreading_plague",
+   "bucket": "curses_debuffs",
+   "popular": true,
+   "colors": [
+    "#c092ff",
+    "#8a61ff",
+    "#000bff"
+   ]
+  },
+  {
+   "ids": [
+    75,
+    615
+   ],
+   "name": "Tanglefoot",
+   "file": "tanglefoot",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ffd5a2",
+    "#ffa53b",
+    "#75ffb6"
+   ]
+  },
+  {
+   "ids": [
+    526
+   ],
+   "name": "Taste of the Hunt",
+   "file": "taste_of_the_hunt",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff5a38",
+    "#3cc3ff",
+    "#8bdaff"
+   ]
+  },
+  {
+   "ids": [
+    535
+   ],
+   "name": "Calling the World's Maw",
+   "file": "calling_the_worlds_maw",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ffae5b",
+    "#ffcc85",
+    "#ff7d0d"
+   ]
+  },
+  {
+   "ids": [
+    1681
+   ],
+   "name": "Tornado",
+   "file": "tornado",
+   "bucket": "earth_knockdown",
+   "popular": true,
+   "colors": [
+    "#ffb896",
+    "#9ffff4"
+   ]
+  },
+  {
+   "ids": [
+    522
+   ],
+   "name": "Burst of Summer Flame",
+   "file": "burst_of_summer_flame",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff4400",
+    "#ffd30d",
+    "#fff177"
+   ]
+  },
+  {
+   "ids": [
+    171
+   ],
+   "name": "Firebrand",
+   "file": "firebrand",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff9110",
+    "#ff480f",
+    "#ffe16b"
+   ]
+  },
+  {
+   "ids": [
+    549
+   ],
+   "name": "Firebug",
+   "file": "firebug",
+   "bucket": "fire_blast",
+   "popular": true,
+   "colors": [
+    "#ff4200",
+    "#ff7a32",
+    "#ffbf73"
+   ]
+  },
+  {
+   "ids": [
+    76
+   ],
+   "name": "Sunbeam",
+   "file": "sunbeam",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ffcd3e",
+    "#ff8800",
+    "#ffe282"
+   ]
+  },
+  {
+   "ids": [
+    533
+   ],
+   "name": "Boiling Spray",
+   "file": "boiling_spray",
+   "bucket": "fire_stream",
+   "popular": false,
+   "colors": [
+    "#56b5ff",
+    "#8aceff",
+    "#30a1ff"
+   ]
+  },
+  {
+   "ids": [
+    508,
+    548
+   ],
+   "name": "Embrace the Earth-Talon",
+   "file": "embrace_the_earth_talon",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff7201",
+    "#ff9f36",
+    "#ffbd71"
+   ]
+  },
+  {
+   "ids": [
+    538
+   ],
+   "name": "Hail Storm",
+   "file": "hail_storm",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#7ac3ff",
+    "#46abff",
+    "#008aff"
+   ]
+  },
+  {
+   "ids": [
+    541
+   ],
+   "name": "Overwhelming Wave",
+   "file": "overwhelming_wave",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#50bcff",
+    "#8199ff",
+    "#8bcdff"
+   ]
+  },
+  {
+   "ids": [
+    562
+   ],
+   "name": "Rot Skulls",
+   "file": "rot_skulls",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff41c9",
+    "#c297ff",
+    "#f884ff"
+   ]
+  },
+  {
+   "ids": [
+    82
+   ],
+   "name": "Stag's Horn",
+   "file": "stags_horn",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff6f00",
+    "#ff9033",
+    "#ffc67d"
+   ]
+  },
+  {
+   "ids": [
+    559
+   ],
+   "name": "Sunlance",
+   "file": "sunlance",
+   "bucket": "force_kinetic",
+   "popular": true,
+   "colors": [
+    "#ffb906"
+   ]
+  },
+  {
+   "ids": [
+    514
+   ],
+   "name": "Talons' Reach",
+   "file": "talons_reach",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff3c00",
+    "#ff672e",
+    "#ffa577"
+   ]
+  },
+  {
+   "ids": [
+    531
+   ],
+   "name": "Twin Stones",
+   "file": "twin_stones",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff8740",
+    "#ffab6d",
+    "#ffca97"
+   ]
+  },
+  {
+   "ids": [
+    516
+   ],
+   "name": "Vile Thorns",
+   "file": "vile_thorns",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#cbff00",
+    "#deff4e",
+    "#72ff10"
+   ]
+  },
+  {
+   "ids": [
+    393,
+    545
+   ],
+   "name": "Wall of Thorns",
+   "file": "wall_of_thorns",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#d8ff69",
+    "#b3ff00",
+    "#c4ff37"
+   ]
+  },
+  {
+   "ids": [
+    544
+   ],
+   "name": "Wicked Briars",
+   "file": "wicked_briars",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff6e4c",
+    "#ff3002",
+    "#ff9f83"
+   ]
+  },
+  {
+   "ids": [
+    79
+   ],
+   "name": "Blizzard",
+   "file": "blizzard",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#48abff",
+    "#70bfff",
+    "#1c95ff"
+   ]
+  },
+  {
+   "ids": [
+    518
+   ],
+   "name": "Winter Wind",
+   "file": "winter_wind",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#0099ff",
+    "#2fc9ff",
+    "#68d9ff"
+   ]
+  },
+  {
+   "ids": [
+    172
+   ],
+   "name": "Beetle Shell",
+   "file": "beetle_shell",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffda56",
+    "#7479ff",
+    "#9a97ff"
+   ]
+  },
+  {
+   "ids": [
+    546
+   ],
+   "name": "Cleansing Wind",
+   "file": "cleansing_wind",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#00bdff",
+    "#35f7ff"
+   ]
+  },
+  {
+   "ids": [
+    1616
+   ],
+   "name": "Form of the Delemgan",
+   "file": "form_of_the_delemgan",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#beff8e",
+    "#ffdf6d",
+    "#ffc823"
+   ]
+  },
+  {
+   "ids": [
+    557
+   ],
+   "name": "Garden of Life",
+   "file": "garden_of_life",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#dcff00",
+    "#fff27f"
+   ]
+  },
+  {
+   "ids": [
+    540
+   ],
+   "name": "Moonwell",
+   "file": "moonwell",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#81e5ff",
+    "#007eff",
+    "#3eb3ff"
+   ]
+  },
+  {
+   "ids": [
+    83
+   ],
+   "name": "Nature's Balm",
+   "file": "natures_balm",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00b8ff",
+    "#4cfaff",
+    "#63ff8b"
+   ]
+  },
+  {
+   "ids": [
+    1408
+   ],
+   "name": "Nature's Bounty",
+   "file": "natures_bounty",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#2cff0c",
+    "#c2ff80"
+   ]
+  },
+  {
+   "ids": [
+    1327
+   ],
+   "name": "Nature's Vigor",
+   "file": "natures_vigor",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#11c7ff",
+    "#6fff5a",
+    "#5bffc6"
+   ]
+  },
+  {
+   "ids": [
+    529
+   ],
+   "name": "Purge of Toxins",
+   "file": "purge_of_toxins",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffd000",
+    "#3dff06"
+   ]
+  },
+  {
+   "ids": [
+    1409
+   ],
+   "name": "Weather the Storm",
+   "file": "weather_the_storm",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#74ffde",
+    "#ff9b46",
+    "#8c82ff"
+   ]
+  },
+  {
+   "ids": [
+    81,
+    971
+   ],
+   "name": "Woodskin",
+   "file": "woodskin",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#d1ff82",
+    "#b0ff3a",
+    "#ff9a26"
+   ]
+  },
+  {
+   "ids": [
+    1685
+   ],
+   "name": "Avenging Storm",
+   "file": "avenging_storm",
+   "bucket": "lightning",
+   "popular": true,
+   "colors": [
+    "#009eff",
+    "#71ccff",
+    "#ff84b7"
+   ]
+  },
+  {
+   "ids": [
+    512
+   ],
+   "name": "Dancing Bolts",
+   "file": "dancing_bolts",
+   "bucket": "lightning",
+   "popular": true,
+   "colors": [
+    "#0060ff",
+    "#3176ff",
+    "#7ea4ff"
+   ]
+  },
+  {
+   "ids": [
+    551
+   ],
+   "name": "Nature's Terror",
+   "file": "natures_terror",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#dfff75",
+    "#73ffbd",
+    "#2affd1"
+   ]
+  },
+  {
+   "ids": [
+    555
+   ],
+   "name": "Relentless Storm",
+   "file": "relentless_storm",
+   "bucket": "lightning",
+   "popular": true,
+   "colors": [
+    "#394dff",
+    "#5f6cff",
+    "#899cff"
+   ]
+  },
+  {
+   "ids": [
+    510
+   ],
+   "name": "Charm Beast",
+   "file": "charm_beast",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#86ffed",
+    "#25ffe6",
+    "#ffa667"
+   ]
+  },
+  {
+   "ids": [
+    1868
+   ],
+   "name": "Infestation of Spiders",
+   "file": "infestation_of_spiders",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#ff0a00"
+   ]
+  },
+  {
+   "ids": [
+    523
+   ],
+   "name": "Conjure Lesser Blight",
+   "file": "conjure_lesser_blight",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#beff26",
+    "#abff7c",
+    "#ffd57a"
+   ]
+  },
+  {
+   "ids": [
+    1705
+   ],
+   "name": "Fire Stag",
+   "file": "fire_stag",
+   "bucket": "summoning",
+   "popular": true,
+   "colors": [
+    "#ff0732",
+    "#ff5f47",
+    "#ffcf74"
+   ]
+  },
+  {
+   "ids": [
+    1619
+   ],
+   "name": "Symbol of Berath",
+   "file": "symbol_of_berath",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#b5ff9f",
+    "#f285ff",
+    "#fb2bff"
+   ]
+  },
+  {
+   "ids": [
+    497
+   ],
+   "name": "Cleansing Flame",
+   "file": "cleansing_flame",
+   "bucket": "curses_debuffs",
+   "popular": true,
+   "colors": [
+    "#058aff"
+   ]
+  },
+  {
+   "ids": [
+    94
+   ],
+   "name": "Despondent Blows",
+   "file": "despondent_blows",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff953f",
+    "#ffcf8d",
+    "#ff3b12"
+   ]
+  },
+  {
+   "ids": [
+    473
+   ],
+   "name": "Devotions for the Faithful",
+   "file": "devotions_for_the_faithful",
+   "bucket": "curses_debuffs",
+   "popular": true,
+   "colors": [
+    "#ffda5d",
+    "#ffc62a",
+    "#ffe589"
+   ]
+  },
+  {
+   "ids": [
+    13
+   ],
+   "name": "Halt",
+   "file": "halt",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff8287",
+    "#ff2432",
+    "#af88ff"
+   ]
+  },
+  {
+   "ids": [
+    86
+   ],
+   "name": "Instill Doubt",
+   "file": "instill_doubt",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff6619",
+    "#ff923b",
+    "#ff2c2c"
+   ]
+  },
+  {
+   "ids": [
+    475
+   ],
+   "name": "Shining Beacon",
+   "file": "shining_beacon",
+   "bucket": "curses_debuffs",
+   "popular": true,
+   "colors": [
+    "#ffe47f",
+    "#ffcd56",
+    "#ffa810"
+   ]
+  },
+  {
+   "ids": [
+    466
+   ],
+   "name": "Repulsing Seal",
+   "file": "repulsing_seal",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff6837",
+    "#ffae00"
+   ]
+  },
+  {
+   "ids": [
+    1710
+   ],
+   "name": "Symbol of Woedica",
+   "file": "symbol_of_woedica",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#b5ff9f",
+    "#f285ff",
+    "#fb2bff"
+   ]
+  },
+  {
+   "ids": [
+    1624
+   ],
+   "name": "Symbol of Wael",
+   "file": "symbol_of_wael",
+   "bucket": "frost_lingering",
+   "popular": false,
+   "colors": [
+    "#b5ff9f",
+    "#f285ff",
+    "#fb2bff"
+   ]
+  },
+  {
+   "ids": [
+    174
+   ],
+   "name": "Armor of Faith",
+   "file": "armor_of_faith",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#ffe305",
+    "#fffe81",
+    "#96ff8b"
+   ]
+  },
+  {
+   "ids": [
+    472
+   ],
+   "name": "Barring Death's Door",
+   "file": "barring_deaths_door",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#36f1ff",
+    "#8affab"
+   ]
+  },
+  {
+   "ids": [
+    87
+   ],
+   "name": "Blessing",
+   "file": "blessing",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#ff9600",
+    "#ffc77e",
+    "#ffa63b"
+   ]
+  },
+  {
+   "ids": [
+    484
+   ],
+   "name": "Champion's Boon",
+   "file": "champions_boon",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#ffdd82",
+    "#ffba51",
+    "#ff6209"
+   ]
+  },
+  {
+   "ids": [
+    468
+   ],
+   "name": "Circle of Protection",
+   "file": "circle_of_protection",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#68e5ff",
+    "#95e5ff",
+    "#ffb78f"
+   ]
+  },
+  {
+   "ids": [
+    56
+   ],
+   "name": "Consecrated Ground",
+   "file": "consecrated_ground",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#4376ff",
+    "#1158ff",
+    "#80bbff"
+   ]
+  },
+  {
+   "ids": [
+    499
+   ],
+   "name": "Crowns for the Faithful",
+   "file": "crowns_for_the_faithful",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffee89",
+    "#ffc453",
+    "#ffa216"
+   ]
+  },
+  {
+   "ids": [
+    92
+   ],
+   "name": "Dire Blessing",
+   "file": "dire_blessing",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff6100",
+    "#ffd562"
+   ]
+  },
+  {
+   "ids": [
+    1709
+   ],
+   "name": "Hand of Weal and Woe",
+   "file": "hand_of_weal_and_woe",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff711e",
+    "#ff2282",
+    "#ff9a62"
+   ]
+  },
+  {
+   "ids": [
+    89
+   ],
+   "name": "Healing Strike",
+   "file": "healing_strike",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    457
+   ],
+   "name": "Holy Meditation",
+   "file": "holy_meditation",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#ffbf00",
+    "#ffce35",
+    "#ffe171"
+   ]
+  },
+  {
+   "ids": [
+    176
+   ],
+   "name": "Holy Power",
+   "file": "holy_power",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#ffd456",
+    "#ffee89"
+   ]
+  },
+  {
+   "ids": [
+    177
+   ],
+   "name": "Iconic Projection",
+   "file": "iconic_projection",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#0b60ff",
+    "#3eb5ff",
+    "#603dff"
+   ]
+  },
+  {
+   "ids": [
+    1627
+   ],
+   "name": "Litany Against Major Afflictions",
+   "file": "litany_against_major_afflictions",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#80faff",
+    "#35b2ff",
+    "#dbff7a"
+   ]
+  },
+  {
+   "ids": [
+    1628
+   ],
+   "name": "Litany Against Minor Afflictions",
+   "file": "litany_against_minor_afflictions",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#7d80ff",
+    "#3659ff",
+    "#ff68ee"
+   ]
+  },
+  {
+   "ids": [
+    1410
+   ],
+   "name": "Minor Avatar",
+   "file": "minor_avatar",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#3380ff",
+    "#549dff",
+    "#8fb2ff"
+   ]
+  },
+  {
+   "ids": [
+    501
+   ],
+   "name": "Minor Intercession",
+   "file": "minor_intercession",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#0cc0ff",
+    "#86edff",
+    "#4dd0ff"
+   ]
+  },
+  {
+   "ids": [
+    477
+   ],
+   "name": "Prayer Against Bewilderment",
+   "file": "prayer_against_bewilderment",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffab86",
+    "#ffa141",
+    "#ff7729"
+   ]
+  },
+  {
+   "ids": [
+    459
+   ],
+   "name": "Prayer Against Fear",
+   "file": "prayer_against_fear",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff0b00",
+    "#ff5700",
+    "#ff8b5b"
+   ]
+  },
+  {
+   "ids": [
+    488
+   ],
+   "name": "Prayer Against Imprisonment",
+   "file": "prayer_against_imprisonment",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#b488ff"
+   ]
+  },
+  {
+   "ids": [
+    463
+   ],
+   "name": "Prayer Against Infirmity",
+   "file": "prayer_against_infirmity",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#81ffdc",
+    "#55fff9"
+   ]
+  },
+  {
+   "ids": [
+    469
+   ],
+   "name": "Prayer Against Restraint",
+   "file": "prayer_against_restraint",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#80ffd4"
+   ]
+  },
+  {
+   "ids": [
+    503
+   ],
+   "name": "Prayer Against Treachery",
+   "file": "prayer_against_treachery",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#ff8e43",
+    "#ffaa63",
+    "#ffbf91"
+   ]
+  },
+  {
+   "ids": [
+    490
+   ],
+   "name": "Restore Critical Endurance",
+   "file": "restore_critical_endurance",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#09b5ff",
+    "#70dfff"
+   ]
+  },
+  {
+   "ids": [
+    467
+   ],
+   "name": "Restore Light Endurance",
+   "file": "restore_light_endurance",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#00b1ff",
+    "#36dfff",
+    "#7cf1ff"
+   ]
+  },
+  {
+   "ids": [
+    479
+   ],
+   "name": "Restore Major Endurance",
+   "file": "restore_major_endurance",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#34d8ff",
+    "#07b6ff",
+    "#6de0ff"
+   ]
+  },
+  {
+   "ids": [
+    461
+   ],
+   "name": "Restore Minor Endurance",
+   "file": "restore_minor_endurance",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#00a5ff",
+    "#52fbff"
+   ]
+  },
+  {
+   "ids": [
+    471
+   ],
+   "name": "Restore Moderate Endurance",
+   "file": "restore_moderate_endurance",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#3adeff",
+    "#0ab5ff",
+    "#7deaff"
+   ]
+  },
+  {
+   "ids": [
+    1411
+   ],
+   "name": "Resurrection",
+   "file": "resurrection",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#7ee3ff",
+    "#1e9aff",
+    "#fff48f"
+   ]
+  },
+  {
+   "ids": [
+    491
+   ],
+   "name": "Revive the Fallen",
+   "file": "revive_the_fallen",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#2baeff",
+    "#71e7ff"
+   ]
+  },
+  {
+   "ids": [
+    493
+   ],
+   "name": "Salvation of Time",
+   "file": "salvation_of_time",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb160",
+    "#ffc68b",
+    "#ff6222"
+   ]
+  },
+  {
+   "ids": [
+    495
+   ],
+   "name": "Shields for the Faithful",
+   "file": "shields_for_the_faithful",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#ffce5e",
+    "#ffa52e",
+    "#ffe184"
+   ]
+  },
+  {
+   "ids": [
+    90
+   ],
+   "name": "Suppress Affliction",
+   "file": "suppress_affliction",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#0b71ff",
+    "#679aff"
+   ]
+  },
+  {
+   "ids": [
+    482
+   ],
+   "name": "Triumph of the Crusaders",
+   "file": "triumph_of_the_crusaders",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#b2ff4c",
+    "#e9ff91",
+    "#ff4d13"
+   ]
+  },
+  {
+   "ids": [
+    1626
+   ],
+   "name": "Watchful Guardian",
+   "file": "watchful_guardian",
+   "bucket": "healing_buffs",
+   "popular": true,
+   "colors": [
+    "#ffd48d",
+    "#ffa322",
+    "#ff8b80"
+   ]
+  },
+  {
+   "ids": [
+    134
+   ],
+   "name": "Watchful Presence",
+   "file": "watchful_presence",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#89daff",
+    "#ffbe98",
+    "#ff8993"
+   ]
+  },
+  {
+   "ids": [
+    175
+   ],
+   "name": "Withdraw",
+   "file": "withdraw",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#64e4ff",
+    "#00ffec",
+    "#009cff"
+   ]
+  },
+  {
+   "ids": [
+    14
+   ],
+   "name": "Divine Terror",
+   "file": "divine_terror",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#888cff",
+    "#4d3dff",
+    "#63ffb7"
+   ]
+  },
+  {
+   "ids": [
+    27
+   ],
+   "name": "Barbs of Condemnation",
+   "file": "barbs_of_condemnation",
+   "bucket": "radiant_holy",
+   "popular": false,
+   "colors": [
+    "#ff0303",
+    "#ffa287",
+    "#ff514c"
+   ]
+  },
+  {
+   "ids": [
+    57
+   ],
+   "name": "Divine Mark",
+   "file": "divine_mark",
+   "bucket": "radiant_holy",
+   "popular": false,
+   "colors": [
+    "#ff6000",
+    "#ff9016",
+    "#fff244"
+   ]
+  },
+  {
+   "ids": [
+    179
+   ],
+   "name": "Pillar of Faith",
+   "file": "pillar_of_faith",
+   "bucket": "radiant_holy",
+   "popular": true,
+   "colors": [
+    "#ff2404",
+    "#ffda86",
+    "#ff823d"
+   ]
+  },
+  {
+   "ids": [
+    486
+   ],
+   "name": "Pillar of Holy Fire",
+   "file": "pillar_of_holy_fire",
+   "bucket": "radiant_holy",
+   "popular": false,
+   "colors": [
+    "#ff6a06",
+    "#ff9d25",
+    "#ffcb6e"
+   ]
+  },
+  {
+   "ids": [
+    480
+   ],
+   "name": "Searing Seal",
+   "file": "searing_seal",
+   "bucket": "radiant_holy",
+   "popular": false,
+   "colors": [
+    "#ff4324",
+    "#ff7841",
+    "#ffd570"
+   ]
+  },
+  {
+   "ids": [
+    505
+   ],
+   "name": "Spark the Souls of the Righteous",
+   "file": "spark_the_souls_of_the_righteous",
+   "bucket": "radiant_holy",
+   "popular": true,
+   "colors": [
+    "#ffc240",
+    "#ffe084",
+    "#ffa604"
+   ]
+  },
+  {
+   "ids": [
+    1412
+   ],
+   "name": "Storm of Holy Fire",
+   "file": "storm_of_holy_fire",
+   "bucket": "radiant_holy",
+   "popular": false,
+   "colors": [
+    "#0067ff",
+    "#00b1ff"
+   ]
+  },
+  {
+   "ids": [
+    1620
+   ],
+   "name": "Symbol of Eothas",
+   "file": "symbol_of_eothas",
+   "bucket": "radiant_holy",
+   "popular": true,
+   "colors": [
+    "#b5ff9f",
+    "#f285ff",
+    "#fb2bff"
+   ]
+  },
+  {
+   "ids": [
+    1621
+   ],
+   "name": "Symbol of Magran",
+   "file": "symbol_of_magran",
+   "bucket": "radiant_holy",
+   "popular": false,
+   "colors": [
+    "#b5ff9f",
+    "#f285ff",
+    "#fb2bff"
+   ]
+  },
+  {
+   "ids": [
+    1622
+   ],
+   "name": "Symbol of Ondra",
+   "file": "symbol_of_ondra",
+   "bucket": "radiant_holy",
+   "popular": false,
+   "colors": [
+    "#b5ff9f",
+    "#f285ff",
+    "#fb2bff"
+   ]
+  },
+  {
+   "ids": [
+    1623
+   ],
+   "name": "Symbol of Skaen",
+   "file": "symbol_of_skaen",
+   "bucket": "radiant_holy",
+   "popular": false,
+   "colors": [
+    "#b5ff9f",
+    "#f285ff",
+    "#fb2bff"
+   ]
+  },
+  {
+   "ids": [
+    1630
+   ],
+   "name": "Caedebald's Blackbow",
+   "file": "caedebalds_blackbow",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#e3ff82",
+    "#d2ff26",
+    "#fa6fff"
+   ]
+  },
+  {
+   "ids": [
+    230
+   ],
+   "name": "Death Ring",
+   "file": "death_ring",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#acff65"
+   ]
+  },
+  {
+   "ids": [
+    420
+   ],
+   "name": "Necrotic Lance",
+   "file": "necrotic_lance",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#6c3aff",
+    "#996eff",
+    "#b794ff"
+   ]
+  },
+  {
+   "ids": [
+    102
+   ],
+   "name": "Noxious Burst",
+   "file": "noxious_burst",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#78ff89",
+    "#15ff8d",
+    "#41ff0a"
+   ]
+  },
+  {
+   "ids": [
+    234
+   ],
+   "name": "Dimensional Shift",
+   "file": "dimensional_shift",
+   "bucket": "beams",
+   "popular": false,
+   "colors": [
+    "#0069ff",
+    "#2e95ff",
+    "#7bb5ff"
+   ]
+  },
+  {
+   "ids": [
+    1325
+   ],
+   "name": "Ninagauth's Bitter Mooring",
+   "file": "ninagauths_bitter_mooring",
+   "bucket": "beams",
+   "popular": false,
+   "colors": [
+    "#0089ff",
+    "#32abff",
+    "#79ceff"
+   ]
+  },
+  {
+   "ids": [
+    1545
+   ],
+   "name": "Ninagauth's Death Ray",
+   "file": "ninagauths_death_ray",
+   "bucket": "beams",
+   "popular": false,
+   "colors": [
+    "#9b2fff",
+    "#8e00ff",
+    "#c780ff"
+   ]
+  },
+  {
+   "ids": [
+    188
+   ],
+   "name": "Ray of Fire",
+   "file": "ray_of_fire",
+   "bucket": "beams",
+   "popular": false,
+   "colors": [
+    "#ff5700",
+    "#ff6a2c",
+    "#ffa27a"
+   ]
+  },
+  {
+   "ids": [
+    190
+   ],
+   "name": "Arcane Dampener",
+   "file": "arcane_dampener",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#0086ff",
+    "#3db2ff",
+    "#7cd7ff"
+   ]
+  },
+  {
+   "ids": [
+    96
+   ],
+   "name": "Arduous Delay of Motion",
+   "file": "arduous_delay_of_motion",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff7447",
+    "#ff3801",
+    "#ffb78c"
+   ]
+  },
+  {
+   "ids": [
+    449
+   ],
+   "name": "Arkemyr's Capricious Hex",
+   "file": "arkemyrs_capricious_hex",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#6ee3ff",
+    "#19ffc4",
+    "#9d6cff"
+   ]
+  },
+  {
+   "ids": [
+    5
+   ],
+   "name": "Arkemyr's Dazzling Lights",
+   "file": "arkemyrs_dazzling_lights",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#6b94ff",
+    "#7affda"
+   ]
+  },
+  {
+   "ids": [
+    227
+   ],
+   "name": "Arkemyr's Wondrous Torment",
+   "file": "arkemyrs_wondrous_torment",
+   "bucket": "curses_debuffs",
+   "popular": true,
+   "colors": [
+    "#817eff",
+    "#0f4fff",
+    "#ff87e6"
+   ]
+  },
+  {
+   "ids": [
+    183
+   ],
+   "name": "Binding Web",
+   "file": "binding_web",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ffd054",
+    "#fbff97",
+    "#fff22c"
+   ]
+  },
+  {
+   "ids": [
+    974
+   ],
+   "name": "Call to Slumber",
+   "file": "call_to_slumber",
+   "bucket": "curses_debuffs",
+   "popular": true,
+   "colors": [
+    "#c883ff",
+    "#7175ff",
+    "#3771ff"
+   ]
+  },
+  {
+   "ids": [
+    410
+   ],
+   "name": "Combusting Wounds",
+   "file": "combusting_wounds",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ffb524",
+    "#ff481a"
+   ]
+  },
+  {
+   "ids": [
+    189
+   ],
+   "name": "Concelhaut's Corrosive Siphon",
+   "file": "concelhauts_corrosive_siphon",
+   "bucket": "curses_debuffs",
+   "popular": true,
+   "colors": [
+    "#ff6100",
+    "#ff8d1f",
+    "#ffc96e"
+   ]
+  },
+  {
+   "ids": [
+    1584
+   ],
+   "name": "Concelhaut's Draining Missiles",
+   "file": "concelhauts_draining_missiles",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#8900ff",
+    "#421fff",
+    "#ac77ff"
+   ]
+  },
+  {
+   "ids": [
+    426
+   ],
+   "name": "Concelhaut's Draining Touch",
+   "file": "concelhauts_draining_touch",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff5f34",
+    "#ff0e00",
+    "#ff9d80"
+   ]
+  },
+  {
+   "ids": [
+    412
+   ],
+   "name": "Curse Of Blackened Sight",
+   "file": "curse_of_blackened_sight",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#7c56ff",
+    "#8d88ff",
+    "#4b0eff"
+   ]
+  },
+  {
+   "ids": [
+    103
+   ],
+   "name": "Expose Vulnerabilities",
+   "file": "expose_vulnerabilities",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff8124",
+    "#ff904d",
+    "#ffc988"
+   ]
+  },
+  {
+   "ids": [
+    414
+   ],
+   "name": "Fetid Caress",
+   "file": "fetid_caress",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#9fff39"
+   ]
+  },
+  {
+   "ids": [
+    452
+   ],
+   "name": "Gaze of the Adragan",
+   "file": "gaze_of_the_adragan",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#a0bcff"
+   ]
+  },
+  {
+   "ids": [
+    1829
+   ],
+   "name": "Llengrath's Dread Haze",
+   "file": "llengraths_dread_haze",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ffcd63",
+    "#c10eff",
+    "#de5cff"
+   ]
+  },
+  {
+   "ids": [
+    1686
+   ],
+   "name": "Major Grimoire Imprint",
+   "file": "major_grimoire_imprint",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff0017",
+    "#ff3e4d",
+    "#ff8393"
+   ]
+  },
+  {
+   "ids": [
+    418
+   ],
+   "name": "Miasma of Dull-Mindedness",
+   "file": "miasma_of_dull_mindedness",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#bd7bff",
+    "#a143ff",
+    "#8004ff"
+   ]
+  },
+  {
+   "ids": [
+    226
+   ],
+   "name": "Minor Grimoire Imprint",
+   "file": "minor_grimoire_imprint",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#4afcff",
+    "#89fff7",
+    "#07d2ff"
+   ]
+  },
+  {
+   "ids": [
+    1415
+   ],
+   "name": "Ninagauth's Killing Bolt",
+   "file": "ninagauths_killing_bolt",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#6c3aff",
+    "#996eff",
+    "#b794ff"
+   ]
+  },
+  {
+   "ids": [
+    1860
+   ],
+   "name": "Spell Steal",
+   "file": "spell_steal",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff0017",
+    "#ff3e4d",
+    "#ff8393"
+   ]
+  },
+  {
+   "ids": [
+    1418
+   ],
+   "name": "Wall of Draining",
+   "file": "wall_of_draining",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#1317ff",
+    "#127dff",
+    "#59b8ff"
+   ]
+  },
+  {
+   "ids": [
+    1648
+   ],
+   "name": "Wall of Many Colors - [0097e3]Blue![-]",
+   "file": "wall_of_many_colors_0097e3_blue",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1650
+   ],
+   "name": "Wall of Many Colors - [9c439f]Violet![-]",
+   "file": "wall_of_many_colors_9c439f_violet",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1493
+   ],
+   "name": "Concelhaut's Crushing Doom",
+   "file": "concelhauts_crushing_doom",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff2800",
+    "#ffab84",
+    "#ff8949"
+   ]
+  },
+  {
+   "ids": [
+    437
+   ],
+   "name": "Llengrath's Safeguard",
+   "file": "llengraths_safeguard",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ffb000",
+    "#ffca2f",
+    "#ffd770"
+   ]
+  },
+  {
+   "ids": [
+    1414
+   ],
+   "name": "Llengrath's Warding Staff",
+   "file": "llengraths_warding_staff",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#5c7dff",
+    "#85bcff"
+   ]
+  },
+  {
+   "ids": [
+    1714
+   ],
+   "name": "Minoletta's Piercing Sigil",
+   "file": "minolettas_piercing_sigil",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff2490",
+    "#ff70c0",
+    "#bf6bff"
+   ]
+  },
+  {
+   "ids": [
+    9
+   ],
+   "name": "Slicken",
+   "file": "slicken",
+   "bucket": "earth_knockdown",
+   "popular": true,
+   "colors": []
+  },
+  {
+   "ids": [
+    1413
+   ],
+   "name": "Delayed Fireball",
+   "file": "delayed_fireball",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff8100",
+    "#ff9532",
+    "#ffba7e"
+   ]
+  },
+  {
+   "ids": [
+    3,
+    191
+   ],
+   "name": "Fireball",
+   "file": "fireball",
+   "bucket": "fire_blast",
+   "popular": true,
+   "colors": [
+    "#ff5c00",
+    "#ff942e",
+    "#ffc474"
+   ]
+  },
+  {
+   "ids": [
+    231
+   ],
+   "name": "Flame Shield",
+   "file": "flame_shield",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff6c00",
+    "#ffa428",
+    "#ffcb6f"
+   ]
+  },
+  {
+   "ids": [
+    429
+   ],
+   "name": "Kalakoth's Minor Blights",
+   "file": "kalakoths_minor_blights",
+   "bucket": "fire_blast",
+   "popular": true,
+   "colors": [
+    "#ffc43a",
+    "#1fff95",
+    "#82ff74"
+   ]
+  },
+  {
+   "ids": [
+    422
+   ],
+   "name": "Rolling Flame",
+   "file": "rolling_flame",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff5c00",
+    "#ff7e24",
+    "#ffc671"
+   ]
+  },
+  {
+   "ids": [
+    443
+   ],
+   "name": "Torrent of Flame",
+   "file": "torrent_of_flame",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff5d00",
+    "#ff9329",
+    "#ffbf72"
+   ]
+  },
+  {
+   "ids": [
+    235,
+    332
+   ],
+   "name": "Wall of Flame",
+   "file": "wall_of_flame",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff3800",
+    "#ffab37",
+    "#ffe280"
+   ]
+  },
+  {
+   "ids": [
+    1635
+   ],
+   "name": "Wall of Many Colors",
+   "file": "wall_of_many_colors",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#13ff39",
+    "#ffb512",
+    "#5185ff"
+   ]
+  },
+  {
+   "ids": [
+    1645
+   ],
+   "name": "Wall of Many Colors - [FB8000]Orange![-]",
+   "file": "wall_of_many_colors_fb8000_orange",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1644
+   ],
+   "name": "Wall of Many Colors - [FF0000]Red![-]",
+   "file": "wall_of_many_colors_ff0000_red",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    187
+   ],
+   "name": "Mirrored Image",
+   "file": "mirrored_image",
+   "bucket": "fire_lingering",
+   "popular": false,
+   "colors": [
+    "#5888ff",
+    "#0e43ff",
+    "#8aafff"
+   ]
+  },
+  {
+   "ids": [
+    22
+   ],
+   "name": "Fan of Flames",
+   "file": "fan_of_flames",
+   "bucket": "fire_stream",
+   "popular": false,
+   "colors": [
+    "#ff7100",
+    "#ffa000"
+   ]
+  },
+  {
+   "ids": [
+    436
+   ],
+   "name": "Citzal's Spirit Lance",
+   "file": "citzals_spirit_lance",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#2600ff",
+    "#6728ff",
+    "#b170ff"
+   ]
+  },
+  {
+   "ids": [
+    401
+   ],
+   "name": "Concelhaut's Parasitic Staff",
+   "file": "concelhauts_parasitic_staff",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#00fbff"
+   ]
+  },
+  {
+   "ids": [
+    159
+   ],
+   "name": "Ghost Blades",
+   "file": "ghost_blades",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#b690ff",
+    "#7b5bff",
+    "#3e20ff"
+   ]
+  },
+  {
+   "ids": [
+    1852
+   ],
+   "name": "Llengrath's Blunt Wisdom",
+   "file": "llengraths_blunt_wisdom",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#af0aff",
+    "#ff46b1",
+    "#ffe783"
+   ]
+  },
+  {
+   "ids": [
+    1871
+   ],
+   "name": "Llengrath's Siphoning Image",
+   "file": "llengraths_siphoning_image",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ffdd69",
+    "#ff70da"
+   ]
+  },
+  {
+   "ids": [
+    438
+   ],
+   "name": "Malignant Cloud",
+   "file": "malignant_cloud",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#50ffb5",
+    "#bdff99",
+    "#7fffa8"
+   ]
+  },
+  {
+   "ids": [
+    428
+   ],
+   "name": "Minoletta's Bounding Missiles",
+   "file": "minolettas_bounding_missiles",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff0e24",
+    "#ff7485",
+    "#d032ff"
+   ]
+  },
+  {
+   "ids": [
+    229
+   ],
+   "name": "Minoletta's Concussive Missiles",
+   "file": "minolettas_concussive_missiles",
+   "bucket": "force_kinetic",
+   "popular": true,
+   "colors": [
+    "#ff3761",
+    "#ff7c92"
+   ]
+  },
+  {
+   "ids": [
+    182
+   ],
+   "name": "Minoletta's Minor Missiles",
+   "file": "minolettas_minor_missiles",
+   "bucket": "force_kinetic",
+   "popular": true,
+   "colors": [
+    "#ff000a",
+    "#ff767f",
+    "#ff203f"
+   ]
+  },
+  {
+   "ids": [
+    454
+   ],
+   "name": "Minoletta's Precisely Piercing Burst",
+   "file": "minolettas_precisely_piercing_burst",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff3da4",
+    "#6205ff",
+    "#f179ff"
+   ]
+  },
+  {
+   "ids": [
+    1417
+   ],
+   "name": "Tayn's Chaotic Orb",
+   "file": "tayns_chaotic_orb",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#1ab4ff",
+    "#55ccff",
+    "#87e9ff"
+   ]
+  },
+  {
+   "ids": [
+    402
+   ],
+   "name": "Thrust Of Tattered Veils",
+   "file": "thrust_of_tattered_veils",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#6e38ff",
+    "#3c00ff",
+    "#ae7fff"
+   ]
+  },
+  {
+   "ids": [
+    446
+   ],
+   "name": "Wall of Force",
+   "file": "wall_of_force",
+   "bucket": "force_kinetic",
+   "popular": true,
+   "colors": [
+    "#15ffdd",
+    "#87f1ff",
+    "#4bffee"
+   ]
+  },
+  {
+   "ids": [
+    1647
+   ],
+   "name": "Wall of Many Colors - [007700]Green![-]",
+   "file": "wall_of_many_colors_007700_green",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1631
+   ],
+   "name": "Wilting Wind",
+   "file": "wilting_wind",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ffc500",
+    "#ff6a00"
+   ]
+  },
+  {
+   "ids": [
+    434
+   ],
+   "name": "Blast of Frost",
+   "file": "blast_of_frost",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#8acbff",
+    "#54b3ff",
+    "#0d8dff"
+   ]
+  },
+  {
+   "ids": [
+    1636
+   ],
+   "name": "Kalakoth's Freezing Rake",
+   "file": "kalakoths_freezing_rake",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#52edff",
+    "#91f3ff",
+    "#24c5ff"
+   ]
+  },
+  {
+   "ids": [
+    398
+   ],
+   "name": "Kalakoth's Sunless Grasp",
+   "file": "kalakoths_sunless_grasp",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#5a98ff",
+    "#94c7ff"
+   ]
+  },
+  {
+   "ids": [
+    1583
+   ],
+   "name": "Ninagauth's Shadowflame",
+   "file": "ninagauths_shadowflame",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#0094ff",
+    "#3596ff",
+    "#7bb7ff"
+   ]
+  },
+  {
+   "ids": [
+    394
+   ],
+   "name": "Chill Fog",
+   "file": "chill_fog",
+   "bucket": "frost_lingering",
+   "popular": true,
+   "colors": [
+    "#618aff",
+    "#8fbeff"
+   ]
+  },
+  {
+   "ids": [
+    456
+   ],
+   "name": "Ninagauth's Freezing Pillar",
+   "file": "ninagauths_freezing_pillar",
+   "bucket": "frost_lingering",
+   "popular": true,
+   "colors": [
+    "#009aff",
+    "#31b9ff",
+    "#76d4ff"
+   ]
+  },
+  {
+   "ids": [
+    447
+   ],
+   "name": "Arcane Reflection",
+   "file": "arcane_reflection",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff8116",
+    "#ff3900",
+    "#ffc26c"
+   ]
+  },
+  {
+   "ids": [
+    408
+   ],
+   "name": "Bulwark Against The Elements",
+   "file": "bulwark_against_the_elements",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#5e94ff",
+    "#58ff99",
+    "#ff5d40"
+   ]
+  },
+  {
+   "ids": [
+    451
+   ],
+   "name": "Citzal's Martial Power",
+   "file": "citzals_martial_power",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffbb00"
+   ]
+  },
+  {
+   "ids": [
+    97
+   ],
+   "name": "Deleterious Alacrity of Motion",
+   "file": "deleterious_alacrity_of_motion",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00a3ff",
+    "#2facff",
+    "#77c7ff"
+   ]
+  },
+  {
+   "ids": [
+    396
+   ],
+   "name": "Eldritch Aim",
+   "file": "eldritch_aim",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8244ff",
+    "#d787ff",
+    "#ffd7a4"
+   ]
+  },
+  {
+   "ids": [
+    6
+   ],
+   "name": "Fleet Feet",
+   "file": "fleet_feet",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#57d4ff",
+    "#1aafff",
+    "#8adfff"
+   ]
+  },
+  {
+   "ids": [
+    416
+   ],
+   "name": "Infuse With Vital Essence",
+   "file": "infuse_with_vital_essence",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff1800",
+    "#ff9e86"
+   ]
+  },
+  {
+   "ids": [
+    225
+   ],
+   "name": "Ironskin",
+   "file": "ironskin",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffd29e",
+    "#ff9c67"
+   ]
+  },
+  {
+   "ids": [
+    98
+   ],
+   "name": "Llengrath's Displaced Image",
+   "file": "llengraths_displaced_image",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#56e8ff",
+    "#5ba4ff",
+    "#92ffe7"
+   ]
+  },
+  {
+   "ids": [
+    1836
+   ],
+   "name": "Llengrath's Mental Shields",
+   "file": "llengraths_mental_shields",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffe76f",
+    "#ff818a",
+    "#a900ff"
+   ]
+  },
+  {
+   "ids": [
+    1837
+   ],
+   "name": "Llengrath's Physical Shields",
+   "file": "llengraths_physical_shields",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#a500ff",
+    "#ffe567",
+    "#ff8288"
+   ]
+  },
+  {
+   "ids": [
+    1643
+   ],
+   "name": "Llengrath's Superior Elemental Bulwark",
+   "file": "llengraths_superior_elemental_bulwark",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffce44",
+    "#4ea2ff",
+    "#59ff88"
+   ]
+  },
+  {
+   "ids": [
+    186
+   ],
+   "name": "Merciless Gaze",
+   "file": "merciless_gaze",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff4d00",
+    "#ff2834",
+    "#ff688a"
+   ]
+  },
+  {
+   "ids": [
+    232
+   ],
+   "name": "Minor Arcane Reflection",
+   "file": "minor_arcane_reflection",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00d3ff",
+    "#2ed4ff",
+    "#74e3ff"
+   ]
+  },
+  {
+   "ids": [
+    1715
+   ],
+   "name": "Pull of Eora",
+   "file": "pull_of_eora",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8fe5ff",
+    "#4ef3ff",
+    "#c989ff"
+   ]
+  },
+  {
+   "ids": [
+    25
+   ],
+   "name": "Spirit Shield",
+   "file": "spirit_shield",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#637dff",
+    "#96b6ff"
+   ]
+  },
+  {
+   "ids": [
+    404
+   ],
+   "name": "Wizard's Double",
+   "file": "wizards_double",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#7a6cff",
+    "#ff8977",
+    "#ef9eff"
+   ]
+  },
+  {
+   "ids": [
+    448
+   ],
+   "name": "Chain Lightning",
+   "file": "chain_lightning",
+   "bucket": "lightning",
+   "popular": true,
+   "colors": [
+    "#3e94ff",
+    "#086dff",
+    "#7fbeff"
+   ]
+  },
+  {
+   "ids": [
+    51
+   ],
+   "name": "Crackling Bolt",
+   "file": "crackling_bolt",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#007dff",
+    "#2a93ff",
+    "#62b0ff"
+   ]
+  },
+  {
+   "ids": [
+    181
+   ],
+   "name": "Jolting Touch",
+   "file": "jolting_touch",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#798dff",
+    "#5262ff"
+   ]
+  },
+  {
+   "ids": [
+    1646
+   ],
+   "name": "Wall of Many Colors - [FFFF00]Yellow![-]",
+   "file": "wall_of_many_colors_ffff00_yellow",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    406
+   ],
+   "name": "Bewildering Spectacle",
+   "file": "bewildering_spectacle",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#1db6ff",
+    "#531bff",
+    "#72fff9"
+   ]
+  },
+  {
+   "ids": [
+    432
+   ],
+   "name": "Confusion",
+   "file": "confusion",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#5fb7ff",
+    "#2261ff"
+   ]
+  },
+  {
+   "ids": [
+    440
+   ],
+   "name": "Ryngrim's Enervating Terror",
+   "file": "ryngrims_enervating_terror",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#0a78ff",
+    "#8bb1ff",
+    "#4794ff"
+   ]
+  },
+  {
+   "ids": [
+    105
+   ],
+   "name": "Ryngrim's Repulsive Visage",
+   "file": "ryngrims_repulsive_visage",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#2e6cff",
+    "#5e8dff",
+    "#8dafff"
+   ]
+  },
+  {
+   "ids": [
+    1649
+   ],
+   "name": "Wall of Many Colors - [0000FF]Indigo![-]",
+   "file": "wall_of_many_colors_0000ff_indigo",
+   "bucket": "mind",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    606
+   ],
+   "name": "Essential Phantom",
+   "file": "essential_phantom",
+   "bucket": "summoning",
+   "popular": true,
+   "colors": [
+    "#8a95ff",
+    "#4766ff",
+    "#022dff"
+   ]
+  },
+  {
+   "ids": [
+    1713
+   ],
+   "name": "Maura's Writhing Tentacles",
+   "file": "mauras_writhing_tentacles",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#a5ff1f",
+    "#adff65",
+    "#fffb86"
+   ]
+  },
+  {
+   "ids": [
+    1416
+   ],
+   "name": "Substantial Phantom",
+   "file": "substantial_phantom",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#6d41ff",
+    "#3d05ff",
+    "#8d7bff"
+   ]
+  },
+  {
+   "ids": [
+    1805
+   ],
+   "name": "Acid Breath",
+   "file": "acid_breath",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    623
+   ],
+   "name": "Corrosive Breath",
+   "file": "corrosive_breath",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#78ff89",
+    "#15ff8d",
+    "#41ff0a"
+   ]
+  },
+  {
+   "ids": [
+    153
+   ],
+   "name": "Corrosive Cloud",
+   "file": "corrosive_cloud",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#78ff89",
+    "#15ff8d",
+    "#41ff0a"
+   ]
+  },
+  {
+   "ids": [
+    1832
+   ],
+   "name": "Death Spores",
+   "file": "death_spores",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#78ff89",
+    "#15ff8d",
+    "#41ff0a"
+   ]
+  },
+  {
+   "ids": [
+    1287
+   ],
+   "name": "Noxious Burst Trap",
+   "file": "noxious_burst_trap",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#78ff89",
+    "#15ff8d",
+    "#41ff0a"
+   ]
+  },
+  {
+   "ids": [
+    1828
+   ],
+   "name": "Pestilent Cloud",
+   "file": "pestilent_cloud",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#50ffb5",
+    "#bdff99",
+    "#7fffa8"
+   ]
+  },
+  {
+   "ids": [
+    1284
+   ],
+   "name": "Poisonous Cloud Trap",
+   "file": "poisonous_cloud_trap",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#acff65"
+   ]
+  },
+  {
+   "ids": [
+    1432
+   ],
+   "name": "Sickening Breath",
+   "file": "sickening_breath",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#78ff89",
+    "#15ff8d",
+    "#41ff0a"
+   ]
+  },
+  {
+   "ids": [
+    648
+   ],
+   "name": "Spit",
+   "file": "spit",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#78ff89",
+    "#15ff8d",
+    "#41ff0a"
+   ]
+  },
+  {
+   "ids": [
+    111
+   ],
+   "name": "Antipathetic Field",
+   "file": "antipathetic_field",
+   "bucket": "beams",
+   "popular": false,
+   "colors": [
+    "#0089ff",
+    "#7baeff"
+   ]
+  },
+  {
+   "ids": [
+    117
+   ],
+   "name": "Ectopsychic Echo",
+   "file": "ectopsychic_echo",
+   "bucket": "beams",
+   "popular": false,
+   "colors": [
+    "#369dff",
+    "#6cc3ff",
+    "#056fff"
+   ]
+  },
+  {
+   "ids": [
+    1778
+   ],
+   "name": "Eyeless Ray of Fire",
+   "file": "eyeless_ray_of_fire",
+   "bucket": "beams",
+   "popular": false,
+   "colors": [
+    "#ff5700",
+    "#ff6a2c",
+    "#ffa27a"
+   ]
+  },
+  {
+   "ids": [
+    1456
+   ],
+   "name": "Ray of Pain",
+   "file": "ray_of_pain",
+   "bucket": "beams",
+   "popular": false,
+   "colors": [
+    "#369dff",
+    "#6cc3ff",
+    "#056fff"
+   ]
+  },
+  {
+   "ids": [
+    1582
+   ],
+   "name": "Ray of the Void",
+   "file": "ray_of_the_void",
+   "bucket": "beams",
+   "popular": false,
+   "colors": [
+    "#6c3aff",
+    "#996eff",
+    "#b794ff"
+   ]
+  },
+  {
+   "ids": [
+    12
+   ],
+   "name": "Steady Aim",
+   "file": "steady_aim",
+   "bucket": "beams",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    41
+   ],
+   "name": "Crippling Strike",
+   "file": "crippling_strike",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff0004",
+    "#ff546b",
+    "#ffa697"
+   ]
+  },
+  {
+   "ids": [
+    1784
+   ],
+   "name": "All Break Upon the Wheel",
+   "file": "all_break_upon_the_wheel",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1373
+   ],
+   "name": "All The Lights Upon The Sea",
+   "file": "all_the_lights_upon_the_sea",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1822
+   ],
+   "name": "Deadfire Shanty",
+   "file": "deadfire_shanty",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    688
+   ],
+   "name": "Dozens' Hymn",
+   "file": "dozens_hymn",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1633
+   ],
+   "name": "Her Embrace, The Walls of our Home",
+   "file": "her_embrace_the_walls_of_our_home",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1366
+   ],
+   "name": "Lament for the Dying Flame",
+   "file": "lament_for_the_dying_flame",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1370
+   ],
+   "name": "Last Dog's Howl",
+   "file": "last_dogs_howl",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    973
+   ],
+   "name": "Leaden Words",
+   "file": "leaden_words",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1365
+   ],
+   "name": "Nae Wrytan Nir Syn",
+   "file": "nae_wrytan_nir_syn",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1367
+   ],
+   "name": "On That Still Night, There Tolled A Bell",
+   "file": "on_that_still_night_there_tolled_a_bell",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1356
+   ],
+   "name": "Paean to the Morning",
+   "file": "paean_to_the_morning",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1364
+   ],
+   "name": "Pames i Masek Lleow",
+   "file": "pames_i_masek_lleow",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1363
+   ],
+   "name": "Rimerunner's Dirge",
+   "file": "rimerunners_dirge",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    125
+   ],
+   "name": "Sample Chant 2",
+   "file": "sample_chant_2",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1368
+   ],
+   "name": "The Bite of Cold, the Cut of Wind",
+   "file": "the_bite_of_cold_the_cut_of_wind",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1371
+   ],
+   "name": "The Crash of Waves",
+   "file": "the_crash_of_waves",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1369
+   ],
+   "name": "The Drums, They Sound Still",
+   "file": "the_drums_they_sound_still",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1375
+   ],
+   "name": "The Golden Shore",
+   "file": "the_golden_shore",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1376
+   ],
+   "name": "The Nuitanri Gnash and Roar",
+   "file": "the_nuitanri_gnash_and_roar",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1783
+   ],
+   "name": "The Parade of Souls",
+   "file": "the_parade_of_souls",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    999
+   ],
+   "name": "The Quiet Slave Mantra",
+   "file": "the_quiet_slave_mantra",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1357
+   ],
+   "name": "The Rising Tide",
+   "file": "the_rising_tide",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1372
+   ],
+   "name": "The Skein Between the Stars",
+   "file": "the_skein_between_the_stars",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1374
+   ],
+   "name": "The Sunken Road",
+   "file": "the_sunken_road",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1362
+   ],
+   "name": "Wrath of the Exiled Queen",
+   "file": "wrath_of_the_exiled_queen",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1422
+   ],
+   "name": "Abduction",
+   "file": "abduction",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#0069ff",
+    "#2e95ff",
+    "#7bb5ff"
+   ]
+  },
+  {
+   "ids": [
+    987
+   ],
+   "name": "Antelope Companion",
+   "file": "antelope_companion",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#6bd6ff",
+    "#09b9ff"
+   ]
+  },
+  {
+   "ids": [
+    1449
+   ],
+   "name": "Aspirant's Mark",
+   "file": "aspirants_mark",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#c0ff00",
+    "#e4ff7d"
+   ]
+  },
+  {
+   "ids": [
+    1423
+   ],
+   "name": "Battle Cry",
+   "file": "battle_cry",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#f2ff8b"
+   ]
+  },
+  {
+   "ids": [
+    988
+   ],
+   "name": "Bear Companion",
+   "file": "bear_companion",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#79daff",
+    "#00b4ff"
+   ]
+  },
+  {
+   "ids": [
+    1652
+   ],
+   "name": "Behold the Martyr",
+   "file": "behold_the_martyr",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ffae6f",
+    "#ffc990",
+    "#a878ff"
+   ]
+  },
+  {
+   "ids": [
+    1824
+   ],
+   "name": "Berath's Kiss",
+   "file": "beraths_kiss",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ca04ff",
+    "#ba3fff",
+    "#de7fff"
+   ]
+  },
+  {
+   "ids": [
+    210
+   ],
+   "name": "Binding Roots",
+   "file": "binding_roots",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ffde3f",
+    "#efff73",
+    "#a3ff53"
+   ]
+  },
+  {
+   "ids": [
+    1458
+   ],
+   "name": "Blind",
+   "file": "blind",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff7100",
+    "#ffa000"
+   ]
+  },
+  {
+   "ids": [
+    1800
+   ],
+   "name": "Blind Monk's Venom",
+   "file": "blind_monks_venom",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ca04ff",
+    "#ba3fff",
+    "#de7fff"
+   ]
+  },
+  {
+   "ids": [
+    989
+   ],
+   "name": "Boar Companion",
+   "file": "boar_companion",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#7bdbff",
+    "#0fbbff"
+   ]
+  },
+  {
+   "ids": [
+    582
+   ],
+   "name": "Body Attunement",
+   "file": "body_attunement",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#b983ff",
+    "#8bafff",
+    "#9144ff"
+   ]
+  },
+  {
+   "ids": [
+    1611,
+    1878
+   ],
+   "name": "Confuse",
+   "file": "confuse",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#5fb7ff",
+    "#2261ff"
+   ]
+  },
+  {
+   "ids": [
+    361
+   ],
+   "name": "Coordinated Positioning",
+   "file": "coordinated_positioning",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#61bcff",
+    "#8fd5ff"
+   ]
+  },
+  {
+   "ids": [
+    1360
+   ],
+   "name": "Crucible of the Soul",
+   "file": "crucible_of_the_soul",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ffbb37",
+    "#a884ff",
+    "#5f34ff"
+   ]
+  },
+  {
+   "ids": [
+    1587
+   ],
+   "name": "Dazing",
+   "file": "dazing",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#6b94ff",
+    "#7affda"
+   ]
+  },
+  {
+   "ids": [
+    375
+   ],
+   "name": "Deep Wounds",
+   "file": "deep_wounds",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#8700ff"
+   ]
+  },
+  {
+   "ids": [
+    1331
+   ],
+   "name": "Deprive the Unworthy",
+   "file": "deprive_the_unworthy",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#5935ff",
+    "#a696ff",
+    "#8767ff"
+   ]
+  },
+  {
+   "ids": [
+    1653
+   ],
+   "name": "Desiccating",
+   "file": "desiccating",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#00e2ff",
+    "#84f2ff",
+    "#34e8ff"
+   ]
+  },
+  {
+   "ids": [
+    602
+   ],
+   "name": "Disintegration",
+   "file": "disintegration",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#afff29",
+    "#eaff68",
+    "#ffce22"
+   ]
+  },
+  {
+   "ids": [
+    1377
+   ],
+   "name": "Dominion of the Sleepers",
+   "file": "dominion_of_the_sleepers",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#61ecff",
+    "#858fff",
+    "#4238ff"
+   ]
+  },
+  {
+   "ids": [
+    1680
+   ],
+   "name": "Draining Touch",
+   "file": "draining_touch",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff5f34",
+    "#ff0e00",
+    "#ff9d80"
+   ]
+  },
+  {
+   "ids": [
+    40
+   ],
+   "name": "Easier Flanking",
+   "file": "easier_flanking",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1042
+   ],
+   "name": "Envenomed Strike",
+   "file": "envenomed_strike",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#9eff00",
+    "#efff5e"
+   ]
+  },
+  {
+   "ids": [
+    1870
+   ],
+   "name": "Ethereal Cloak",
+   "file": "ethereal_cloak",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff8e6e",
+    "#6000ff",
+    "#817fff"
+   ]
+  },
+  {
+   "ids": [
+    563
+   ],
+   "name": "Eyestrike",
+   "file": "eyestrike",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#7cffd4",
+    "#38ffc7",
+    "#00ffb8"
+   ]
+  },
+  {
+   "ids": [
+    344
+   ],
+   "name": "Fearsome Strike",
+   "file": "fearsome_strike",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff3b00",
+    "#ff702e",
+    "#ffaa69"
+   ]
+  },
+  {
+   "ids": [
+    628
+   ],
+   "name": "Finger of Death",
+   "file": "finger_of_death",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#5935ff",
+    "#a696ff",
+    "#8767ff"
+   ]
+  },
+  {
+   "ids": [
+    576
+   ],
+   "name": "Fractured Volition",
+   "file": "fractured_volition",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#a05dff",
+    "#a831ff"
+   ]
+  },
+  {
+   "ids": [
+    1615
+   ],
+   "name": "Going Between",
+   "file": "going_between",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff8e6e",
+    "#6000ff",
+    "#817fff"
+   ]
+  },
+  {
+   "ids": [
+    214
+   ],
+   "name": "Harass",
+   "file": "harass",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    343
+   ],
+   "name": "Interdiction",
+   "file": "interdiction",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff4117",
+    "#ff5b4d",
+    "#ff9f82"
+   ]
+  },
+  {
+   "ids": [
+    1604
+   ],
+   "name": "Invoke Vessels",
+   "file": "invoke_vessels",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#f1ff4e",
+    "#c3ff5c",
+    "#fff913"
+   ]
+  },
+  {
+   "ids": [
+    1239
+   ],
+   "name": "Lesser Arkemyr's Dazzling Lights",
+   "file": "lesser_arkemyrs_dazzling_lights",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#5367ff",
+    "#7a81ff"
+   ]
+  },
+  {
+   "ids": [
+    1240
+   ],
+   "name": "Lesser Concelhaut's Corrosive Siphon",
+   "file": "lesser_concelhauts_corrosive_siphon",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff6100",
+    "#ff8d1f",
+    "#ffc96e"
+   ]
+  },
+  {
+   "ids": [
+    990
+   ],
+   "name": "Lion Companion",
+   "file": "lion_companion",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#66d4ff",
+    "#00b6ff"
+   ]
+  },
+  {
+   "ids": [
+    49
+   ],
+   "name": "Marked Prey",
+   "file": "marked_prey",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff0d01",
+    "#ff3a26"
+   ]
+  },
+  {
+   "ids": [
+    572
+   ],
+   "name": "Mental Binding",
+   "file": "mental_binding",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff0100",
+    "#ff332e",
+    "#ff6d7f"
+   ]
+  },
+  {
+   "ids": [
+    38
+   ],
+   "name": "Mercy Kill",
+   "file": "mercy_kill",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1389
+   ],
+   "name": "Minor Fetid Caress",
+   "file": "minor_fetid_caress",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#9fff39"
+   ]
+  },
+  {
+   "ids": [
+    1603
+   ],
+   "name": "Paralyze",
+   "file": "paralyze",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#9fff39"
+   ]
+  },
+  {
+   "ids": [
+    1821
+   ],
+   "name": "Paralyzing Shot",
+   "file": "paralyzing_shot",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff0700",
+    "#ffa876"
+   ]
+  },
+  {
+   "ids": [
+    617,
+    1606
+   ],
+   "name": "Petrify",
+   "file": "petrify",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    113
+   ],
+   "name": "Psychovampiric Shield",
+   "file": "psychovampiric_shield",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff37b2",
+    "#ff82c6",
+    "#ff534b"
+   ]
+  },
+  {
+   "ids": [
+    115
+   ],
+   "name": "Recall Agony",
+   "file": "recall_agony",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#959dff",
+    "#5a68ff",
+    "#ff2f48"
+   ]
+  },
+  {
+   "ids": [
+    1702
+   ],
+   "name": "Resonant Touch",
+   "file": "resonant_touch",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff6755",
+    "#ff66f3",
+    "#328fff"
+   ]
+  },
+  {
+   "ids": [
+    1811
+   ],
+   "name": "Ring of the Ancient Forge",
+   "file": "ring_of_the_ancient_forge",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff8016",
+    "#ff002f",
+    "#ffac77"
+   ]
+  },
+  {
+   "ids": [
+    1553
+   ],
+   "name": "Rotting Stench",
+   "file": "rotting_stench",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#888cff",
+    "#4d3dff",
+    "#63ffb7"
+   ]
+  },
+  {
+   "ids": [
+    1445
+   ],
+   "name": "Runner's Wounding Shot",
+   "file": "runners_wounding_shot",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff0700",
+    "#ffa876"
+   ]
+  },
+  {
+   "ids": [
+    1403
+   ],
+   "name": "Sap",
+   "file": "sap",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#d77bff",
+    "#ff87be",
+    "#ff496c"
+   ]
+  },
+  {
+   "ids": [
+    1271
+   ],
+   "name": "Scroll of Paralysis",
+   "file": "scroll_of_paralysis",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ffd58e",
+    "#ffb85f",
+    "#ff871e"
+   ]
+  },
+  {
+   "ids": [
+    1839
+   ],
+   "name": "Sever the Soul",
+   "file": "sever_the_soul",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ffab2c",
+    "#7b24ff",
+    "#a081ff"
+   ]
+  },
+  {
+   "ids": [
+    221
+   ],
+   "name": "Shocking Brutality",
+   "file": "shocking_brutality",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1602
+   ],
+   "name": "Slow Spirits",
+   "file": "slow_spirits",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff7447",
+    "#ff3801",
+    "#ffb78c"
+   ]
+  },
+  {
+   "ids": [
+    1441
+   ],
+   "name": "Smoke Cloud",
+   "file": "smoke_cloud",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#93c9ff",
+    "#e06eff",
+    "#cf96ff"
+   ]
+  },
+  {
+   "ids": [
+    1581
+   ],
+   "name": "Soul Drain",
+   "file": "soul_drain",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#87ffb7",
+    "#1aff7c",
+    "#ffe188"
+   ]
+  },
+  {
+   "ids": [
+    116
+   ],
+   "name": "Soul Ignition",
+   "file": "soul_ignition",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff6709",
+    "#ff6c39",
+    "#ffac80"
+   ]
+  },
+  {
+   "ids": [
+    991
+   ],
+   "name": "Stag Companion",
+   "file": "stag_companion",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#00b6ff",
+    "#69d5ff",
+    "#97e3ff"
+   ]
+  },
+  {
+   "ids": [
+    1405
+   ],
+   "name": "Stasis Shell",
+   "file": "stasis_shell",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ae79ff",
+    "#c437ff",
+    "#5000ff"
+   ]
+  },
+  {
+   "ids": [
+    1379
+   ],
+   "name": "Steps to the Wheel",
+   "file": "steps_to_the_wheel",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#c6ff45",
+    "#8669ff",
+    "#efff77"
+   ]
+  },
+  {
+   "ids": [
+    1215
+   ],
+   "name": "The Pallid Hand",
+   "file": "the_pallid_hand",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff6100",
+    "#ff8d1f",
+    "#ffc96e"
+   ]
+  },
+  {
+   "ids": [
+    1406
+   ],
+   "name": "Time Parasite",
+   "file": "time_parasite",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#b676ff",
+    "#782dff",
+    "#ff806d"
+   ]
+  },
+  {
+   "ids": [
+    1888
+   ],
+   "name": "Weaken",
+   "file": "weaken",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    590
+   ],
+   "name": "Wild Leech",
+   "file": "wild_leech",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#87ffb7",
+    "#1aff7c",
+    "#ffe188"
+   ]
+  },
+  {
+   "ids": [
+    223
+   ],
+   "name": "Withering Strike",
+   "file": "withering_strike",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#55ffa4",
+    "#12ff7d",
+    "#8effcf"
+   ]
+  },
+  {
+   "ids": [
+    363
+   ],
+   "name": "Wounding Shot",
+   "file": "wounding_shot",
+   "bucket": "curses_debuffs",
+   "popular": false,
+   "colors": [
+    "#ff0700",
+    "#ffa876"
+   ]
+  },
+  {
+   "ids": [
+    1809
+   ],
+   "name": "Abydon's Labor",
+   "file": "abydons_labor",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff245c",
+    "#ff754e"
+   ]
+  },
+  {
+   "ids": [
+    570
+   ],
+   "name": "Amplified Thrust",
+   "file": "amplified_thrust",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#00a1ff",
+    "#5ec6ff"
+   ]
+  },
+  {
+   "ids": [
+    598
+   ],
+   "name": "Amplified Wave",
+   "file": "amplified_wave",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#8c9fff",
+    "#bf96ff",
+    "#5266ff"
+   ]
+  },
+  {
+   "ids": [
+    1301
+   ],
+   "name": "Animal Companion Combat Bonuses",
+   "file": "animal_companion_combat_bonuses",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#79daff",
+    "#00b4ff"
+   ]
+  },
+  {
+   "ids": [
+    201
+   ],
+   "name": "Clarity Of Agony",
+   "file": "clarity_of_agony",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#00fffc",
+    "#82ffd3"
+   ]
+  },
+  {
+   "ids": [
+    196
+   ],
+   "name": "Clear Out",
+   "file": "clear_out",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#53fff4",
+    "#24f0ff",
+    "#8efeff"
+   ]
+  },
+  {
+   "ids": [
+    633
+   ],
+   "name": "DEBUG Knockdown Spell",
+   "file": "debug_knockdown_spell",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1807
+   ],
+   "name": "Destroy Eyeless",
+   "file": "destroy_eyeless",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#afff29",
+    "#eaff68",
+    "#ffce22"
+   ]
+  },
+  {
+   "ids": [
+    594
+   ],
+   "name": "Detonate",
+   "file": "detonate",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff9d50",
+    "#ffdd7b"
+   ]
+  },
+  {
+   "ids": [
+    1874
+   ],
+   "name": "Empowered Heavy Cannon Blast",
+   "file": "empowered_heavy_cannon_blast",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff3d12",
+    "#ffdd80",
+    "#ff9f4d"
+   ]
+  },
+  {
+   "ids": [
+    1779
+   ],
+   "name": "Eyeless Kick",
+   "file": "eyeless_kick",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    386
+   ],
+   "name": "Force of Anguish",
+   "file": "force_of_anguish",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#7ad7ff",
+    "#00afff",
+    "#38d1ff"
+   ]
+  },
+  {
+   "ids": [
+    845
+   ],
+   "name": "Grimoire Slam",
+   "file": "grimoire_slam",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#5cffec",
+    "#ffa149",
+    "#b2ff97"
+   ]
+  },
+  {
+   "ids": [
+    1844
+   ],
+   "name": "Heavy Cannon Blast",
+   "file": "heavy_cannon_blast",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff9835",
+    "#ffd778",
+    "#ff3800"
+   ]
+  },
+  {
+   "ids": [
+    995
+   ],
+   "name": "Judge's Sentence",
+   "file": "judges_sentence",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff8d8e",
+    "#ff6c6e",
+    "#ff0008"
+   ]
+  },
+  {
+   "ids": [
+    32
+   ],
+   "name": "Knock Down",
+   "file": "knock_down",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff3030",
+    "#ff0000",
+    "#ff6767"
+   ]
+  },
+  {
+   "ids": [
+    213
+   ],
+   "name": "Master's Call",
+   "file": "masters_call",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ffbe82"
+   ]
+  },
+  {
+   "ids": [
+    1854
+   ],
+   "name": "Maul",
+   "file": "maul",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff5a38",
+    "#3cc3ff",
+    "#8bdaff"
+   ]
+  },
+  {
+   "ids": [
+    112
+   ],
+   "name": "Mind Wave",
+   "file": "mind_wave",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#7261ff",
+    "#4751ff",
+    "#b38aff"
+   ]
+  },
+  {
+   "ids": [
+    1884
+   ],
+   "name": "Prone",
+   "file": "prone",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    337
+   ],
+   "name": "Psychic Blast - Stun",
+   "file": "psychic_blast_stun",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    996
+   ],
+   "name": "Punisher's Mercy",
+   "file": "punishers_mercy",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff8d8e",
+    "#ff6c6e",
+    "#ff0008"
+   ]
+  },
+  {
+   "ids": [
+    1278
+   ],
+   "name": "Repulsing Seal Trap Attack",
+   "file": "repulsing_seal_trap_attack",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff6500",
+    "#ffb61f",
+    "#ffe864"
+   ]
+  },
+  {
+   "ids": [
+    1707
+   ],
+   "name": "Skyward Kick",
+   "file": "skyward_kick",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ffa31e",
+    "#ffd37d",
+    "#abff62"
+   ]
+  },
+  {
+   "ids": [
+    1433
+   ],
+   "name": "Slick Ice",
+   "file": "slick_ice",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1791
+   ],
+   "name": "Snow Bear Swipe",
+   "file": "snow_bear_swipe",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#7ad7ff",
+    "#00afff",
+    "#38d1ff"
+   ]
+  },
+  {
+   "ids": [
+    637
+   ],
+   "name": "Spiritshift Wolf",
+   "file": "spiritshift_wolf",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#37bfff",
+    "#00a3ff",
+    "#79d8ff"
+   ]
+  },
+  {
+   "ids": [
+    1806
+   ],
+   "name": "Tail Whip",
+   "file": "tail_whip",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    47
+   ],
+   "name": "Takedown",
+   "file": "takedown",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ff3500",
+    "#ff763f",
+    "#ffa880"
+   ]
+  },
+  {
+   "ids": [
+    202
+   ],
+   "name": "Transcendent Suffering 3",
+   "file": "transcendent_suffering_3",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#ffb600",
+    "#ffc935",
+    "#ffdd7d"
+   ]
+  },
+  {
+   "ids": [
+    718
+   ],
+   "name": "Weapon Focus: Ruffian",
+   "file": "weapon_focus_ruffian",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1775
+   ],
+   "name": "Wild Attack",
+   "file": "wild_attack",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#76d9ff",
+    "#12bbff"
+   ]
+  },
+  {
+   "ids": [
+    1305
+   ],
+   "name": "Wing Slam",
+   "file": "wing_slam",
+   "bucket": "earth_knockdown",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1845
+   ],
+   "name": "Burning Pitch Trebuchet",
+   "file": "burning_pitch_trebuchet",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff5c00",
+    "#ff942e",
+    "#ffc474"
+   ]
+  },
+  {
+   "ids": [
+    609
+   ],
+   "name": "Explosive Death",
+   "file": "explosive_death",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    787
+   ],
+   "name": "Fireball Trap",
+   "file": "fireball_trap",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff5c00",
+    "#ff942e",
+    "#ffc474"
+   ]
+  },
+  {
+   "ids": [
+    1427
+   ],
+   "name": "Guarding Flames",
+   "file": "guarding_flames",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff6c00",
+    "#ffa428",
+    "#ffcb6f"
+   ]
+  },
+  {
+   "ids": [
+    2
+   ],
+   "name": "Holy Radiance",
+   "file": "holy_radiance",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#8ee4ff",
+    "#56bdff",
+    "#0fbbff"
+   ]
+  },
+  {
+   "ids": [
+    1676
+   ],
+   "name": "Immunity: Disease",
+   "file": "immunity_disease",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1242
+   ],
+   "name": "Lesser Burst of Summer Flame",
+   "file": "lesser_burst_of_summer_flame",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff3b00",
+    "#ffb701"
+   ]
+  },
+  {
+   "ids": [
+    1280
+   ],
+   "name": "Searing Seal Trap Attack",
+   "file": "searing_seal_trap_attack",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1557
+   ],
+   "name": "Self-Destruct",
+   "file": "self_destruct",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff5c00",
+    "#ff942e",
+    "#ffc474"
+   ]
+  },
+  {
+   "ids": [
+    1561
+   ],
+   "name": "Soul Burn",
+   "file": "soul_burn",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ffb600",
+    "#ffc935",
+    "#ffdd7d"
+   ]
+  },
+  {
+   "ids": [
+    330
+   ],
+   "name": "Sworn Enemy",
+   "file": "sworn_enemy",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff1400",
+    "#ff8908",
+    "#ffbb37"
+   ]
+  },
+  {
+   "ids": [
+    970
+   ],
+   "name": "Wreathing Flame",
+   "file": "wreathing_flame",
+   "bucket": "fire_blast",
+   "popular": false,
+   "colors": [
+    "#ff6c00",
+    "#ffa428",
+    "#ffcb6f"
+   ]
+  },
+  {
+   "ids": [
+    754
+   ],
+   "name": "Bash",
+   "file": "bash",
+   "bucket": "fire_lingering",
+   "popular": false,
+   "colors": [
+    "#0099ff",
+    "#2fc9ff",
+    "#68d9ff"
+   ]
+  },
+  {
+   "ids": [
+    62
+   ],
+   "name": "Coordinated Attacks",
+   "file": "coordinated_attacks",
+   "bucket": "fire_lingering",
+   "popular": false,
+   "colors": [
+    "#ffb800",
+    "#ffc833",
+    "#ffde83"
+   ]
+  },
+  {
+   "ids": [
+    1785
+   ],
+   "name": "Immunity: Ground",
+   "file": "immunity_ground",
+   "bucket": "fire_lingering",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    109
+   ],
+   "name": "Psychic Backlash",
+   "file": "psychic_backlash",
+   "bucket": "fire_lingering",
+   "popular": false,
+   "colors": [
+    "#4b00ff",
+    "#6624ff",
+    "#9b6fff"
+   ]
+  },
+  {
+   "ids": [
+    1886
+   ],
+   "name": "Stun",
+   "file": "stun",
+   "bucket": "fire_lingering",
+   "popular": false,
+   "colors": [
+    "#1789ff",
+    "#00dcff"
+   ]
+  },
+  {
+   "ids": [
+    1823
+   ],
+   "name": "Dragon's Breath",
+   "file": "dragons_breath",
+   "bucket": "fire_stream",
+   "popular": false,
+   "colors": [
+    "#ff7100",
+    "#ffa000"
+   ]
+  },
+  {
+   "ids": [
+    1426
+   ],
+   "name": "Fiery Breath",
+   "file": "fiery_breath",
+   "bucket": "fire_stream",
+   "popular": false,
+   "colors": [
+    "#ff7100",
+    "#ffa000"
+   ]
+  },
+  {
+   "ids": [
+    1303
+   ],
+   "name": "Horn Slash",
+   "file": "horn_slash",
+   "bucket": "fire_stream",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1114
+   ],
+   "name": "One-Handed Style",
+   "file": "one_handed_style",
+   "bucket": "fire_stream",
+   "popular": false,
+   "colors": [
+    "#b900ff",
+    "#ca3aff",
+    "#df88ff"
+   ]
+  },
+  {
+   "ids": [
+    1625
+   ],
+   "name": "Powder Burns",
+   "file": "powder_burns",
+   "bucket": "fire_stream",
+   "popular": false,
+   "colors": [
+    "#ffce7c",
+    "#ff675e"
+   ]
+  },
+  {
+   "ids": [
+    212
+   ],
+   "name": "Predator's Sense",
+   "file": "predators_sense",
+   "bucket": "fire_stream",
+   "popular": false,
+   "colors": [
+    "#00ffc5",
+    "#77ffe2"
+   ]
+  },
+  {
+   "ids": [
+    1618
+   ],
+   "name": "Abjuration",
+   "file": "abjuration",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#8444ff",
+    "#b484ff",
+    "#820eff"
+   ]
+  },
+  {
+   "ids": [
+    1679
+   ],
+   "name": "Agile Retreat",
+   "file": "agile_retreat",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1317
+   ],
+   "name": "Antelope Defenses",
+   "file": "antelope_defenses",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#6bd6ff",
+    "#09b9ff"
+   ]
+  },
+  {
+   "ids": [
+    1323
+   ],
+   "name": "Arcane Assault",
+   "file": "arcane_assault",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#6500ff",
+    "#7872ff",
+    "#2f6dff"
+   ]
+  },
+  {
+   "ids": [
+    993
+   ],
+   "name": "Arctic Fox Companion",
+   "file": "arctic_fox_companion",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1298
+   ],
+   "name": "Arrow Trap",
+   "file": "arrow_trap",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff0700",
+    "#ffa876"
+   ]
+  },
+  {
+   "ids": [
+    1614
+   ],
+   "name": "Barbaric Retaliation",
+   "file": "barbaric_retaliation",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff2f28",
+    "#ff705f"
+   ]
+  },
+  {
+   "ids": [
+    372
+   ],
+   "name": "Blinding Strike",
+   "file": "blinding_strike",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ca04ff",
+    "#ba3fff",
+    "#de7fff"
+   ]
+  },
+  {
+   "ids": [
+    1835
+   ],
+   "name": "Brute Assault",
+   "file": "brute_assault",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#2ea9ff",
+    "#89ffdf",
+    "#d3ff9a"
+   ]
+  },
+  {
+   "ids": [
+    1008
+   ],
+   "name": "Cat Flurry Attack",
+   "file": "cat_flurry_attack",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff4100",
+    "#ff7c3f",
+    "#ffb37b"
+   ]
+  },
+  {
+   "ids": [
+    1632
+   ],
+   "name": "Charge",
+   "file": "charge",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#fff289",
+    "#1b6eff",
+    "#5f97ff"
+   ]
+  },
+  {
+   "ids": [
+    1399
+   ],
+   "name": "DEBUG Petrify Spell",
+   "file": "debug_petrify_spell",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    569
+   ],
+   "name": "DEBUG stun Spell",
+   "file": "debug_stun_spell",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1293
+   ],
+   "name": "Dart Trap",
+   "file": "dart_trap",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff0000",
+    "#ff8585"
+   ]
+  },
+  {
+   "ids": [
+    215
+   ],
+   "name": "Death Of A Thousand Cuts",
+   "file": "death_of_a_thousand_cuts",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1596
+   ],
+   "name": "Destroys Spirits",
+   "file": "destroys_spirits",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#afff29",
+    "#eaff68",
+    "#ffce22"
+   ]
+  },
+  {
+   "ids": [
+    1457
+   ],
+   "name": "Destroys Vessels",
+   "file": "destroys_vessels",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#afff29",
+    "#eaff68",
+    "#ffce22"
+   ]
+  },
+  {
+   "ids": [
+    1400
+   ],
+   "name": "Dragon Leap",
+   "file": "dragon_leap",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff4833",
+    "#ffb130",
+    "#fff06e"
+   ]
+  },
+  {
+   "ids": [
+    1704
+   ],
+   "name": "Echoing Shout",
+   "file": "echoing_shout",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ffb534",
+    "#ffdc70"
+   ]
+  },
+  {
+   "ids": [
+    208
+   ],
+   "name": "Flagellant's Path",
+   "file": "flagellants_path",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#2ea9ff",
+    "#89ffdf",
+    "#d3ff9a"
+   ]
+  },
+  {
+   "ids": [
+    1118
+   ],
+   "name": "Graceful Retreat",
+   "file": "graceful_retreat",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1820
+   ],
+   "name": "Ground Stab",
+   "file": "ground_stab",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1815
+   ],
+   "name": "Gréf's Authority",
+   "file": "gr_fs_authority",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#afff29",
+    "#eaff68",
+    "#ffce22"
+   ]
+  },
+  {
+   "ids": [
+    1682
+   ],
+   "name": "Helpless Beast Form",
+   "file": "helpless_beast_form",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff74e7",
+    "#ff2ac7",
+    "#87fff8"
+   ]
+  },
+  {
+   "ids": [
+    1882
+   ],
+   "name": "Hobble",
+   "file": "hobble",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    198
+   ],
+   "name": "Into The Fray",
+   "file": "into_the_fray",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff1200",
+    "#ff3321"
+   ]
+  },
+  {
+   "ids": [
+    1840
+   ],
+   "name": "Javelin Stab",
+   "file": "javelin_stab",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1288
+   ],
+   "name": "Malignant Cloud Trap",
+   "file": "malignant_cloud_trap",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#50ffb5",
+    "#bdff99",
+    "#7fffa8"
+   ]
+  },
+  {
+   "ids": [
+    114
+   ],
+   "name": "Mind Blades",
+   "file": "mind_blades",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#62b4ff",
+    "#147aff",
+    "#92fffa"
+   ]
+  },
+  {
+   "ids": [
+    584
+   ],
+   "name": "Mind Lance",
+   "file": "mind_lance",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#96ffe2",
+    "#49ffce"
+   ]
+  },
+  {
+   "ids": [
+    972
+   ],
+   "name": "Missile Barrage",
+   "file": "missile_barrage",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff6d00",
+    "#ffc70f",
+    "#fff260"
+   ]
+  },
+  {
+   "ids": [
+    1858
+   ],
+   "name": "Noxious Wave",
+   "file": "noxious_wave",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#50bcff",
+    "#8199ff",
+    "#8bcdff"
+   ]
+  },
+  {
+   "ids": [
+    1772
+   ],
+   "name": "Paralytic Poison",
+   "file": "paralytic_poison",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#baff2b",
+    "#c1ff5d"
+   ]
+  },
+  {
+   "ids": [
+    631
+   ],
+   "name": "Paralyzing Touch",
+   "file": "paralyzing_touch",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1285
+   ],
+   "name": "Poisonous Dart Trap",
+   "file": "poisonous_dart_trap",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#baff2b",
+    "#c1ff5d"
+   ]
+  },
+  {
+   "ids": [
+    1453
+   ],
+   "name": "Prestidigitator's Missiles",
+   "file": "prestidigitators_missiles",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff000a",
+    "#ff767f",
+    "#ff203f"
+   ]
+  },
+  {
+   "ids": [
+    336
+   ],
+   "name": "Psychic Blast - Daze",
+   "file": "psychic_blast_daze",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1383
+   ],
+   "name": "Rake",
+   "file": "rake",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff4100",
+    "#ff7c3f",
+    "#ffb37b"
+   ]
+  },
+  {
+   "ids": [
+    1701
+   ],
+   "name": "Reaping Knives",
+   "file": "reaping_knives",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#7d25ff",
+    "#a471ff",
+    "#44f3ff"
+   ]
+  },
+  {
+   "ids": [
+    676
+   ],
+   "name": "Second Chance",
+   "file": "second_chance",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    588
+   ],
+   "name": "Silent Scream",
+   "file": "silent_scream",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#f2ff8b"
+   ]
+  },
+  {
+   "ids": [
+    370
+   ],
+   "name": "Sneak Attack",
+   "file": "sneak_attack",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#8700ff"
+   ]
+  },
+  {
+   "ids": [
+    99
+   ],
+   "name": "Spiritshift",
+   "file": "spiritshift",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#92bfff",
+    "#5b9eff",
+    "#1c70ff"
+   ]
+  },
+  {
+   "ids": [
+    674
+   ],
+   "name": "Spiritshift Boar",
+   "file": "spiritshift_boar",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ffc455",
+    "#ffaf1f"
+   ]
+  },
+  {
+   "ids": [
+    635
+   ],
+   "name": "Spiritshift Cat",
+   "file": "spiritshift_cat",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff7a75",
+    "#ff5651",
+    "#ff201a"
+   ]
+  },
+  {
+   "ids": [
+    746
+   ],
+   "name": "Split",
+   "file": "split",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    744
+   ],
+   "name": "Spore Disease",
+   "file": "spore_disease",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff783c",
+    "#9dff4f",
+    "#deff07"
+   ]
+  },
+  {
+   "ids": [
+    1831
+   ],
+   "name": "Stone Fling",
+   "file": "stone_fling",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff8740",
+    "#ffab6d",
+    "#ffca97"
+   ]
+  },
+  {
+   "ids": [
+    16
+   ],
+   "name": "Stunning Blow",
+   "file": "stunning_blow",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#1da5ff",
+    "#5ac0ff",
+    "#93d8ff"
+   ]
+  },
+  {
+   "ids": [
+    619
+   ],
+   "name": "Stunning Scream",
+   "file": "stunning_scream",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#007dff",
+    "#78baff",
+    "#2994ff"
+   ]
+  },
+  {
+   "ids": [
+    43
+   ],
+   "name": "Summon Companion",
+   "file": "summon_companion",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#00ffc5",
+    "#77ffe2"
+   ]
+  },
+  {
+   "ids": [
+    1304
+   ],
+   "name": "Tail Lash",
+   "file": "tail_lash",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    752
+   ],
+   "name": "Teleport Through Earth",
+   "file": "teleport_through_earth",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#7befff",
+    "#3bdfff",
+    "#00c2ff"
+   ]
+  },
+  {
+   "ids": [
+    1708
+   ],
+   "name": "The Long Pain",
+   "file": "the_long_pain",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff6258",
+    "#ffe075",
+    "#ff0027"
+   ]
+  },
+  {
+   "ids": [
+    200
+   ],
+   "name": "Threatening Presence",
+   "file": "threatening_presence",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff1b1b",
+    "#ff4545",
+    "#ff8585"
+   ]
+  },
+  {
+   "ids": [
+    1
+   ],
+   "name": "Torment's Reach",
+   "file": "torments_reach",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff3c00",
+    "#ff791f",
+    "#ffd380"
+   ]
+  },
+  {
+   "ids": [
+    1437
+   ],
+   "name": "Twinned Arrows",
+   "file": "twinned_arrows",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff0026",
+    "#ff3454",
+    "#ffcf56"
+   ]
+  },
+  {
+   "ids": [
+    1067
+   ],
+   "name": "Two Weapon Style",
+   "file": "two_weapon_style",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#ff1b1b",
+    "#ff4545",
+    "#ff8585"
+   ]
+  },
+  {
+   "ids": [
+    626
+   ],
+   "name": "Wail",
+   "file": "wail",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#f2ff8b"
+   ]
+  },
+  {
+   "ids": [
+    629
+   ],
+   "name": "Weakening Rend",
+   "file": "weakening_rend",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    992
+   ],
+   "name": "Wolf Companion",
+   "file": "wolf_companion",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#76d9ff",
+    "#12bbff"
+   ]
+  },
+  {
+   "ids": [
+    1019
+   ],
+   "name": "Wounded Boar Damage Bonus",
+   "file": "wounded_boar_damage_bonus",
+   "bucket": "force_kinetic",
+   "popular": false,
+   "colors": [
+    "#7bdbff",
+    "#0fbbff"
+   ]
+  },
+  {
+   "ids": [
+    1300,
+    1302
+   ],
+   "name": "Breath",
+   "file": "breath",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#ff7100",
+    "#ffa000"
+   ]
+  },
+  {
+   "ids": [
+    121
+   ],
+   "name": "Chanter Trait",
+   "file": "chanter_trait",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#8244ff",
+    "#d787ff",
+    "#ffd7a4"
+   ]
+  },
+  {
+   "ids": [
+    1425
+   ],
+   "name": "Frost Breath",
+   "file": "frost_breath",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#8acbff",
+    "#54b3ff",
+    "#0d8dff"
+   ]
+  },
+  {
+   "ids": [
+    1424
+   ],
+   "name": "Icy Spray",
+   "file": "icy_spray",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#8acbff",
+    "#54b3ff",
+    "#0d8dff"
+   ]
+  },
+  {
+   "ids": [
+    608
+   ],
+   "name": "Imp Burn Attack",
+   "file": "imp_burn_attack",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    750
+   ],
+   "name": "Instant Teleport",
+   "file": "instant_teleport",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#7befff",
+    "#3bdfff",
+    "#00c2ff"
+   ]
+  },
+  {
+   "ids": [
+    667
+   ],
+   "name": "Rime and Frost Followed the Footfalls of Karth",
+   "file": "rime_and_frost_followed_the_footfalls_of_karth",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#ffdb9f"
+   ]
+  },
+  {
+   "ids": [
+    1599
+   ],
+   "name": "Snowball",
+   "file": "snowball",
+   "bucket": "frost_burst",
+   "popular": false,
+   "colors": [
+    "#618aff",
+    "#8fbeff"
+   ]
+  },
+  {
+   "ids": [
+    1025
+   ],
+   "name": "Crystal-Eater's Freezing Pillar",
+   "file": "crystal_eaters_freezing_pillar",
+   "bucket": "frost_lingering",
+   "popular": false,
+   "colors": [
+    "#009aff",
+    "#31b9ff",
+    "#76d4ff"
+   ]
+  },
+  {
+   "ids": [
+    1291
+   ],
+   "name": "Freezing Pillar Trap",
+   "file": "freezing_pillar_trap",
+   "bucket": "frost_lingering",
+   "popular": false,
+   "colors": [
+    "#009aff",
+    "#31b9ff",
+    "#76d4ff"
+   ]
+  },
+  {
+   "ids": [
+    1788
+   ],
+   "name": "Resistance: Prone",
+   "file": "resistance_prone",
+   "bucket": "frost_lingering",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1560
+   ],
+   "name": "Wing Storm",
+   "file": "wing_storm",
+   "bucket": "frost_lingering",
+   "popular": false,
+   "colors": [
+    "#0099ff",
+    "#2fc9ff",
+    "#68d9ff"
+   ]
+  },
+  {
+   "ids": [
+    1146
+   ],
+   "name": "Accurate Traps",
+   "file": "accurate_traps",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1444
+   ],
+   "name": "Acolyte's Radiance",
+   "file": "acolytes_radiance",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8ee4ff",
+    "#56bdff",
+    "#0fbbff"
+   ]
+  },
+  {
+   "ids": [
+    374
+   ],
+   "name": "Adept Evasion",
+   "file": "adept_evasion",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8700ff"
+   ]
+  },
+  {
+   "ids": [
+    1689
+   ],
+   "name": "Aegis of Loyalty",
+   "file": "aegis_of_loyalty",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb800",
+    "#ffc833",
+    "#ffde83"
+   ]
+  },
+  {
+   "ids": [
+    748
+   ],
+   "name": "Affliction Resistance",
+   "file": "affliction_resistance",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1586
+   ],
+   "name": "Ambushing",
+   "file": "ambushing",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8700ff"
+   ]
+  },
+  {
+   "ids": [
+    119
+   ],
+   "name": "Ancient Memory",
+   "file": "ancient_memory",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffc400",
+    "#ffe383"
+   ]
+  },
+  {
+   "ids": [
+    1861
+   ],
+   "name": "Anitlei",
+   "file": "anitlei",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb600",
+    "#ffc935",
+    "#ffdd7d"
+   ]
+  },
+  {
+   "ids": [
+    1448
+   ],
+   "name": "Apprentice's Sneak Attack",
+   "file": "apprentices_sneak_attack",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8700ff"
+   ]
+  },
+  {
+   "ids": [
+    26
+   ],
+   "name": "Arcane Veil",
+   "file": "arcane_veil",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#2aaaff",
+    "#7bcfff",
+    "#0058ff"
+   ]
+  },
+  {
+   "ids": [
+    1315
+   ],
+   "name": "Armed to the Teeth",
+   "file": "armed_to_the_teeth",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    33
+   ],
+   "name": "Armored Grace",
+   "file": "armored_grace",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    1152
+   ],
+   "name": "Arms Bearer",
+   "file": "arms_bearer",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1138
+   ],
+   "name": "Backstab",
+   "file": "backstab",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1105
+   ],
+   "name": "Barbaric Blow",
+   "file": "barbaric_blow",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff5100",
+    "#ffaa17"
+   ]
+  },
+  {
+   "ids": [
+    1031
+   ],
+   "name": "Bear's Fortitude",
+   "file": "bears_fortitude",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1120
+   ],
+   "name": "Beast Slayer",
+   "file": "beast_slayer",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1156
+   ],
+   "name": "Berath's Boon",
+   "file": "beraths_boon",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1546
+   ],
+   "name": "Blessing of the Forgotten",
+   "file": "blessing_of_the_forgotten",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff9600",
+    "#ffc77e",
+    "#ffa63b"
+   ]
+  },
+  {
+   "ids": [
+    1699
+   ],
+   "name": "Blood Thirst",
+   "file": "blood_thirst",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff1601",
+    "#ffe78e",
+    "#ff6641"
+   ]
+  },
+  {
+   "ids": [
+    72
+   ],
+   "name": "Blooded",
+   "file": "blooded",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff1b1b",
+    "#ff4545",
+    "#ff8585"
+   ]
+  },
+  {
+   "ids": [
+    1186
+   ],
+   "name": "Blooded Hunter",
+   "file": "blooded_hunter",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    382
+   ],
+   "name": "Bloodlust",
+   "file": "bloodlust",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff1b1b",
+    "#ff4545",
+    "#ff8585"
+   ]
+  },
+  {
+   "ids": [
+    1313
+   ],
+   "name": "Boar Regeneration",
+   "file": "boar_regeneration",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1049
+   ],
+   "name": "Body Control",
+   "file": "body_control",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#bbff64",
+    "#d0ff92",
+    "#a0ff26"
+   ]
+  },
+  {
+   "ids": [
+    1229
+   ],
+   "name": "Bonus 1st Level Spell",
+   "file": "bonus_1st_level_spell",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1231
+   ],
+   "name": "Bonus 2nd Level Spell",
+   "file": "bonus_2nd_level_spell",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1233
+   ],
+   "name": "Bonus 3rd Level Spell",
+   "file": "bonus_3rd_level_spell",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1235
+   ],
+   "name": "Bonus 4th Level Spell",
+   "file": "bonus_4th_level_spell",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1697
+   ],
+   "name": "Brisk Recitation",
+   "file": "brisk_recitation",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffc400",
+    "#ffe383"
+   ]
+  },
+  {
+   "ids": [
+    1032
+   ],
+   "name": "Bull's Will",
+   "file": "bulls_will",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1040
+   ],
+   "name": "Cautious Attack",
+   "file": "cautious_attack",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffce00",
+    "#c8ff95"
+   ]
+  },
+  {
+   "ids": [
+    1688
+   ],
+   "name": "Clarity",
+   "file": "clarity",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#bbff64",
+    "#d0ff92",
+    "#a0ff26"
+   ]
+  },
+  {
+   "ids": [
+    1864
+   ],
+   "name": "Clean Conscience",
+   "file": "clean_conscience",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1077
+   ],
+   "name": "Close Shooter",
+   "file": "close_shooter",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    34
+   ],
+   "name": "Confident Aim",
+   "file": "confident_aim",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    31
+   ],
+   "name": "Constant Recovery",
+   "file": "constant_recovery",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00a9ff",
+    "#37e5ff",
+    "#7afff7"
+   ]
+  },
+  {
+   "ids": [
+    195
+   ],
+   "name": "Critical Defense",
+   "file": "critical_defense",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    687
+   ],
+   "name": "DEBUG prevent death",
+   "file": "debug_prevent_death",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1083
+   ],
+   "name": "Dangerous Implement",
+   "file": "dangerous_implement",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff408c",
+    "#ff1296",
+    "#ff829f"
+   ]
+  },
+  {
+   "ids": [
+    376
+   ],
+   "name": "Deathblows",
+   "file": "deathblows",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8700ff"
+   ]
+  },
+  {
+   "ids": [
+    1150
+   ],
+   "name": "Deep Pockets",
+   "file": "deep_pockets",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    30
+   ],
+   "name": "Defender",
+   "file": "defender",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffbb00",
+    "#1664ff",
+    "#ffe24b"
+   ]
+  },
+  {
+   "ids": [
+    42
+   ],
+   "name": "Dirty Fighting",
+   "file": "dirty_fighting",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8700ff"
+   ]
+  },
+  {
+   "ids": [
+    1329
+   ],
+   "name": "Disciplined Barrage",
+   "file": "disciplined_barrage",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8cc5ff",
+    "#568fff",
+    "#8d85ff"
+   ]
+  },
+  {
+   "ids": [
+    1564
+   ],
+   "name": "Dozens' Luck",
+   "file": "dozens_luck",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    209
+   ],
+   "name": "Driving Flight",
+   "file": "driving_flight",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00ffc5",
+    "#77ffe2"
+   ]
+  },
+  {
+   "ids": [
+    1006
+   ],
+   "name": "Druid Boar Regeneration",
+   "file": "druid_boar_regeneration",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#95ff00",
+    "#c2ff70"
+   ]
+  },
+  {
+   "ids": [
+    1010
+   ],
+   "name": "Druid Stag Defenses",
+   "file": "druid_stag_defenses",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#95ff00",
+    "#c2ff70"
+   ]
+  },
+  {
+   "ids": [
+    1069
+   ],
+   "name": "Dual Wield Ferocity",
+   "file": "dual_wield_ferocity",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffd970",
+    "#ffc348"
+   ]
+  },
+  {
+   "ids": [
+    206
+   ],
+   "name": "Duality of Mortal Presence - Deflection",
+   "file": "duality_of_mortal_presence_deflection",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff6943",
+    "#ff3f00",
+    "#ffb57a"
+   ]
+  },
+  {
+   "ids": [
+    207
+   ],
+   "name": "Duality of Mortal Presence - Other Defenses",
+   "file": "duality_of_mortal_presence_other_defenses",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#004bff",
+    "#2767ff",
+    "#6e9aff"
+   ]
+  },
+  {
+   "ids": [
+    1192
+   ],
+   "name": "Dungeon Delver",
+   "file": "dungeon_delver",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1196
+   ],
+   "name": "Effigy's Resentment: Aloth",
+   "file": "effigys_resentment_aloth",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1718
+   ],
+   "name": "Effigy's Resentment: Devil of Caroc",
+   "file": "effigys_resentment_devil_of_caroc",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1197
+   ],
+   "name": "Effigy's Resentment: Durance",
+   "file": "effigys_resentment_durance",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1194
+   ],
+   "name": "Effigy's Resentment: Edér",
+   "file": "effigys_resentment_ed_r",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#004fff",
+    "#2a90ff",
+    "#71b9ff"
+   ]
+  },
+  {
+   "ids": [
+    1198
+   ],
+   "name": "Effigy's Resentment: Grieving Mother",
+   "file": "effigys_resentment_grieving_mother",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1199
+   ],
+   "name": "Effigy's Resentment: Hiravias",
+   "file": "effigys_resentment_hiravias",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1200
+   ],
+   "name": "Effigy's Resentment: Kana\n",
+   "file": "effigys_resentment_kana",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1719
+   ],
+   "name": "Effigy's Resentment: Maneha",
+   "file": "effigys_resentment_maneha",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1201
+   ],
+   "name": "Effigy's Resentment: Pallegina",
+   "file": "effigys_resentment_pallegina",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1202
+   ],
+   "name": "Effigy's Resentment: Sagani",
+   "file": "effigys_resentment_sagani",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1717
+   ],
+   "name": "Effigy's Resentment: Zahua",
+   "file": "effigys_resentment_zahua",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    360
+   ],
+   "name": "Escape",
+   "file": "escape",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#5651ff",
+    "#7a76ff",
+    "#2c27ff"
+   ]
+  },
+  {
+   "ids": [
+    1700
+   ],
+   "name": "Exalted Hands",
+   "file": "exalted_hands",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffad00",
+    "#ffd51d",
+    "#ffee67"
+   ]
+  },
+  {
+   "ids": [
+    1512
+   ],
+   "name": "Eye of the Storm",
+   "file": "eye_of_the_storm",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff1b1b",
+    "#ff4545",
+    "#ff8585"
+   ]
+  },
+  {
+   "ids": [
+    54
+   ],
+   "name": "Faith And Conviction",
+   "file": "faith_and_conviction",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb800",
+    "#ffc833",
+    "#ffde83"
+   ]
+  },
+  {
+   "ids": [
+    1057
+   ],
+   "name": "Faithful Companion",
+   "file": "faithful_companion",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1029
+   ],
+   "name": "Fast Runner",
+   "file": "fast_runner",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1833
+   ],
+   "name": "Fearless",
+   "file": "fearless",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    1629
+   ],
+   "name": "Feign Death",
+   "file": "feign_death",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ca00ff",
+    "#d06fff"
+   ]
+  },
+  {
+   "ids": [
+    1264
+   ],
+   "name": "Field Triage",
+   "file": "field_triage",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb153",
+    "#ffb681",
+    "#ff6b13"
+   ]
+  },
+  {
+   "ids": [
+    371
+   ],
+   "name": "Finishing Blow",
+   "file": "finishing_blow",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff3a00",
+    "#ffde7b"
+   ]
+  },
+  {
+   "ids": [
+    319
+   ],
+   "name": "Flames of Devotion",
+   "file": "flames_of_devotion",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#0c7dff",
+    "#41a2ff",
+    "#79c5ff"
+   ]
+  },
+  {
+   "ids": [
+    66
+   ],
+   "name": "Frenzy",
+   "file": "frenzy",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff0006",
+    "#ff2c31",
+    "#ff767a"
+   ]
+  },
+  {
+   "ids": [
+    1158
+   ],
+   "name": "Galawain's Boon",
+   "file": "galawains_boon",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1447
+   ],
+   "name": "Gallant's Focus",
+   "file": "gallants_focus",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff0800",
+    "#ffa08c",
+    "#ff403b"
+   ]
+  },
+  {
+   "ids": [
+    1347
+   ],
+   "name": "Gaun's Pledge",
+   "file": "gauns_pledge",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00b1ff",
+    "#36dfff",
+    "#7cf1ff"
+   ]
+  },
+  {
+   "ids": [
+    1124
+   ],
+   "name": "Ghost Hunter",
+   "file": "ghost_hunter",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1184
+   ],
+   "name": "Gift from the Machine",
+   "file": "gift_from_the_machine",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1237
+   ],
+   "name": "Greater Focus",
+   "file": "greater_focus",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1455
+   ],
+   "name": "Guardian Spirit",
+   "file": "guardian_spirit",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#4376ff",
+    "#1158ff",
+    "#80bbff"
+   ]
+  },
+  {
+   "ids": [
+    197
+   ],
+   "name": "Guardian Stance",
+   "file": "guardian_stance",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffc619",
+    "#ffd940",
+    "#f5ff7b"
+   ]
+  },
+  {
+   "ids": [
+    1108
+   ],
+   "name": "Gunner",
+   "file": "gunner",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    328
+   ],
+   "name": "Hastening Exhortation",
+   "file": "hastening_exhortation",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#4200ff",
+    "#6d2dff",
+    "#a777ff"
+   ]
+  },
+  {
+   "ids": [
+    1712
+   ],
+   "name": "Heal Companion",
+   "file": "heal_companion",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#69ff54",
+    "#20ffb9",
+    "#89ffae"
+   ]
+  },
+  {
+   "ids": [
+    1401
+   ],
+   "name": "Healing Chain",
+   "file": "healing_chain",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#3effe2",
+    "#65ff76",
+    "#82ffe8"
+   ]
+  },
+  {
+   "ids": [
+    1132
+   ],
+   "name": "Heart of the Storm",
+   "file": "heart_of_the_storm",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1217
+   ],
+   "name": "Hope Eternal",
+   "file": "hope_eternal",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffaf00",
+    "#ffdc2d",
+    "#fff96e"
+   ]
+  },
+  {
+   "ids": [
+    1154
+   ],
+   "name": "Hylea's Boon",
+   "file": "hyleas_boon",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#004fff",
+    "#2a90ff",
+    "#71b9ff"
+   ]
+  },
+  {
+   "ids": [
+    1656
+   ],
+   "name": "Immunity: Blinded",
+   "file": "immunity_blinded",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1657
+   ],
+   "name": "Immunity: Charmed",
+   "file": "immunity_charmed",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1658
+   ],
+   "name": "Immunity: Confused",
+   "file": "immunity_confused",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1659
+   ],
+   "name": "Immunity: Dazed",
+   "file": "immunity_dazed",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1660
+   ],
+   "name": "Immunity: Distracted",
+   "file": "immunity_distracted",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1661
+   ],
+   "name": "Immunity: Dominated",
+   "file": "immunity_dominated",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1662
+   ],
+   "name": "Immunity: Flanked",
+   "file": "immunity_flanked",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1663
+   ],
+   "name": "Immunity: Frightened",
+   "file": "immunity_frightened",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1664
+   ],
+   "name": "Immunity: Hobbled",
+   "file": "immunity_hobbled",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1665
+   ],
+   "name": "Immunity: Paralyzed",
+   "file": "immunity_paralyzed",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1666
+   ],
+   "name": "Immunity: Petrified",
+   "file": "immunity_petrified",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1675
+   ],
+   "name": "Immunity: Poison",
+   "file": "immunity_poison",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1667
+   ],
+   "name": "Immunity: Prone",
+   "file": "immunity_prone",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1668
+   ],
+   "name": "Immunity: Sickened",
+   "file": "immunity_sickened",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1669
+   ],
+   "name": "Immunity: Stuck",
+   "file": "immunity_stuck",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1670
+   ],
+   "name": "Immunity: Stunned",
+   "file": "immunity_stunned",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1671
+   ],
+   "name": "Immunity: Terrified",
+   "file": "immunity_terrified",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1673
+   ],
+   "name": "Immunity: Unconscious",
+   "file": "immunity_unconscious",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1672
+   ],
+   "name": "Immunity: Weakened",
+   "file": "immunity_weakened",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1070
+   ],
+   "name": "Improved Shield",
+   "file": "improved_shield",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffd970",
+    "#ffc348"
+   ]
+  },
+  {
+   "ids": [
+    334
+   ],
+   "name": "Infectious Spores",
+   "file": "infectious_spores",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff783c",
+    "#9dff4f",
+    "#deff07"
+   ]
+  },
+  {
+   "ids": [
+    1128
+   ],
+   "name": "Interrupting Blows",
+   "file": "interrupting_blows",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1429,
+    1494
+   ],
+   "name": "Invisibility",
+   "file": "invisibility",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#9ab1ff",
+    "#768bff",
+    "#b345ff"
+   ]
+  },
+  {
+   "ids": [
+    1420
+   ],
+   "name": "Iron Wheel",
+   "file": "iron_wheel",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb600",
+    "#ffc935",
+    "#ffdd7d"
+   ]
+  },
+  {
+   "ids": [
+    321
+   ],
+   "name": "Lay on Hands",
+   "file": "lay_on_hands",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffad00",
+    "#ffd51d",
+    "#ffee67"
+   ]
+  },
+  {
+   "ids": [
+    1241
+   ],
+   "name": "Lesser Sneak Attack",
+   "file": "lesser_sneak_attack",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    63
+   ],
+   "name": "Liberating Exhortation",
+   "file": "liberating_exhortation",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#40a8ff",
+    "#00adff",
+    "#7fc1ff"
+   ]
+  },
+  {
+   "ids": [
+    342
+   ],
+   "name": "Long Stride",
+   "file": "long_stride",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb600",
+    "#ffc935",
+    "#ffdd7d"
+   ]
+  },
+  {
+   "ids": [
+    1859
+   ],
+   "name": "Lord's Authority",
+   "file": "lords_authority",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffdd82",
+    "#ffba51",
+    "#ff6209"
+   ]
+  },
+  {
+   "ids": [
+    1075
+   ],
+   "name": "Marksman",
+   "file": "marksman",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00ffc5",
+    "#77ffe2"
+   ]
+  },
+  {
+   "ids": [
+    1782
+   ],
+   "name": "Martyr",
+   "file": "martyr",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffe47f",
+    "#ffcd56",
+    "#ffa810"
+   ]
+  },
+  {
+   "ids": [
+    1045
+   ],
+   "name": "Mental Fortress",
+   "file": "mental_fortress",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#bbff64",
+    "#d0ff92",
+    "#a0ff26"
+   ]
+  },
+  {
+   "ids": [
+    1838
+   ],
+   "name": "Mental Prowess",
+   "file": "mental_prowess",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1110
+   ],
+   "name": "Merciless Companion",
+   "file": "merciless_companion",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1182
+   ],
+   "name": "Mob Justice",
+   "file": "mob_justice",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1774
+   ],
+   "name": "Moon Spider Essence",
+   "file": "moon_spider_essence",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#81e5ff",
+    "#007eff",
+    "#3eb3ff"
+   ]
+  },
+  {
+   "ids": [
+    1773
+   ],
+   "name": "Moon Spider Radiance",
+   "file": "moon_spider_radiance",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#81e5ff",
+    "#007eff",
+    "#3eb3ff"
+   ]
+  },
+  {
+   "ids": [
+    1081
+   ],
+   "name": "Mortification of the Soul",
+   "file": "mortification_of_the_soul",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#7723ff",
+    "#7e4fff",
+    "#a88aff"
+   ]
+  },
+  {
+   "ids": [
+    77
+   ],
+   "name": "Natural Hardiness",
+   "file": "natural_hardiness",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#95ff00",
+    "#c2ff70"
+   ]
+  },
+  {
+   "ids": [
+    1450
+   ],
+   "name": "Novice's Suffering",
+   "file": "novices_suffering",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb600",
+    "#ffc935",
+    "#ffdd7d"
+   ]
+  },
+  {
+   "ids": [
+    392
+   ],
+   "name": "One Stands Alone",
+   "file": "one_stands_alone",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff1b1b",
+    "#ff4545",
+    "#ff8585"
+   ]
+  },
+  {
+   "ids": [
+    1452
+   ],
+   "name": "Outlander's Frenzy",
+   "file": "outlanders_frenzy",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff0006",
+    "#ff2c31",
+    "#ff767a"
+   ]
+  },
+  {
+   "ids": [
+    586
+   ],
+   "name": "Pain Block",
+   "file": "pain_block",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#3d63ff",
+    "#7895ff"
+   ]
+  },
+  {
+   "ids": [
+    118
+   ],
+   "name": "Pain Link",
+   "file": "pain_link",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff7e42",
+    "#ffb47d",
+    "#ff4600"
+   ]
+  },
+  {
+   "ids": [
+    1142
+   ],
+   "name": "Penetrating Shot",
+   "file": "penetrating_shot",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff8945",
+    "#ff5817",
+    "#ffb787"
+   ]
+  },
+  {
+   "ids": [
+    220
+   ],
+   "name": "Piercing Attack",
+   "file": "piercing_attack",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1419
+   ],
+   "name": "Play Dead",
+   "file": "play_dead",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8940ff",
+    "#ad76ff",
+    "#5700ff"
+   ]
+  },
+  {
+   "ids": [
+    1144
+   ],
+   "name": "Potent Potions",
+   "file": "potent_potions",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1205
+   ],
+   "name": "Powerful Traps",
+   "file": "powerful_traps",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1122
+   ],
+   "name": "Primal Bane",
+   "file": "primal_bane",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1209
+   ],
+   "name": "Quick Switch",
+   "file": "quick_switch",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1848
+   ],
+   "name": "Radiant Spore Ichor",
+   "file": "radiant_spore_ichor",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#c0ff00",
+    "#e4ff7d"
+   ]
+  },
+  {
+   "ids": [
+    359
+   ],
+   "name": "Reckless Assault",
+   "file": "reckless_assault",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ca8fff",
+    "#a74bff",
+    "#ffae70"
+   ]
+  },
+  {
+   "ids": [
+    224
+   ],
+   "name": "Reckless Stride",
+   "file": "reckless_stride",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    216
+   ],
+   "name": "Redirect",
+   "file": "redirect",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1430
+   ],
+   "name": "Regeneration",
+   "file": "regeneration",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    324
+   ],
+   "name": "Reinforcing Exhortation",
+   "file": "reinforcing_exhortation",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#afff8d",
+    "#07ff0e",
+    "#54ff49"
+   ]
+  },
+  {
+   "ids": [
+    217
+   ],
+   "name": "Relentless",
+   "file": "relentless",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1059
+   ],
+   "name": "Resilient Companion",
+   "file": "resilient_companion",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1818
+   ],
+   "name": "Restore Spiritshift",
+   "file": "restore_spiritshift",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#11c7ff",
+    "#6fff5a",
+    "#5bffc6"
+   ]
+  },
+  {
+   "ids": [
+    1711
+   ],
+   "name": "Revive Companion",
+   "file": "revive_companion",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffe353",
+    "#2cf1ff",
+    "#7effca"
+   ]
+  },
+  {
+   "ids": [
+    52
+   ],
+   "name": "Reviving Exhortation",
+   "file": "reviving_exhortation",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff8f00",
+    "#ffc134",
+    "#ffdc80"
+   ]
+  },
+  {
+   "ids": [
+    1080
+   ],
+   "name": "Ring of Eternal Funding",
+   "file": "ring_of_eternal_funding",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1392
+   ],
+   "name": "Rite of Ancient Legends",
+   "file": "rite_of_ancient_legends",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffc76b",
+    "#feff9b",
+    "#ffa116"
+   ]
+  },
+  {
+   "ids": [
+    1393
+   ],
+   "name": "Rite of Hidden Wonders",
+   "file": "rite_of_hidden_wonders",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffd78e",
+    "#ffbf5e",
+    "#ff9d0d"
+   ]
+  },
+  {
+   "ids": [
+    1395
+   ],
+   "name": "Rite of Walking Shadows",
+   "file": "rite_of_walking_shadows",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffbf8b",
+    "#ffbe5e",
+    "#ff9511"
+   ]
+  },
+  {
+   "ids": [
+    1396
+   ],
+   "name": "Rite of Youthful Spirits",
+   "file": "rite_of_youthful_spirits",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffc077",
+    "#ff7946"
+   ]
+  },
+  {
+   "ids": [
+    1394
+   ],
+   "name": "Rite of the Untamed Wild",
+   "file": "rite_of_the_untamed_wild",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffcd7b",
+    "#ffb54a",
+    "#ff9808"
+   ]
+  },
+  {
+   "ids": [
+    218
+   ],
+   "name": "Roll With It",
+   "file": "roll_with_it",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    219
+   ],
+   "name": "Ruthless Opportunist",
+   "file": "ruthless_opportunist",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1160
+   ],
+   "name": "Rymrgand's Boon",
+   "file": "rymrgands_boon",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1439
+   ],
+   "name": "Sacred Immolation",
+   "file": "sacred_immolation",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#1aa4ff",
+    "#4ba6ff",
+    "#80deff"
+   ]
+  },
+  {
+   "ids": [
+    1126
+   ],
+   "name": "Sanctifier",
+   "file": "sanctifier",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1863
+   ],
+   "name": "Satisfied Mind",
+   "file": "satisfied_mind",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1038
+   ],
+   "name": "Savage Attack",
+   "file": "savage_attack",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff6500",
+    "#ff9962"
+   ]
+  },
+  {
+   "ids": [
+    71
+   ],
+   "name": "Savage Defiance",
+   "file": "savage_defiance",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff2b00",
+    "#ff8a2c",
+    "#ffb77c"
+   ]
+  },
+  {
+   "ids": [
+    1203
+   ],
+   "name": "Scale-Breaker",
+   "file": "scale_breaker",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffc430",
+    "#e0ff58",
+    "#ff1200"
+   ]
+  },
+  {
+   "ids": [
+    1130
+   ],
+   "name": "Scion of Flame",
+   "file": "scion_of_flame",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    682
+   ],
+   "name": "Scroll of Defense",
+   "file": "scroll_of_defense",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#0019ff",
+    "#6acaff",
+    "#2088ff"
+   ]
+  },
+  {
+   "ids": [
+    683
+   ],
+   "name": "Scroll of Maelstrom",
+   "file": "scroll_of_maelstrom",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff6d00",
+    "#ffc70f",
+    "#fff260"
+   ]
+  },
+  {
+   "ids": [
+    1272
+   ],
+   "name": "Scroll of Protection",
+   "file": "scroll_of_protection",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffda8c",
+    "#ffcf5c",
+    "#ffdd1f"
+   ]
+  },
+  {
+   "ids": [
+    684
+   ],
+   "name": "Scroll of Revival",
+   "file": "scroll_of_revival",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#0019ff",
+    "#6acaff",
+    "#2088ff"
+   ]
+  },
+  {
+   "ids": [
+    685
+   ],
+   "name": "Scroll of Valor",
+   "file": "scroll_of_valor",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#0019ff",
+    "#6acaff",
+    "#2088ff"
+   ]
+  },
+  {
+   "ids": [
+    1178
+   ],
+   "name": "Second Skin",
+   "file": "second_skin",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1642
+   ],
+   "name": "Second Wind",
+   "file": "second_wind",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00abff",
+    "#37b8ff",
+    "#6ed5ff"
+   ]
+  },
+  {
+   "ids": [
+    1136
+   ],
+   "name": "Secrets of Rime",
+   "file": "secrets_of_rime",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1033
+   ],
+   "name": "Shadowing Beyond",
+   "file": "shadowing_beyond",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#9ab1ff",
+    "#768bff",
+    "#b345ff"
+   ]
+  },
+  {
+   "ids": [
+    1510
+   ],
+   "name": "Shock DR Reduction",
+   "file": "shock_dr_reduction",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff3030",
+    "#ff0000",
+    "#ff6767"
+   ]
+  },
+  {
+   "ids": [
+    1085
+   ],
+   "name": "Shot on the Run",
+   "file": "shot_on_the_run",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1162
+   ],
+   "name": "Skaen's Boon",
+   "file": "skaens_boon",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1030
+   ],
+   "name": "Snake's Reflexes",
+   "file": "snakes_reflexes",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1687
+   ],
+   "name": "Solitary",
+   "file": "solitary",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#bbff64",
+    "#d0ff92",
+    "#a0ff26"
+   ]
+  },
+  {
+   "ids": [
+    1188
+   ],
+   "name": "Song of the Heavens",
+   "file": "song_of_the_heavens",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1434
+   ],
+   "name": "Soul Binding",
+   "file": "soul_binding",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffad00",
+    "#ffd51d",
+    "#ffee67"
+   ]
+  },
+  {
+   "ids": [
+    862
+   ],
+   "name": "Soul Jump",
+   "file": "soul_jump",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    107
+   ],
+   "name": "Soul Whip",
+   "file": "soul_whip",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#591eff",
+    "#b43aff",
+    "#ea7dff"
+   ]
+  },
+  {
+   "ids": [
+    1314
+   ],
+   "name": "Spectre Regeneration",
+   "file": "spectre_regeneration",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1134
+   ],
+   "name": "Spirit of Decay",
+   "file": "spirit_of_decay",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1089
+   ],
+   "name": "Strange Mercy",
+   "file": "strange_mercy",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1404
+   ],
+   "name": "Sundering Blow",
+   "file": "sundering_blow",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff8280",
+    "#ff8751",
+    "#7884ff"
+   ]
+  },
+  {
+   "ids": [
+    1258
+   ],
+   "name": "Superior Deflection",
+   "file": "superior_deflection",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#0c7dff",
+    "#41a2ff",
+    "#79c5ff"
+   ]
+  },
+  {
+   "ids": [
+    1703
+   ],
+   "name": "Swap Endurance",
+   "file": "swap_endurance",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff4f10",
+    "#ff813d",
+    "#ffa77e"
+   ]
+  },
+  {
+   "ids": [
+    362
+   ],
+   "name": "Swift Aim",
+   "file": "swift_aim",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8bffe2",
+    "#d9ff2a",
+    "#b2ff84"
+   ]
+  },
+  {
+   "ids": [
+    15
+   ],
+   "name": "Swift Strikes",
+   "file": "swift_strikes",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#4db0ff",
+    "#85c9ff",
+    "#1b9aff"
+   ]
+  },
+  {
+   "ids": [
+    1440
+   ],
+   "name": "Take the Hit",
+   "file": "take_the_hit",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8a9bff",
+    "#ffbc97",
+    "#ffaa61"
+   ]
+  },
+  {
+   "ids": [
+    1180
+   ],
+   "name": "The Merciless Hand",
+   "file": "the_merciless_hand",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    68
+   ],
+   "name": "Thick-skinned",
+   "file": "thick_skinned",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff1b1b",
+    "#ff4545",
+    "#ff8585"
+   ]
+  },
+  {
+   "ids": [
+    17
+   ],
+   "name": "Transcendent Suffering",
+   "file": "transcendent_suffering",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb600",
+    "#ffc935",
+    "#ffdd7d"
+   ]
+  },
+  {
+   "ids": [
+    18
+   ],
+   "name": "Transcendent Suffering 2",
+   "file": "transcendent_suffering_2",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb600",
+    "#ffc935",
+    "#ffdd7d"
+   ]
+  },
+  {
+   "ids": [
+    203
+   ],
+   "name": "Transcendent Suffering 4",
+   "file": "transcendent_suffering_4",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb600",
+    "#ffc935",
+    "#ffdd7d"
+   ]
+  },
+  {
+   "ids": [
+    1651
+   ],
+   "name": "Triggered Immunity",
+   "file": "triggered_immunity",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#918eff",
+    "#b516ff",
+    "#ff72b8"
+   ]
+  },
+  {
+   "ids": [
+    335
+   ],
+   "name": "Troll Regeneration",
+   "file": "troll_regeneration",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    20
+   ],
+   "name": "Turning Wheel",
+   "file": "turning_wheel",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb600",
+    "#ffc935",
+    "#ffdd7d"
+   ]
+  },
+  {
+   "ids": [
+    1116
+   ],
+   "name": "Two-Handed Style",
+   "file": "two_handed_style",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    377
+   ],
+   "name": "Unbending",
+   "file": "unbending",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff0100",
+    "#ff564c",
+    "#ffb485"
+   ]
+  },
+  {
+   "ids": [
+    380
+   ],
+   "name": "Unbroken",
+   "file": "unbroken",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff670f",
+    "#ffaa36",
+    "#ffb872"
+   ]
+  },
+  {
+   "ids": [
+    1051
+   ],
+   "name": "Unstoppable",
+   "file": "unstoppable",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#bbff64",
+    "#d0ff92",
+    "#a0ff26"
+   ]
+  },
+  {
+   "ids": [
+    1683
+   ],
+   "name": "Vengeful Grief",
+   "file": "vengeful_grief",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00ffc5",
+    "#77ffe2"
+   ]
+  },
+  {
+   "ids": [
+    1446
+   ],
+   "name": "Veteran's Recovery",
+   "file": "veterans_recovery",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00a9ff",
+    "#37e5ff",
+    "#7afff7"
+   ]
+  },
+  {
+   "ids": [
+    364
+   ],
+   "name": "Vicious Aim",
+   "file": "vicious_aim",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00e6ff",
+    "#ffbd6d"
+   ]
+  },
+  {
+   "ids": [
+    222
+   ],
+   "name": "Vicious Blows",
+   "file": "vicious_blows",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    700
+   ],
+   "name": "Vicious Companion",
+   "file": "vicious_companion",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00ffc5",
+    "#77ffe2"
+   ]
+  },
+  {
+   "ids": [
+    340
+   ],
+   "name": "Vigorous Defense",
+   "file": "vigorous_defense",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00b0ff",
+    "#96ffa4"
+   ]
+  },
+  {
+   "ids": [
+    1585
+   ],
+   "name": "Visage of Concelhaut",
+   "file": "visage_of_concelhaut",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#a27eff",
+    "#7e47ff",
+    "#4e08ff"
+   ]
+  },
+  {
+   "ids": [
+    1140
+   ],
+   "name": "Vulnerable Attack",
+   "file": "vulnerable_attack",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffbc4a",
+    "#ff941b",
+    "#ffd189"
+   ]
+  },
+  {
+   "ids": [
+    1164
+   ],
+   "name": "Wael's Boon",
+   "file": "waels_boon",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1068
+   ],
+   "name": "Weapon and Shield Style",
+   "file": "weapon_and_shield_style",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1190
+   ],
+   "name": "Wild Running",
+   "file": "wild_running",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    67
+   ],
+   "name": "Wild Sprint",
+   "file": "wild_sprint",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#8ee0ff",
+    "#65d5ff",
+    "#34c6ff"
+   ]
+  },
+  {
+   "ids": [
+    1148
+   ],
+   "name": "Wilder Hunter",
+   "file": "wilder_hunter",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    351
+   ],
+   "name": "Wildstrike Burn",
+   "file": "wildstrike_burn",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff9a35",
+    "#ff5f00",
+    "#ffb17e"
+   ]
+  },
+  {
+   "ids": [
+    353
+   ],
+   "name": "Wildstrike Corrode",
+   "file": "wildstrike_corrode",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ceff8f",
+    "#b9ff4c",
+    "#93ff08"
+   ]
+  },
+  {
+   "ids": [
+    349
+   ],
+   "name": "Wildstrike Crush",
+   "file": "wildstrike_crush",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffcb98",
+    "#ff8818",
+    "#ffae66"
+   ]
+  },
+  {
+   "ids": [
+    355
+   ],
+   "name": "Wildstrike Freeze",
+   "file": "wildstrike_freeze",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#00b5ff",
+    "#2ac3ff",
+    "#74d8ff"
+   ]
+  },
+  {
+   "ids": [
+    347
+   ],
+   "name": "Wildstrike Pierce",
+   "file": "wildstrike_pierce",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#92fff6",
+    "#67ffee"
+   ]
+  },
+  {
+   "ids": [
+    357
+   ],
+   "name": "Wildstrike Shock",
+   "file": "wildstrike_shock",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#488dff",
+    "#005cff",
+    "#8fbaff"
+   ]
+  },
+  {
+   "ids": [
+    345
+   ],
+   "name": "Wildstrike Slash",
+   "file": "wildstrike_slash",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff5e43",
+    "#ff9e8d",
+    "#ff2500"
+   ]
+  },
+  {
+   "ids": [
+    610
+   ],
+   "name": "Wisp Regeneration",
+   "file": "wisp_regeneration",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1262
+   ],
+   "name": "Wound Binding",
+   "file": "wound_binding",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#0093ff",
+    "#85ffec",
+    "#4af4ff"
+   ]
+  },
+  {
+   "ids": [
+    19
+   ],
+   "name": "WoundsTrait",
+   "file": "woundstrait",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    53
+   ],
+   "name": "Zealous Barrage",
+   "file": "zealous_barrage",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    65
+   ],
+   "name": "Zealous Charge",
+   "file": "zealous_charge",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#0059ff",
+    "#8ea5ff",
+    "#377fff"
+   ]
+  },
+  {
+   "ids": [
+    326
+   ],
+   "name": "Zealous Endurance",
+   "file": "zealous_endurance",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffb100",
+    "#ffed8e",
+    "#ffc441"
+   ]
+  },
+  {
+   "ids": [
+    317
+   ],
+   "name": "Zealous Focus",
+   "file": "zealous_focus",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ff0800",
+    "#ffa08c",
+    "#ff403b"
+   ]
+  },
+  {
+   "ids": [
+    1381
+   ],
+   "name": "Bolt",
+   "file": "bolt",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#007dff",
+    "#2a93ff",
+    "#62b0ff"
+   ]
+  },
+  {
+   "ids": [
+    1295
+   ],
+   "name": "Chain Lightning Trap",
+   "file": "chain_lightning_trap",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#3e94ff",
+    "#086dff",
+    "#7fbeff"
+   ]
+  },
+  {
+   "ids": [
+    1384
+   ],
+   "name": "Heal",
+   "file": "heal",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#3adeff",
+    "#0ab5ff",
+    "#7deaff"
+   ]
+  },
+  {
+   "ids": [
+    1580
+   ],
+   "name": "Mind Shrapnel",
+   "file": "mind_shrapnel",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#62b4ff",
+    "#147aff",
+    "#92fffa"
+   ]
+  },
+  {
+   "ids": [
+    333
+   ],
+   "name": "Shocking Blast",
+   "file": "shocking_blast",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#3e94ff",
+    "#086dff",
+    "#7fbeff"
+   ]
+  },
+  {
+   "ids": [
+    110
+   ],
+   "name": "Soul Shock",
+   "file": "soul_shock",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#0a6fff",
+    "#3a8eff",
+    "#79b4ff"
+   ]
+  },
+  {
+   "ids": [
+    95
+   ],
+   "name": "Warding Seal",
+   "file": "warding_seal",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#0085ff",
+    "#13c1ff"
+   ]
+  },
+  {
+   "ids": [
+    1279
+   ],
+   "name": "Warding Seal Trap Attack",
+   "file": "warding_seal_trap_attack",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#0085ff",
+    "#13c1ff"
+   ]
+  },
+  {
+   "ids": [
+    714
+   ],
+   "name": "Weapon Focus: Adventurer",
+   "file": "weapon_focus_adventurer",
+   "bucket": "lightning",
+   "popular": false,
+   "colors": [
+    "#ffbb00",
+    "#1664ff",
+    "#ffe24b"
+   ]
+  },
+  {
+   "ids": [
+    339
+   ],
+   "name": "Barbaric Shout",
+   "file": "barbaric_shout",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#ff4200",
+    "#ff0700"
+   ]
+  },
+  {
+   "ids": [
+    338
+   ],
+   "name": "Barbaric Yell",
+   "file": "barbaric_yell",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#ff5100",
+    "#ffba5f"
+   ]
+  },
+  {
+   "ids": [
+    616,
+    1880
+   ],
+   "name": "Charm",
+   "file": "charm",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#86ffed",
+    "#25ffe6",
+    "#ffa667"
+   ]
+  },
+  {
+   "ids": [
+    618,
+    675,
+    986,
+    1588
+   ],
+   "name": "Dominate",
+   "file": "dominate",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1014
+   ],
+   "name": "Druid Bear Terrifying Roar",
+   "file": "druid_bear_terrifying_roar",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#ce7fff",
+    "#944aff",
+    "#ff9d6a"
+   ]
+  },
+  {
+   "ids": [
+    1451
+   ],
+   "name": "Enigma's Charm",
+   "file": "enigmas_charm",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#d09eff",
+    "#24ff41"
+   ]
+  },
+  {
+   "ids": [
+    1817
+   ],
+   "name": "Frighten",
+   "file": "frighten",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#888cff",
+    "#4d3dff",
+    "#63ffb7"
+   ]
+  },
+  {
+   "ids": [
+    627
+   ],
+   "name": "Frightening Aura",
+   "file": "frightening_aura",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#dfff75",
+    "#73ffbd",
+    "#2affd1"
+   ]
+  },
+  {
+   "ids": [
+    1321
+   ],
+   "name": "Frightening Roar",
+   "file": "frightening_roar",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#ce7eff",
+    "#964cff",
+    "#ff9765"
+   ]
+  },
+  {
+   "ids": [
+    384
+   ],
+   "name": "Heart of Fury",
+   "file": "heart_of_fury",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#ff3100",
+    "#ffc200",
+    "#ff7400"
+   ]
+  },
+  {
+   "ids": [
+    1428,
+    1694
+   ],
+   "name": "Howl",
+   "file": "howl",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#78ff89",
+    "#15ff8d",
+    "#41ff0a"
+   ]
+  },
+  {
+   "ids": [
+    600
+   ],
+   "name": "Mind Plague",
+   "file": "mind_plague",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#7bffbc",
+    "#27ff92",
+    "#7aff7a"
+   ]
+  },
+  {
+   "ids": [
+    574
+   ],
+   "name": "Phantom Foes",
+   "file": "phantom_foes",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#9d1aff",
+    "#b559ff",
+    "#a298ff"
+   ]
+  },
+  {
+   "ids": [
+    578
+   ],
+   "name": "Puppet Master",
+   "file": "puppet_master",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#0028ff",
+    "#70b9ff",
+    "#908aff"
+   ]
+  },
+  {
+   "ids": [
+    596
+   ],
+   "name": "Ringleader",
+   "file": "ringleader",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#ff6742",
+    "#ff9778"
+   ]
+  },
+  {
+   "ids": [
+    580
+   ],
+   "name": "Secret Horrors",
+   "file": "secret_horrors",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#ff8021",
+    "#ffbb64"
+   ]
+  },
+  {
+   "ids": [
+    1790
+   ],
+   "name": "Snow Bear Terrifying Roar",
+   "file": "snow_bear_terrifying_roar",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#ce7fff",
+    "#944aff",
+    "#ff9d6a"
+   ]
+  },
+  {
+   "ids": [
+    1358
+   ],
+   "name": "Speaker to the Restless",
+   "file": "speaker_to_the_restless",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#8a59ff",
+    "#ff8dc4",
+    "#ff5389"
+   ]
+  },
+  {
+   "ids": [
+    634
+   ],
+   "name": "Spiritshift Bear",
+   "file": "spiritshift_bear",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#c386ff",
+    "#ae5fff",
+    "#9432ff"
+   ]
+  },
+  {
+   "ids": [
+    565
+   ],
+   "name": "Tenuous Grasp",
+   "file": "tenuous_grasp",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#760bff",
+    "#884cff",
+    "#8a8eff"
+   ]
+  },
+  {
+   "ids": [
+    1087
+   ],
+   "name": "The Black Path",
+   "file": "the_black_path",
+   "bucket": "mind",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    567
+   ],
+   "name": "Whisper of Treason",
+   "file": "whisper_of_treason",
+   "bucket": "mind",
+   "popular": false,
+   "colors": [
+    "#d09eff",
+    "#24ff41"
+   ]
+  },
+  {
+   "ids": [
+    73
+   ],
+   "name": "Brute Force",
+   "file": "brute_force",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff1b1b",
+    "#ff4545",
+    "#ff8585"
+   ]
+  },
+  {
+   "ids": [
+    70
+   ],
+   "name": "Carnage",
+   "file": "carnage",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff1b1b",
+    "#ff4545",
+    "#ff8585"
+   ]
+  },
+  {
+   "ids": [
+    373
+   ],
+   "name": "Defensive Bond",
+   "file": "defensive_bond",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#00ffc5",
+    "#77ffe2"
+   ]
+  },
+  {
+   "ids": [
+    1562
+   ],
+   "name": "Flick of the Wrist",
+   "file": "flick_of_the_wrist",
+   "bucket": "",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    106
+   ],
+   "name": "Focus Trait",
+   "file": "focus_trait",
+   "bucket": "",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1223
+   ],
+   "name": "Incomprehensible Revelation",
+   "file": "incomprehensible_revelation",
+   "bucket": "",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1219
+   ],
+   "name": "Inspired Flame",
+   "file": "inspired_flame",
+   "bucket": "",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1634
+   ],
+   "name": "Persistent Distraction",
+   "file": "persistent_distraction",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#8700ff"
+   ]
+  },
+  {
+   "ids": [
+    1221
+   ],
+   "name": "Prey on the Weak",
+   "file": "prey_on_the_weak",
+   "bucket": "",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    389
+   ],
+   "name": "Riposte",
+   "file": "riposte",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#8700ff"
+   ]
+  },
+  {
+   "ids": [
+    1112
+   ],
+   "name": "Strengthened Bond",
+   "file": "strengthened_bond",
+   "bucket": "",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    383
+   ],
+   "name": "Vengeful Defeat",
+   "file": "vengeful_defeat",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff1b1b",
+    "#ff4545",
+    "#ff8585"
+   ]
+  },
+  {
+   "ids": [
+    715
+   ],
+   "name": "Weapon Focus: Knight",
+   "file": "weapon_focus_knight",
+   "bucket": "",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    716
+   ],
+   "name": "Weapon Focus: Noble",
+   "file": "weapon_focus_noble",
+   "bucket": "",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    717
+   ],
+   "name": "Weapon Focus: Peasant",
+   "file": "weapon_focus_peasant",
+   "bucket": "",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    719
+   ],
+   "name": "Weapon Focus: Soldier",
+   "file": "weapon_focus_soldier",
+   "bucket": "",
+   "popular": false,
+   "colors": []
+  },
+  {
+   "ids": [
+    1350
+   ],
+   "name": "Weapon Mastery: Adventurer",
+   "file": "weapon_mastery_adventurer",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    1351
+   ],
+   "name": "Weapon Mastery: Knight",
+   "file": "weapon_mastery_knight",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    1352
+   ],
+   "name": "Weapon Mastery: Noble",
+   "file": "weapon_mastery_noble",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    1353
+   ],
+   "name": "Weapon Mastery: Peasant",
+   "file": "weapon_mastery_peasant",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    1354
+   ],
+   "name": "Weapon Mastery: Ruffian",
+   "file": "weapon_mastery_ruffian",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    1355
+   ],
+   "name": "Weapon Mastery: Soldier",
+   "file": "weapon_mastery_soldier",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    126
+   ],
+   "name": "Weapon Specialization: Adventurer",
+   "file": "weapon_specialization_adventurer",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    365
+   ],
+   "name": "Weapon Specialization: Knight",
+   "file": "weapon_specialization_knight",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    366
+   ],
+   "name": "Weapon Specialization: Noble",
+   "file": "weapon_specialization_noble",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    367
+   ],
+   "name": "Weapon Specialization: Peasant",
+   "file": "weapon_specialization_peasant",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    368
+   ],
+   "name": "Weapon Specialization: Ruffian",
+   "file": "weapon_specialization_ruffian",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    369
+   ],
+   "name": "Weapon Specialization: Soldier",
+   "file": "weapon_specialization_soldier",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ff2a00",
+    "#ff8c74"
+   ]
+  },
+  {
+   "ids": [
+    1843
+   ],
+   "name": "Rally the Crag Ogres",
+   "file": "rally_the_crag_ogres",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#ffc31a",
+    "#ffe14d",
+    "#fffd7a"
+   ]
+  },
+  {
+   "ids": [
+    1454
+   ],
+   "name": "Rhymer's Summon",
+   "file": "rhymers_summon",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#f1ff4e",
+    "#c3ff5c",
+    "#fff913"
+   ]
+  },
+  {
+   "ids": [
+    1794
+   ],
+   "name": "Summon Illusionary Weapons",
+   "file": "summon_illusionary_weapons",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#ff1ca7",
+    "#ff00cd",
+    "#ff9658"
+   ]
+  },
+  {
+   "ids": [
+    983
+   ],
+   "name": "Summon Noble Creature",
+   "file": "summon_noble_creature",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#ffb661"
+   ]
+  },
+  {
+   "ids": [
+    985
+   ],
+   "name": "Summon Shadow",
+   "file": "summon_shadow",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1797
+   ],
+   "name": "Summon Swamp Lurker",
+   "file": "summon_swamp_lurker",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#beff26",
+    "#abff7c",
+    "#ffd57a"
+   ]
+  },
+  {
+   "ids": [
+    1438
+   ],
+   "name": "The Dichotomous Soul",
+   "file": "the_dichotomous_soul",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#3991ff",
+    "#ff8000",
+    "#ffa575"
+   ]
+  },
+  {
+   "ids": [
+    1299
+   ],
+   "name": "Burrow",
+   "file": "burrow",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    1012
+   ],
+   "name": "Druid Stag Carnage",
+   "file": "druid_stag_carnage",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ffbe84",
+    "#ff7952",
+    "#ff1400"
+   ]
+  },
+  {
+   "ids": [
+    1319
+   ],
+   "name": "Stag Carnage",
+   "file": "stag_carnage",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#ffbe84",
+    "#ff7952",
+    "#ff1400"
+   ]
+  },
+  {
+   "ids": [
+    1435
+   ],
+   "name": "Teleport",
+   "file": "teleport",
+   "bucket": "",
+   "popular": false,
+   "colors": [
+    "#6300ff",
+    "#9b3bff",
+    "#c47fff"
+   ]
+  },
+  {
+   "ids": [
+    120
+   ],
+   "name": "And Hel-Hyraf Crashed Upon The Shield",
+   "file": "and_hel_hyraf_crashed_upon_the_shield",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffd07f",
+    "#e87fff",
+    "#ff9aa6"
+   ]
+  },
+  {
+   "ids": [
+    658
+   ],
+   "name": "At the Sound of His Voice, the Killers Froze Stiff",
+   "file": "at_the_sound_of_his_voice_the_killers_froze_stiff",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#47d1ff",
+    "#7dd4ff",
+    "#8561ff"
+   ]
+  },
+  {
+   "ids": [
+    1639
+   ],
+   "name": "Boil Their Flesh From Skin to Bone",
+   "file": "boil_their_flesh_from_skin_to_bone",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffac47",
+    "#ffe784",
+    "#ff2f21"
+   ]
+  },
+  {
+   "ids": [
+    122
+   ],
+   "name": "Not Felled by the Axe, Nor Broken by the Storm",
+   "file": "not_felled_by_the_axe_nor_broken_by_the_storm",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ff196a",
+    "#4a84ff",
+    "#ff6dee"
+   ]
+  },
+  {
+   "ids": [
+    655
+   ],
+   "name": "Reny Daret's Ghost Spake, \"I'll Catch You, Ben Fidel\"",
+   "file": "reny_darets_ghost_spake_ill_catch_you_ben_fidel",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ff47c9",
+    "#bf39ff",
+    "#ff057d"
+   ]
+  },
+  {
+   "ids": [
+    662
+   ],
+   "name": "Rise Again, Rise Again, Scions of Adon!",
+   "file": "rise_again_rise_again_scions_of_adon",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ff9d00",
+    "#ffc51a",
+    "#f1ff73"
+   ]
+  },
+  {
+   "ids": [
+    659
+   ],
+   "name": "Seven Nights She Waited While the White Winds Wept",
+   "file": "seven_nights_she_waited_while_the_white_winds_wept",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#00e8ff",
+    "#00b1ff",
+    "#57f5ff"
+   ]
+  },
+  {
+   "ids": [
+    656
+   ],
+   "name": "Shatter their Shackles, Cast off their Chains!",
+   "file": "shatter_their_shackles_cast_off_their_chains",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ff853c",
+    "#ff7013",
+    "#ff9178"
+   ]
+  },
+  {
+   "ids": [
+    1548
+   ],
+   "name": "So Singt thy Biting Winds o' Eld Nary",
+   "file": "so_singt_thy_biting_winds_o_eld_nary",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#87c9ff",
+    "#40acff",
+    "#008cff"
+   ]
+  },
+  {
+   "ids": [
+    661
+   ],
+   "name": "The Bride Caught their Ruse and Set to Make them Pay",
+   "file": "the_bride_caught_their_ruse_and_set_to_make_them_pay",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#fa9eff",
+    "#ff19fd",
+    "#e85dff"
+   ]
+  },
+  {
+   "ids": [
+    660
+   ],
+   "name": "The Brideman Slew Thirty 'Fore They Crossed Half the Hall",
+   "file": "the_brideman_slew_thirty_fore_they_crossed_half_the_hall",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ff0e00",
+    "#ff958e",
+    "#ff463a"
+   ]
+  },
+  {
+   "ids": [
+    653
+   ],
+   "name": "The Lover Cried out to the Beloved, \"I am Yours!\"",
+   "file": "the_lover_cried_out_to_the_beloved_i_am_yours",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ff0034",
+    "#ff3e6c",
+    "#ff8297"
+   ]
+  },
+  {
+   "ids": [
+    650
+   ],
+   "name": "The Thunder Rolled Like Waves on Black Seas",
+   "file": "the_thunder_rolled_like_waves_on_black_seas",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#1789ff",
+    "#00dcff"
+   ]
+  },
+  {
+   "ids": [
+    1442
+   ],
+   "name": "Their Champion Braved The Horde Alone",
+   "file": "their_champion_braved_the_horde_alone",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ffd164",
+    "#ffb800",
+    "#9e6aff"
+   ]
+  },
+  {
+   "ids": [
+    651
+   ],
+   "name": "Thrice Was She Wronged, and Thrice Justly Avenged",
+   "file": "thrice_was_she_wronged_and_thrice_justly_avenged",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ff7600",
+    "#ffb32c",
+    "#ffcc78"
+   ]
+  },
+  {
+   "ids": [
+    123
+   ],
+   "name": "White Worms Writhed in the Bellies of the Dead",
+   "file": "white_worms_writhed_in_the_bellies_of_the_dead",
+   "bucket": "chanter",
+   "popular": false,
+   "colors": [
+    "#ff3a28",
+    "#ffa37a",
+    "#ff1400"
+   ]
+  },
+  {
+   "ids": [
+    1640
+   ],
+   "name": "Rejoice, My Comrades! Two Fingers of Daylight!",
+   "file": "rejoice_my_comrades_two_fingers_of_daylight",
+   "bucket": "healing_buffs",
+   "popular": false,
+   "colors": [
+    "#ffeb94",
+    "#ffc281",
+    "#ff83d7"
+   ]
+  },
+  {
+   "ids": [
+    649
+   ],
+   "name": "But Reny Daret's Ghost, He Would not Rest",
+   "file": "but_reny_darets_ghost_he_would_not_rest",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#ff51d9",
+    "#f73dff",
+    "#ff20a0"
+   ]
+  },
+  {
+   "ids": [
+    1641
+   ],
+   "name": "Called to His Bidding, the Ancient Instruments of Death",
+   "file": "called_to_his_bidding_the_ancient_instruments_of_death",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#ff1ca7",
+    "#ff00cd",
+    "#ff9658"
+   ]
+  },
+  {
+   "ids": [
+    654
+   ],
+   "name": "Gernisc Slew the Beast, but Soon Faced Its Kin",
+   "file": "gernisc_slew_the_beast_but_soon_faced_its_kin",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#50fff3",
+    "#3bff9f",
+    "#27f0ff"
+   ]
+  },
+  {
+   "ids": [
+    664
+   ],
+   "name": "Gernisc's Beast Lit the Night with his Breath",
+   "file": "gerniscs_beast_lit_the_night_with_his_breath",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#ff4b00",
+    "#ff8204",
+    "#ffb517"
+   ]
+  },
+  {
+   "ids": [
+    652
+   ],
+   "name": "If their Bones Still Slept Under that Hill, None Can Say",
+   "file": "if_their_bones_still_slept_under_that_hill_none_can_say",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#f1ff4e",
+    "#c3ff5c",
+    "#fff913"
+   ]
+  },
+  {
+   "ids": [
+    657
+   ],
+   "name": "My Son, Do You See your Sisters Across the Moor?",
+   "file": "my_son_do_you_see_your_sisters_across_the_moor",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#39a4ff",
+    "#445bff",
+    "#53f2ff"
+   ]
+  },
+  {
+   "ids": [
+    663
+   ],
+   "name": "Oh, But Knock Not on the Door of Urdel and Gurdel",
+   "file": "oh_but_knock_not_on_the_door_of_urdel_and_gurdel",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#ffc31a",
+    "#ffe14d",
+    "#fffd7a"
+   ]
+  },
+  {
+   "ids": [
+    1551
+   ],
+   "name": "What Rou Naka Found Down the Deep",
+   "file": "what_rou_naka_found_down_the_deep",
+   "bucket": "summoning",
+   "popular": false,
+   "colors": [
+    "#dfff7a",
+    "#bfff3a"
+   ]
+  },
+  {
+   "ids": [
+    630
+   ],
+   "name": "Vomit Blood",
+   "file": "vomit_blood",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#78ff89",
+    "#15ff8d",
+    "#41ff0a"
+   ]
+  },
+  {
+   "ids": [
+    624
+   ],
+   "name": "Draining Freeze",
+   "file": "draining_freeze",
+   "bucket": "frost_lingering",
+   "popular": false,
+   "colors": [
+    "#8acbff",
+    "#54b3ff",
+    "#0d8dff"
+   ]
+  },
+  {
+   "ids": [
+    1776
+   ],
+   "name": "Skuldrak Poison Breath",
+   "file": "skuldrak_poison_breath",
+   "bucket": "acid_decay",
+   "popular": false,
+   "colors": [
+    "#cbff00",
+    "#deff4e",
+    "#72ff10"
+   ]
+  }
+ ]
+}

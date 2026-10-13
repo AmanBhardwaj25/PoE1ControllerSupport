@@ -1,0 +1,101 @@
+{
+  "name": "mind",
+  "note": "A faint, eerie flutter, like something brushing your thoughts.",
+  "motors": {
+    "cast": [
+      {
+        "motor": "high",
+        "amp": 0.08,
+        "attack": 1.5,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 6
+      }
+    ],
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.2,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.35,
+        "attack": 0.1,
+        "fade": 0.3,
+        "length": 0.6,
+        "pulse": 6,
+        "duty": 0.3,
+        "flicker": 0.4
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "high",
+        "amp": 0.18,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 6,
+        "duty": 0.3,
+        "flicker": 0.4
+      }
+    ]
+  },
+  "haptic": {
+    "cast": [
+      {
+        "motor": "high",
+        "amp": 0.088,
+        "attack": 1.05,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 6
+      }
+    ],
+    "launch": [
+      {
+        "motor": "high",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.385,
+        "attack": 0.07,
+        "fade": 0.21,
+        "length": 0.48,
+        "pulse": 6,
+        "duty": 0.3,
+        "flicker": 0.4
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "high",
+        "amp": 0.198,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 6,
+        "duty": 0.3,
+        "flicker": 0.4
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#8640ff",
+      "#c070ff",
+      "#30ffff"
+    ]
+  }
+}

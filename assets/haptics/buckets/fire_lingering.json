@@ -1,0 +1,179 @@
+{
+  "name": "fire_lingering",
+  "note": "A spark and a burst; each later tick a short double crackle.",
+  "motors": {
+    "cast": [
+      {
+        "motor": "both",
+        "amp": 0.12,
+        "attack": 1.5,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.5
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.0,
+        "fade": 0.05,
+        "length": 0.1
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.45,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      },
+      {
+        "motor": "low",
+        "amp": 0.7,
+        "attack": 0.02,
+        "fade": 0.2,
+        "length": 0.45,
+        "delay": 0.11
+      },
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 0.2,
+        "length": 0.4,
+        "delay": 0.11,
+        "flicker": 0.7
+      }
+    ],
+    "linger": [
+      {
+        "motor": "both",
+        "amp": 0.35,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.06,
+        "flicker": 0.6
+      },
+      {
+        "motor": "high",
+        "amp": 0.25,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05,
+        "delay": 0.12,
+        "flicker": 0.6
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.22,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.4
+      },
+      {
+        "motor": "high",
+        "amp": 0.12,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.7
+      }
+    ]
+  },
+  "haptic": {
+    "cast": [
+      {
+        "motor": "both",
+        "amp": 0.132,
+        "attack": 1.05,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.5
+      }
+    ],
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 0.035,
+        "length": 0.08
+      }
+    ],
+    "impact": [
+      {
+        "motor": "high",
+        "amp": 0.495,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      },
+      {
+        "motor": "low",
+        "amp": 0.77,
+        "attack": 0.014,
+        "fade": 0.14,
+        "length": 0.36,
+        "delay": 0.11
+      },
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 0.14,
+        "length": 0.32,
+        "delay": 0.11,
+        "flicker": 0.7
+      }
+    ],
+    "linger": [
+      {
+        "motor": "both",
+        "amp": 0.385,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.048,
+        "flicker": 0.6
+      },
+      {
+        "motor": "high",
+        "amp": 0.275,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04,
+        "delay": 0.12,
+        "flicker": 0.6
+      }
+    ],
+    "prepare": [
+      {
+        "motor": "low",
+        "amp": 0.242,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "pulse": 1.4
+      },
+      {
+        "motor": "high",
+        "amp": 0.132,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0,
+        "flicker": 0.7
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#ff5a00",
+      "#ff2000",
+      "#ffb040"
+    ]
+  }
+}

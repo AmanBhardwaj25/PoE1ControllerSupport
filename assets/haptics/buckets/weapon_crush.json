@@ -1,0 +1,64 @@
+{
+  "name": "weapon_crush",
+  "note": "A heavy, blunt block (maces, hammers, fists).",
+  "motors": {
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.15,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.1
+      },
+      {
+        "motor": "high",
+        "amp": 0.3,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.05
+      }
+    ]
+  },
+  "haptic": {
+    "launch": [
+      {
+        "motor": "low",
+        "amp": 0.165,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      }
+    ],
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 1.0,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.08
+      },
+      {
+        "motor": "high",
+        "amp": 0.33,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.04
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#d8dde6",
+      "#9aa6b8"
+    ]
+  }
+}

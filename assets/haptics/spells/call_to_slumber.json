@@ -1,0 +1,38 @@
+{
+  "name": "Call to Slumber",
+  "note": "A slow breath that fades out, like falling asleep.",
+  "bucket": "curses_debuffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.4,
+        "attack": 0.3,
+        "fade": 0.6,
+        "length": 1.2,
+        "pulse": 1.5,
+        "duty": 0.6
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.44,
+        "attack": 0.21,
+        "fade": 0.42,
+        "length": 0.96,
+        "pulse": 1.5,
+        "duty": 0.6
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#c883ff",
+      "#7175ff",
+      "#3771ff"
+    ]
+  }
+}

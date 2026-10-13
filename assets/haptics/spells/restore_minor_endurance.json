@@ -1,0 +1,33 @@
+{
+  "name": "Restore Minor Endurance",
+  "note": "A small, warm swell.",
+  "bucket": "healing_buffs",
+  "motors": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.3,
+        "attack": 0.15,
+        "fade": 0.3,
+        "length": 0.5
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "low",
+        "amp": 0.33,
+        "attack": 0.105,
+        "fade": 0.21,
+        "length": 0.4
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#00a5ff",
+      "#52fbff"
+    ]
+  }
+}

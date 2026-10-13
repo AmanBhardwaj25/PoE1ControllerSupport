@@ -1,0 +1,70 @@
+{
+  "name": "Cleansing Flame",
+  "note": "Holy fire catches with a knock and a crackle, and keeps burning.",
+  "bucket": "fire_lingering",
+  "motors": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 1000,
+        "length": 0.06
+      },
+      {
+        "motor": "high",
+        "amp": 0.5,
+        "attack": 0,
+        "fade": 0.3,
+        "length": 0.5,
+        "delay": 0.11,
+        "flicker": 0.8
+      }
+    ],
+    "linger": [
+      {
+        "motor": "high",
+        "amp": 0.35,
+        "attack": 0,
+        "fade": 0.2,
+        "length": 0.35,
+        "flicker": 0.7
+      }
+    ]
+  },
+  "haptic": {
+    "impact": [
+      {
+        "motor": "both",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 1000,
+        "length": 0.048
+      },
+      {
+        "motor": "high",
+        "amp": 0.55,
+        "attack": 0.0,
+        "fade": 0.21,
+        "length": 0.4,
+        "delay": 0.11,
+        "flicker": 0.8
+      }
+    ],
+    "linger": [
+      {
+        "motor": "high",
+        "amp": 0.385,
+        "attack": 0.0,
+        "fade": 0.14,
+        "length": 0.28,
+        "flicker": 0.7
+      }
+    ]
+  },
+  "lights": {
+    "colors": [
+      "#058aff"
+    ]
+  }
+}
