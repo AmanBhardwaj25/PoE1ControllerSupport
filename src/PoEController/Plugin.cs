@@ -73,6 +73,8 @@ namespace PoEController
         private ConfigEntry<float> m_VibrationStrength;
         private ConfigEntry<bool> m_ControllerLights;
         private ConfigEntry<bool> m_AdaptiveTriggers;
+        private ConfigEntry<bool> m_OnlyClickableStops;
+        private ConfigEntry<Patches.CursorDrawing> m_CursorDrawing;
         private ConfigEntry<int> m_VibrationTest;
         private ConfigEntry<float> m_TooltipDelay;
         private DeviceTransitions m_Transitions;
@@ -145,6 +147,7 @@ namespace PoEController
             m_CameraSpeed = Config.Bind("Input", "CameraSpeed", 1.5f, new ConfigDescription("Right-stick camera speed, relative to the keyboard pan speed.", new AcceptableValueRange<float>(0.25f, 5f)));
             m_FollowCamera = Config.Bind("Input", "FollowCamera", false, "Controller follow camera (toggled with R3; remembered across areas and restarts).");
             m_PauseOnDisconnect = Config.Bind("Input", "PauseOnDisconnect", true, "Pause the game when the controller disconnects while you are playing with it.");
+            m_OnlyClickableStops = Config.Bind("Menus", "OnlyClickableStops", true, "Menu navigation stops only on things a click acts on: frames, backgrounds, scroll areas and scroll bars are skipped, and a button made of several pieces is one stop. Off = the old behaviour (every element that catches the mouse).");
             m_QuickTooltips = Config.Bind("Menus", "QuickTooltips", true, "On the controller, show the game's hover tooltip once the cursor has rested on an element for Menus.TooltipDelay (the game's own Options delay still applies if it is shorter).");
             m_BrightTooltipWords = Config.Bind("Menus", "BrightTooltipWords", true, "Show the words that have a tooltip (character sheet, item and ability texts) in a clear blue instead of the game's dim colour. Applies the next time a text is shown.");
             m_AnalogSpeed = Config.Bind("Input", "AnalogMovementSpeed", true, "Left stick: a light tilt walks, a full push runs, and in between the party speeds up gradually. Off = always the game's normal running speed.");
@@ -152,6 +155,7 @@ namespace PoEController
             m_Vibration = Config.Bind("Input", "VibrationMode", Patches.VibrationMode.Essential, "Controller vibration. Off: never. Essential only: like the console version, when the camera shakes (scripted scenes, heavy hits, critical kills, big creatures). Aphatasia's extended: also when your party takes hits (main character medium, companions light), on critical hits dealt or taken, and when a party member is knocked out or dies.");
             m_VibrationTest = Config.Bind("Input", "VibrationTest", 0, "Test bench: left / right choose a pattern file (haptics/buckets, haptics/spells, haptics/custom), A plays it at full strength for this controller (cast, launch, then impact). Files you add or edit show up straight away.");
             m_VibrationStrength = Config.Bind("Input", "VibrationStrength", 1f, new ConfigDescription("Vibration strength: 1 = the console version's values.", new AcceptableValueRange<float>(0.25f, 3f)));
+            m_CursorDrawing = Config.Bind("Input", "CursorDrawnByGame", Patches.CursorDrawing.Auto, "Who draws the mouse cursor (the gauntlet). Auto: the game itself on the Steam Deck (its display hides a cursor that stands still, as the locked menu cursor does), the system everywhere else. Always / Never force one or the other.");
             m_AdaptiveTriggers = Config.Bind("Input", "AdaptiveTriggers", true, "DualSense adaptive triggers. Turn-based fights, RT (Combat Radial) on your party's turns: ready (resistance shaped by the weapon), strained (debuffs or low endurance: heavy), empowered (buffs: a light hum), locked (stunned, paralyzed, prone...: rigid); slack once the action is used; vibrates while a long cast is prepared. Out of combat both triggers show the worst-off party member (debuffs or low health: heavy; a buff: a light hum) Turn this off if the resistance gets tiring; vibration and lights are separate settings and stay as they are.");
             m_ControllerLights = Config.Bind("Input", "ControllerLights", true, "DualSense / DualShock 4 lights: the lightbar takes the colours of the spells you see (from their in-game art), shows whose turn it is and low endurance; the DualSense player lights show the acting party slot and its mute light pulses while a spell is prepared. Flashes for hits and spells need Vibration on Aphatasia's extended.");
             m_TooltipDelay = Config.Bind("Menus", "TooltipDelay", 0.4f, new ConfigDescription("Seconds the controller cursor rests on an element before its tooltip shows.", new AcceptableValueRange<float>(0.1f, 3f)));
@@ -438,6 +442,10 @@ namespace PoEController
                 Menus.TooltipAssist.Enabled = m_QuickTooltips.Value;
                 World.DirectMovement.AnalogSpeed = m_AnalogSpeed.Value;
                 Patches.RumblePatches.Mode = Compat.Features.On(Compat.Features.Rumble) ? m_Vibration.Value : Patches.VibrationMode.Off;
+                Patches.CursorPatches.Software = Compat.Features.On(Compat.Features.SoftwareCursor)
+                    && (m_CursorDrawing.Value == Patches.CursorDrawing.Always || (m_CursorDrawing.Value == Patches.CursorDrawing.Auto && IsSteamOS));
+                Menus.FocusNavigator.OnlyClickable = m_OnlyClickableStops.Value;
+                Menus.NguiPadInput.Update(Compat.Features.On(Compat.Features.NguiPadInput) && Mode.Active == InputDevice.Gamepad && Pad.Connected);
                 Input.RumblePlayer.Multiplier = m_VibrationStrength.Value;
                 Patches.LinkColorPatches.Enabled = m_BrightTooltipWords.Value && Compat.Features.On(Compat.Features.LinkColors);
                 Menus.TooltipAssist.Delay = m_TooltipDelay.Value;
@@ -506,6 +514,8 @@ namespace PoEController
                     Menus.SlotCountMover.Restore();
                     Input.RumblePlayer.StopAll(Pad);
                     Input.LightPlayer.Stop(Pad);
+                    Menus.NguiPadInput.Restore();
+                    Patches.CursorPatches.Software = false;
                     Menus.MouseEmulator.ReleaseAll();
                 }
                 catch (Exception)
@@ -613,6 +623,8 @@ namespace PoEController
             Menus.SlotCountMover.Restore();
             try { Input.RumblePlayer.StopAll(Pad); } catch (Exception) { }
             try { Input.LightPlayer.Stop(Pad); } catch (Exception) { }
+            try { Menus.NguiPadInput.Restore(); } catch (Exception) { }
+            try { Patches.CursorPatches.Software = false; } catch (Exception) { }
             m_Harmony?.UnpatchSelf();
             Pad?.Dispose();
             Sdl.SDL_Quit();

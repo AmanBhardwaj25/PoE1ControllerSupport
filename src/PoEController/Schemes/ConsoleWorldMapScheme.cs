@@ -14,6 +14,9 @@ namespace PoEController.Schemes
     /// </summary>
     public sealed class ConsoleWorldMapScheme : MenuScheme
     {
+        /// <summary>R3 here jumps to the current location.</summary>
+        protected override bool TooltipsOnR3 => false;
+
         private const float StickThreshold = 0.5f;
         private const float StickRepeatDelay = 0.35f;
         private const float StickRepeatInterval = 0.18f;

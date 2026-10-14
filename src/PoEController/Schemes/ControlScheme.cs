@@ -115,7 +115,7 @@ namespace PoEController.Schemes
         {
             for (int i = 0; i < m_Bindings.Length; i++)
             {
-                if (pad.GetButton(m_Bindings[i].Button))
+                if (pad.GetButton(m_Bindings[i].Button) && !TakesOver(m_Bindings[i].Button))
                 {
                     VirtualControls.Hold(m_Bindings[i].Control);
                 }
@@ -129,6 +129,9 @@ namespace PoEController.Schemes
             UIHudWindow top = ctx.TopWindow;
             Compat.Features.Run(Compat.Features.ButtonGlyphs, () => UI.GameButtonHints.ForWindow(top, m_Bindings));
         }
+
+        /// <summary>The scheme handles this button itself right now (its binding isn't passed to the game).</summary>
+        protected virtual bool TakesOver(PadButton button) => false;
 
         protected static void AddBindingPrompts(Binding[] bindings, List<Prompt> into)
         {

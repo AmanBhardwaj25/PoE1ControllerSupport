@@ -41,9 +41,14 @@ namespace PoEController.Compat
         public const string FocusFrameRule = "No focus frame on game buttons (Console style)";
         public const string LinkColors = "Brighter tooltip words";
         public const string Rumble = "Controller vibration";
+        public const string TooltipMode = "Tooltip mode (R3 in menus)";
+        public const string MenuPageFocus = "Focus on the selected option after a page change";
+        public const string SoftwareCursor = "Cursor drawn by the game (Steam Deck)";
+        public const string NguiPadInput = "NGUI's own pad input off";
         public const string Lights = "Controller lights and adaptive triggers (DualSense / DualShock 4)";
         public const string AnalogSpeed = "Analog movement speed";
         public const string ConversationScroll = "Scroll conversations with RS";
+        public const string ConversationFocus = "Cursor on the conversation responses";
         public const string SlotCount = "Stack count out from under the cursor (Console style)";
 
         private static readonly Dictionary<string, string> s_Off = new Dictionary<string, string>();

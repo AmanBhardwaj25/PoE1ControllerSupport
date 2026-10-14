@@ -80,6 +80,11 @@ namespace PoEController.Schemes
             if (On)
             {
                 ItemActions.AddCategoryEntries(source, into);
+                // The stash window (R3 is tooltips): where the game lets the party reach it (camp, inn, town ...).
+                if (!m_IsStash && StashAllowed())
+                {
+                    into.Add(new ItemActions.Entry { Kind = ItemActions.Kind.OpenStash, Label = "Open stash" });
+                }
             }
         }
 
@@ -127,8 +132,12 @@ namespace PoEController.Schemes
             {
                 return; // Y just opened the Actions menu
             }
+            m_Root = NavigationRoot(ctx);
             Compat.Features.Run(Compat.Features.ConsoleMenus, () => HandleConsole(pad, dt));
         }
+
+        /// <summary>The window the d-pad works in this frame (for tooltip mode from the L3 hold).</summary>
+        private Transform m_Root;
 
         private void HandleConsole(Gamepad pad, float dt)
         {
@@ -172,10 +181,6 @@ namespace PoEController.Schemes
             if (pad.GetButtonDown(PadButton.RightShoulder))
             {
                 StepCharacter(1);
-            }
-            if (pad.GetButtonDown(PadButton.RightStick))
-            {
-                ToggleStash();
             }
         }
 
@@ -521,25 +526,6 @@ namespace PoEController.Schemes
                     || GameState.Option.GetOption(GameOption.BoolOption.DONT_RESTRICT_STASH));
         }
 
-        private void ToggleStash()
-        {
-            if (Dragging || UIStashManager.Instance == null)
-            {
-                return;
-            }
-            if (m_IsStash)
-            {
-                UIStashManager.Instance.HideWindow();
-                return;
-            }
-            if (!StashAllowed())
-            {
-                GlobalAudioPlayer.SPlay(UIAudioList.UIAudioType.Error);
-                return;
-            }
-            UIStashManager.Instance.ShowWindow();
-        }
-
         protected override void AddNavigationPrompts(List<Prompt> into)
         {
             if (!On)
@@ -603,14 +589,7 @@ namespace PoEController.Schemes
             into.Add(new Prompt(new[] { "lb", "rb" }, "Character"));
             into.Add(new Prompt("lstick_click", "Multi-select"));
             into.Add(new Prompt("lstick_click", CursorIsFree ? "Hold: lock cursor" : "Hold: free cursor"));
-            if (m_IsStash)
-            {
-                into.Add(new Prompt("rstick_click", "Close stash"));
-            }
-            else if (StashAllowed())
-            {
-                into.Add(new Prompt("rstick_click", "Stash"));
-            }
+            into.Add(new Prompt("rstick_click", "Tooltips"));
         }
     }
 

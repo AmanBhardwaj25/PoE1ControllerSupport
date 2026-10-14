@@ -14,6 +14,9 @@ namespace PoEController.Schemes
     /// </summary>
     public sealed class ConsoleLootScheme : MenuScheme, IItemTooltipHint
     {
+        /// <summary>R3 here switches the target between the party and the stash.</summary>
+        protected override bool TooltipsOnR3 => false;
+
         public ConsoleLootScheme(params Binding[] bindings)
             : base("Loot (Console)", bindings)
         {

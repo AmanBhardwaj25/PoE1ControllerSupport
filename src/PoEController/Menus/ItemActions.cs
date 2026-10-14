@@ -24,6 +24,8 @@ namespace PoEController.Menus
             QuickSlot,
             /// <summary>Split a stack: the game's own amount dialog, then the part is carried (double-click). Console only.</summary>
             Split,
+            /// <summary>Open the stash window (Console inventory, where the stash can be reached).</summary>
+            OpenStash,
         }
 
         public sealed class Entry
@@ -158,10 +160,17 @@ namespace PoEController.Menus
                     }
                     Equippable equippable = source.InvItem.baseItem as Equippable;
                     UIInventoryGridItem slot = equippable != null ? inv.Equipment.GetGridItemForSlot(equippable.GetPreferredSlot()) : null;
-                    if (slot != null && slot.gameObject.activeSelf && ClearForEquip(slot, equippable, source, e.Member))
+                    if (slot == null || !slot.gameObject.activeSelf || !ClearForEquip(slot, equippable, source, e.Member, out bool moved))
                     {
-                        slot.TrySwap(source, splitStack: false);
+                        return true;
                     }
+                    if (moved)
+                    {
+                        // The slot only shows as empty from the next frame: equipping now is refused. Run again then.
+                        return false;
+                    }
+                    // TrySwap shows the game's own message if it refuses.
+                    slot.TrySwap(source, splitStack: false);
                     return true;
                 }
                 case Kind.Examine:
@@ -222,6 +231,12 @@ namespace PoEController.Menus
                     }
                     return true;
                 }
+                case Kind.OpenStash:
+                    if (UIStashManager.Instance != null)
+                    {
+                        UIStashManager.Instance.ShowWindow();
+                    }
+                    return true;
                 case Kind.Split:
                 {
                     // Double-click on a stack = the game's amount dialog, then the part is carried on the cursor.
@@ -257,10 +272,12 @@ namespace PoEController.Menus
         /// Before equipping <paramref name="item"/> into <paramref name="slot"/> on <paramref name="member"/>: what is
         /// in the way (that slot, and the other hand when either weapon is two-handed) goes into the member's own pack,
         /// the way unequipping does, instead of swapping into wherever the new item came from. False (with a message)
-        /// if their pack can't take it all; then nothing has moved.
+        /// if their pack can't take it all; then nothing has moved. <paramref name="moved"/> = something went to the
+        /// pack (the slot only shows as empty from the next frame).
         /// </summary>
-        private static bool ClearForEquip(UIInventoryGridItem slot, Equippable item, UIInventoryGridItem source, PartyMemberAI member)
+        private static bool ClearForEquip(UIInventoryGridItem slot, Equippable item, UIInventoryGridItem source, PartyMemberAI member, out bool moved)
         {
+            moved = false;
             var inTheWay = new List<UIInventoryGridItem>(2);
             if (!slot.Empty)
             {
@@ -297,11 +314,19 @@ namespace PoEController.Menus
             foreach (UIInventoryGridItem g in inTheWay)
             {
                 UIInventoryGridItem empty = row.ItemGrid.FirstEmptyGridItem();
-                // TrySwap shows the game's own message if it refuses (e.g. an item that can't be unequipped).
-                if (empty == null || !empty.TrySwap(g, splitStack: false))
+                if (empty == null)
                 {
                     return false;
                 }
+                // TrySwap's result isn't "it worked": into an empty slot it is false after a successful move (the item
+                // is merged in and taken out of the old slot). The slot being empty afterwards is. A refusal shows the
+                // game's own message (e.g. an item that can't be unequipped).
+                empty.TrySwap(g, splitStack: false);
+                if (!g.Empty)
+                {
+                    return false;
+                }
+                moved = true;
             }
             return true;
         }

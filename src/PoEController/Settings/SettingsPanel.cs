@@ -45,6 +45,8 @@ namespace PoEController.Settings
             { "Input.VibrationStrength", "Vibration strength" },
             { "Input.ControllerLights", "Controller lights (DualSense / DualShock 4)" },
             { "Input.AdaptiveTriggers", "Adaptive triggers (DualSense)" },
+            { "Input.CursorDrawnByGame", "Cursor drawn by the game" },
+            { "Menus.OnlyClickableStops", "Skip things that can't be clicked" },
             { "Input.VibrationTest", "Test a vibration pattern (A)" },
             { "Input.PauseOnDisconnect", "Pause when the controller disconnects" },
             { "Menus.QuickTooltips", "Quick tooltips" },

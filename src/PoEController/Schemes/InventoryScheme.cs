@@ -325,7 +325,7 @@ namespace PoEController.Schemes
             }
             else if (m_PendingTime > PendingTimeout)
             {
-                Plugin.Log.LogWarning($"Item menu: '{m_Pending.Label}' gave up, the inventory didn't switch character");
+                Plugin.Log.LogWarning($"Item menu: '{m_Pending.Label}' gave up (the inventory didn't switch character, or the slot didn't clear)");
                 m_Pending = null;
             }
         }

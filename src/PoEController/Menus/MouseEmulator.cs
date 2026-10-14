@@ -49,7 +49,14 @@ namespace PoEController.Menus
 
         public static bool IsSyntheticActivity => Time.unscaledTime < SyntheticUntil || s_LeftDown || s_RightDown;
 
-        public static Vector2 Position => UnityEngine.Input.mousePosition;
+        private static int s_SetFrame = -1;
+
+        /// <summary>
+        /// The cursor position (Unity screen coords). In the frame <see cref="MoveTo"/> moved it, the new point: Unity
+        /// reports a moved system cursor only from the next frame on, and code that looks under the cursor right after
+        /// moving it (choose the focused option, frame it) would otherwise see the element it just left.
+        /// </summary>
+        public static Vector2 Position => Time.frameCount == s_SetFrame ? LastSetPosition : (Vector2)UnityEngine.Input.mousePosition;
 
         /// <summary>Moves the cursor; only while the game window is active so we never move it over other apps.</summary>
         public static bool MoveTo(Vector2 unityScreenPos)
@@ -67,6 +74,7 @@ namespace PoEController.Menus
                 return false;
             }
             LastSetPosition = new Vector2(x, y);
+            s_SetFrame = Time.frameCount;
             MarkSynthetic();
             return SetCursorPos(p.X, p.Y);
         }

@@ -39,6 +39,23 @@ namespace PoEController.UI
 
         public static void Clear() => s_Hints.Clear();
 
+        /// <summary>
+        /// <paramref name="t"/> is a game button that shows a controller glyph (it or a parent got one this frame or
+        /// the last): it has its own pad button, so menu navigation leaves it out.
+        /// </summary>
+        public static bool Covers(Transform t)
+        {
+            for (int i = 0; i < s_Hints.Count; i++)
+            {
+                GameObject target = s_Hints[i].Target;
+                if (target != null && (t == target.transform || t.IsChildOf(target.transform)))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         /// <summary>The gap in pixels (Screen.dpi; 96 dpi when the OS doesn't report it).</summary>
         private static float Gap()
         {
