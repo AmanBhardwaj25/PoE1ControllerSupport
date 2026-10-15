@@ -92,7 +92,61 @@ namespace PoEController.World
                 Badge = n.Badge,
                 Status = n.Status,
                 Blank = n.Blank,
+                Info = n.Blank ? null : n.Use,
             };
+        }
+
+        /// <summary>Where the radial stood (ring, choosing a custom slot, highlighted slot), to come back to it.</summary>
+        public sealed class Place
+        {
+            public List<string> Path;
+            public int Picking;
+            public int Highlight;
+        }
+
+        /// <summary>Y: the highlighted spell / ability / item has a card to open.</summary>
+        public bool CanExamine => Current != null && !Current.Blank && RadialInfo.CanExamine(Current.Use);
+
+        /// <summary>
+        /// Y: opens the game's card for the highlighted entry. The radial closes (the card is a window over the world);
+        /// returns where it stood, for <see cref="Reopen"/> once the card is closed. <paramref name="paused"/> = the
+        /// radial had paused the game (the caller now owns that pause).
+        /// </summary>
+        public Place Examine(out bool paused)
+        {
+            paused = false;
+            Node n = Current;
+            if (n == null || !CanExamine)
+            {
+                return null;
+            }
+            var place = new Place { Path = new List<string>(m_Path), Picking = m_Picking, Highlight = Highlight };
+            CharacterStats owner = Owner;
+            Plugin.Log.LogInfo($"Combat radial: examine {n.Name}");
+            paused = CloseKeepPause();
+            RadialInfo.Examine(n.Use, owner);
+            return place;
+        }
+
+        /// <summary>Opens again where <see cref="Examine"/> left off. False if the radial can't open now.</summary>
+        public bool Reopen(Place place, bool inheritPause)
+        {
+            if (place == null || !Open(inheritPause))
+            {
+                return false;
+            }
+            m_Path.AddRange(place.Path);
+            m_Picking = place.Picking;
+            Rebuild();
+            if (m_Shown.Count == 0)
+            {
+                // That ring is gone (e.g. its last spell was used up): the top ring instead.
+                m_Path.Clear();
+                m_Picking = -1;
+                Rebuild();
+            }
+            Highlight = Math.Min(place.Highlight, m_Shown.Count - 1);
+            return true;
         }
 
         /// <param name="inheritPause">The caller already paused on our behalf (coming back from targeting).</param>
@@ -648,7 +702,7 @@ namespace PoEController.World
         private Node TalkOrDelayNode(CharacterStats owner)
         {
             AIController actor = TurnActor?.Invoke();
-            if (actor != null && TacticalModeManager.Instance != null && TacticalModeManager.Instance.GetCanDelayTurn(actor))
+            if (TurnChecks.CanDelayTurn(actor))
             {
                 return new Node
                 {

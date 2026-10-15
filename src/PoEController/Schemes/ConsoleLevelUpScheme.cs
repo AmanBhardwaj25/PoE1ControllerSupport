@@ -450,7 +450,9 @@ namespace PoEController.Schemes
             foreach (UICharacterCreationTalentCategoryButton b in cc.GetComponentsInChildren<UICharacterCreationTalentCategoryButton>(false))
             {
                 Collider col = b.GetComponent<Collider>();
-                if (col != null && col.enabled)
+                UIImageButtonRevised look = b.GetComponent<UIImageButtonRevised>();
+                // A greyed-out category (DisableButton turns its button off) ignores clicks: not a stop for LT / RT.
+                if (col != null && col.enabled && (look == null || look.enabled))
                 {
                     tabs.Add(b);
                 }
@@ -459,11 +461,23 @@ namespace PoEController.Schemes
             return tabs;
         }
 
+        private static readonly FieldInfo s_ForceDown = AccessTools.Field(typeof(UIImageButtonRevised), "forceDown");
+
+        /// <summary>
+        /// The open tab. Spell levels show it as selected; a talent category is held down instead
+        /// (ShowTalentCategory: ForceDown on the open one only), which is not "selected" anywhere else (ability lists
+        /// force every entry down), so it is read here for the category tabs only.
+        /// </summary>
         private static int CurrentTab(List<Component> tabs)
         {
             for (int i = 0; i < tabs.Count; i++)
             {
                 if (ClickTargets.IsSelected(tabs[i]))
+                {
+                    return i;
+                }
+                UIImageButtonRevised look = tabs[i] is UICharacterCreationTalentCategoryButton ? tabs[i].GetComponent<UIImageButtonRevised>() : null;
+                if (look != null && s_ForceDown != null && s_ForceDown.GetValue(look) is bool down && down)
                 {
                     return i;
                 }

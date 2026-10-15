@@ -101,7 +101,7 @@ namespace PoEController.Schemes
         private protected void RunAction(ItemActions.Entry e, UIInventoryGridItem source)
         {
             Plugin.Log.LogInfo($"Item action: {e.Label} ({source.InvItem.baseItem.name})");
-            if (!ItemActions.Run(e, source))
+            if (ItemActions.Run(e, source) == ItemActions.Outcome.Pending)
             {
                 m_Pending = e;
                 m_PendingSource = source;
@@ -299,7 +299,7 @@ namespace PoEController.Schemes
                 }
                 CloseMenu(pad);
                 Plugin.Log.LogInfo($"Item menu: {e.Label} ({m_SourceItem.baseItem.name})");
-                if (!ItemActions.Run(e, m_Source))
+                if (ItemActions.Run(e, m_Source) == ItemActions.Outcome.Pending)
                 {
                     m_Pending = e;
                     m_PendingSource = m_Source;
@@ -319,7 +319,7 @@ namespace PoEController.Schemes
                 m_Pending = null;
                 return;
             }
-            if (ItemActions.Run(m_Pending, m_PendingSource))
+            if (ItemActions.Run(m_Pending, m_PendingSource) != ItemActions.Outcome.Pending)
             {
                 m_Pending = null;
             }

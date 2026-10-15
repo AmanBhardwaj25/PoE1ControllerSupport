@@ -62,7 +62,13 @@ namespace PoEController.UI
             int h = radial.Highlight;
             if (h >= 0 && h < n)
             {
-                DrawLabel(radial.GetSlot(h), SlotCentre(c, slotR, RadialLayout.Degrees(h, n, radial.SpreadOnHoles)), c, frameD * 0.65f, s);
+                RadialSlot hs = radial.GetSlot(h);
+                DrawLabel(hs, SlotCentre(c, slotR, RadialLayout.Degrees(h, n, radial.SpreadOnHoles)), c, frameD * 0.65f, s);
+                if (hs.Info != null)
+                {
+                    RadialInfo.DrawPanel(m_Text, new Rect(c.x - size * 0.5f, c.y - size * 0.5f, size, size), hs.Name,
+                        RadialInfo.Text(hs.Info, radial.Owner), s);
+                }
             }
             GUI.color = old;
         }

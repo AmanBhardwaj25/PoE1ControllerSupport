@@ -39,6 +39,10 @@ namespace PoEController.Schemes
         private readonly InteractionTargeting m_Targeting = new InteractionTargeting();
         private readonly PartySelect m_PartySelect = new PartySelect();
         private readonly AbilityWheel m_Wheel = new AbilityWheel();
+        /// <summary>The wheel closed for Examine (X): reopened there once the card is closed.</summary>
+        private AbilityWheel.Place m_ExamineReturn;
+        /// <summary>The wheel had paused the game when Examine closed it: that pause is ours until it reopens.</summary>
+        private bool m_ExaminePausedByUs;
         private readonly WorldCursor m_Cursor = new WorldCursor();
         private Vector3 m_Heading;
         private bool m_ShoulderChordUsed;
@@ -83,6 +87,10 @@ namespace PoEController.Schemes
 
         public override void HandleInput(in SchemeContext ctx, Gamepad pad, float dt)
         {
+            if (m_ExamineReturn != null)
+            {
+                ReturnFromExamine();
+            }
             if (m_Wheel.IsOpen)
             {
                 HandleWheel(pad, dt);
@@ -219,9 +227,34 @@ namespace PoEController.Schemes
                     m_Wheel.Close();
                 }
             }
+            else if (pad.GetButtonDown(PadButton.West) && m_Wheel.CanExamine)
+            {
+                m_ExamineReturn = m_Wheel.Examine(out m_ExaminePausedByUs);
+            }
             else if (pad.GetButtonDown(PadButton.East) && m_Wheel.Back())
             {
                 m_Wheel.Close();
+            }
+        }
+
+        /// <summary>
+        /// Back in the world after Examine's card (closed with B or the mouse): the wheel opens again on the same group
+        /// and entry, keeping the pause it had. Not on the controller any more, or it can't open now: the pause it had
+        /// taken is given back.
+        /// </summary>
+        private void ReturnFromExamine()
+        {
+            AbilityWheel.Place place = m_ExamineReturn;
+            bool paused = m_ExaminePausedByUs;
+            m_ExamineReturn = null;
+            m_ExaminePausedByUs = false;
+            if (OnGamepad && m_Wheel.Reopen(place, paused))
+            {
+                return;
+            }
+            if (paused && TimeController.Instance != null && TimeController.Instance.Paused)
+            {
+                TimeController.Instance.Paused = false;
             }
         }
 
@@ -410,7 +443,7 @@ namespace PoEController.Schemes
 
         private static bool CanDelayTurn(AIController actor)
         {
-            return actor != null && TacticalModeManager.Instance != null && TacticalModeManager.Instance.GetCanDelayTurn(actor);
+            return World.TurnChecks.CanDelayTurn(actor);
         }
 
         private static void HoldBindings(Gamepad pad, Binding[] bindings)
@@ -666,6 +699,10 @@ namespace PoEController.Schemes
                 if (confirm != null)
                 {
                     into.Add(new Prompt("south", confirm));
+                }
+                if (m_Wheel.CanExamine)
+                {
+                    into.Add(new Prompt("west", "Examine"));
                 }
                 into.Add(new Prompt("east", m_Wheel.InGroup ? "Back" : "Close"));
                 if (!TacticalModeManager.IsInTacticalCombat())

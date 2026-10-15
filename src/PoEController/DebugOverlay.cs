@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace PoEController
 {
-    /// <summary>IMGUI overlay (F8) for checking controller detection, glyphs, device switching and screen tracking.</summary>
+    /// <summary>IMGUI overlay (F7) for checking controller detection, glyphs, device switching and screen tracking.</summary>
     internal static class DebugOverlay
     {
         private const float GlyphSize = 32f;

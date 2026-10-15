@@ -50,6 +50,7 @@ namespace PoEController.Compat
         public const string ConversationScroll = "Scroll conversations with RS";
         public const string ConversationFocus = "Cursor on the conversation responses";
         public const string SlotCount = "Stack count out from under the cursor (Console style)";
+        public const string RadialInfo = "Spell and item details in the radials";
 
         private static readonly Dictionary<string, string> s_Off = new Dictionary<string, string>();
 

@@ -34,6 +34,7 @@ namespace PoEController.Settings
             { "Prompts.Scale", "Prompt size" },
             { "Prompts.TargetLabel", "Word on the A prompt" },
             { "Prompts.ConsoleShortBar", "Short prompt bar (Console)" },
+            { "Prompts.RadialDetails", "Spell details beside the radial" },
             { "Prompts.WorldPosition", "Prompt bar in the world" },
             { "Prompts.MenuPosition", "Prompt bar in menus" },
             { "Glyphs.Style", "Button glyph style" },

@@ -90,6 +90,7 @@ namespace PoEController.UI
                 {
                     m_Text.DrawText(new Rect(c.x - w * 0.5f, c.y + 14f * s, w, 70f * s), cur.Status, 0.9f, TextAnchor.UpperCenter, StatusColor);
                 }
+                RadialInfo.DrawPanel(m_Text, new Rect(c.x - discR, c.y - discR, discR * 2f, discR * 2f), cur.Name, RadialInfo.Text(cur, wheel.Owner), s);
             }
         }
 

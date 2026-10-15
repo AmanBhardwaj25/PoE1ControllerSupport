@@ -459,21 +459,28 @@ namespace PoEController.Schemes
 
         /// <summary>
         /// Runs one action on every marked item (each item's own action entry, so the game's checks apply item by item),
-        /// then leaves multi-select with a short summary message.
+        /// then posts a short summary of what really moved. Items that didn't move, or only in part, stay marked (and
+        /// multi-select stays on); when everything moved, multi-select ends.
         /// </summary>
         private void RunBatch(string verb, System.Func<List<ItemActions.Entry>, ItemActions.Entry> pick)
         {
             int done = 0;
-            int skipped = 0;
+            int partly = 0;
+            int failed = 0;
             string reason = null;
             UIWidget anchor = null;
             var list = new List<ItemActions.Entry>();
+            var keep = new List<InventoryItem>();
             foreach (InventoryItem item in m_Marked.ToList())
             {
                 UIInventoryGridItem slot = ItemActions.Find(item, null);
                 if (slot == null || slot.Empty)
                 {
-                    skipped++;
+                    failed++;
+                    if (item != null && item.baseItem != null)
+                    {
+                        keep.Add(item);
+                    }
                     continue;
                 }
                 anchor = anchor ?? slot.Icon;
@@ -482,15 +489,41 @@ namespace PoEController.Schemes
                 ItemActions.Entry e = pick(list);
                 if (e == null || e.Disabled != null)
                 {
-                    skipped++;
+                    failed++;
+                    keep.Add(item);
                     reason = reason ?? e?.Disabled;
                     continue;
                 }
-                ItemActions.Run(e, slot);
-                done++;
+                switch (ItemActions.Run(e, slot))
+                {
+                    case ItemActions.Outcome.Done:
+                        done++;
+                        break;
+                    case ItemActions.Outcome.Partly:
+                        partly++;
+                        keep.Add(item);
+                        break;
+                    default:
+                        failed++;
+                        keep.Add(item);
+                        break;
+                }
             }
-            ExitMulti();
-            string text = $"{verb}: {done} item{(done == 1 ? "" : "s")}" + (skipped > 0 ? $" ({skipped} stayed{(reason != null ? ": " + reason : "")})" : "");
+            if (keep.Count == 0)
+            {
+                ExitMulti();
+            }
+            else
+            {
+                m_Marked.Clear();
+                m_Marked.AddRange(keep);
+                UIGlobalInventory.Instance.UnselectAll();
+                m_MarkRefresh = 0f; // highlight the kept ones again right away
+            }
+            string text = $"{verb}: {done} item{(done == 1 ? "" : "s")}"
+                + (partly > 0 ? $", {partly} only in part (no room for the rest)" : "")
+                + (failed > 0 ? $" ({failed} stayed{(reason != null ? ": " + reason : "")})" : "")
+                + (keep.Count > 0 ? ". Those are still marked." : "");
             Plugin.Log.LogInfo("Inventory: " + text);
             if (anchor != null && UIGlobalInventory.Instance != null)
             {

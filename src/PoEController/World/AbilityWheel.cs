@@ -234,6 +234,50 @@ namespace PoEController.World
             }
         }
 
+        /// <summary>Where the wheel stood (open group, highlighted entry), to come back to it.</summary>
+        public sealed class Place
+        {
+            public string Group;
+            public int Highlight;
+        }
+
+        /// <summary>The highlighted spell / ability / item has a card to open.</summary>
+        public bool CanExamine => RadialInfo.CanExamine(Current);
+
+        /// <summary>
+        /// Opens the game's card for the highlighted entry. The wheel closes (the card is a window over the world);
+        /// returns where it stood, for <see cref="Reopen"/> once the card is closed. <paramref name="paused"/> = the
+        /// wheel had paused the game (the caller now owns that pause).
+        /// </summary>
+        public Place Examine(out bool paused)
+        {
+            paused = false;
+            Entry e = Current;
+            if (!CanExamine)
+            {
+                return null;
+            }
+            var place = new Place { Group = m_OpenGroup, Highlight = Highlight };
+            CharacterStats owner = Owner;
+            Plugin.Log.LogInfo($"Ability wheel: examine {e.Name}");
+            paused = CloseKeepPause();
+            RadialInfo.Examine(e, owner);
+            return place;
+        }
+
+        /// <summary>Opens again where <see cref="Examine"/> left off. False if the wheel can't open now.</summary>
+        public bool Reopen(Place place, bool inheritPause)
+        {
+            if (place == null || !Open(inheritPause))
+            {
+                return false;
+            }
+            m_OpenGroup = place.Group;
+            Rebuild(); // a group that is gone falls back to the top ring
+            Highlight = Mathf.Clamp(place.Highlight, 0, m_Shown.Count - 1);
+            return true;
+        }
+
         /// <summary>B. Returns true if the wheel should close.</summary>
         public bool Back()
         {

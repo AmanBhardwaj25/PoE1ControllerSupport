@@ -43,10 +43,11 @@ namespace PoEController
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string Guid = "poe.controller";
-        public const string Version = "0.45.0";
+        public const string Version = "0.46.0";
 
         private ConfigEntry<ControlStyle> m_ControlStyle;
         private ConfigEntry<bool> m_ConsoleShortBar;
+        private ConfigEntry<bool> m_RadialDetails;
         private ConfigEntry<bool> m_ConsoleHideActionBar;
         private ConfigEntry<bool> m_ConsoleCombatPointer;
         private bool m_TrimHud;
@@ -143,7 +144,9 @@ namespace PoEController
             LogControlStyle("is");
             m_GlyphOverride =Config.Bind("Glyphs", "Style", GlyphOverride.Auto, "Button prompt style. Auto follows the connected controller.");
             m_Deadzone = Config.Bind("Input", "StickDeadzone", 0.2f, new ConfigDescription("Radial deadzone for both sticks.", new AcceptableValueRange<float>(0.05f, 0.6f)));
-            m_DebugToggle = Config.Bind("Debug", "ToggleOverlay", new KeyboardShortcut(KeyCode.F8), "Shows the controller debug overlay.");
+            // Replaces "ToggleOverlay" (F8, which is also the game's Quick Load: a press loaded the quicksave). A new key
+            // so saved files pick up the new default. F7 is unused by the game (it uses F5, F8, F11, and F9 / F10 with -e3).
+            m_DebugToggle = Config.Bind("Debug", "Overlay", new KeyboardShortcut(KeyCode.F7), "Shows the controller debug overlay. Avoid F5 / F8 (the game's quick save / quick load).");
             m_CameraSpeed = Config.Bind("Input", "CameraSpeed", 1.5f, new ConfigDescription("Right-stick camera speed, relative to the keyboard pan speed.", new AcceptableValueRange<float>(0.25f, 5f)));
             m_FollowCamera = Config.Bind("Input", "FollowCamera", false, "Controller follow camera (toggled with R3; remembered across areas and restarts).");
             m_PauseOnDisconnect = Config.Bind("Input", "PauseOnDisconnect", true, "Pause the game when the controller disconnects while you are playing with it.");
@@ -165,6 +168,7 @@ namespace PoEController
             m_TargetLabel = Config.Bind("Prompts", "TargetLabel", TargetLabelMode.Full, "The A prompt over the highlighted thing in the world: Full = glyph + word (Open, Talkâ€¦), GlyphOnly = just the glyph, Brief = the word for 2 seconds when a new target is highlighted, then just the glyph.");
             // Replaces 0.23's ConsoleFullBar (default flipped; a new key so saved files pick up the new default).
             m_ConsoleShortBar = Config.Bind("Prompts", "ConsoleShortBar", true, "Console style: show only what matters right now in the world prompt bar (the A action, pause, the current mode's buttons), like the Switch. Off = list every world control.");
+            m_RadialDetails = Config.Bind("Prompts", "RadialDetails", true, "Beside the Combat Radial (Console) and the ability wheel (PC layout): what the highlighted spell, ability or item does, in the game's own tooltip words. Examine (Y in the Combat Radial, X in the ability wheel) opens the full card either way.");
             m_PromptsEnabled = Config.Bind("Prompts", "Enabled", true, "Show the button prompt bar while using a controller.");
             m_PromptScale = Config.Bind("Prompts", "Scale", 1f, new ConfigDescription("Prompt bar size multiplier.", new AcceptableValueRange<float>(0.5f, 2f)));
             m_HudBarPosition = Config.Bind("Prompts", "WorldPosition", BarPosition.Top, "Where the prompt bar sits during in-world play (the bottom is taken by the game HUD).");
@@ -449,6 +453,7 @@ namespace PoEController
                 Input.RumblePlayer.Multiplier = m_VibrationStrength.Value;
                 Patches.LinkColorPatches.Enabled = m_BrightTooltipWords.Value && Compat.Features.On(Compat.Features.LinkColors);
                 Menus.TooltipAssist.Delay = m_TooltipDelay.Value;
+                World.RadialInfo.ShowPanel = m_RadialDetails.Value;
                 Tutorials.TutorialFlow.TimedEnabled = m_TimedTutorials.Value;
                 Tutorials.TutorialFlow.WordsPerMinute = m_ReadingWpm.Value;
                 Tutorials.TutorialFlow.RecallHold = m_RecallHold.Value;

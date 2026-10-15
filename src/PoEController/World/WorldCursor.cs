@@ -152,7 +152,26 @@ namespace PoEController.World
         }
 
         /// <summary>True when a click now would land in the world rather than on HUD / UI.</summary>
-        public bool CanClick => Active && GameCursor.UiObjectUnderCursor == null && UIWindowManager.MouseInputAvailable;
+        public bool CanClick => Active && UIWindowManager.MouseInputAvailable && (GameCursor.UiObjectUnderCursor == null || OnWorldMarker());
+
+        /// <summary>
+        /// The game UI under the pointer is a marker standing in for something in the world (an area exit's icon with
+        /// the map name, a trigger's icon): clicking it is the world action a mouse player gets (travel), so it is
+        /// allowed; any other HUD element under the pointer is not.
+        /// </summary>
+        private static bool OnWorldMarker()
+        {
+            try
+            {
+                GameObject ui = GameCursor.UiObjectUnderCursor;
+                UITriggerIcon marker = ui != null ? ui.GetComponentInParent<UITriggerIcon>() : null;
+                return marker != null && !marker.Hiding && marker.ClickCallback != null;
+            }
+            catch (System.Exception)
+            {
+                return false; // a changed game: back to "no clicks on game UI"
+            }
+        }
 
         /// <summary>A pressed / released. The press only goes through when <see cref="CanClick"/>.</summary>
         public void SetClick(bool down)

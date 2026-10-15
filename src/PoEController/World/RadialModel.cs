@@ -16,6 +16,8 @@ namespace PoEController.World
         public string Status;
         /// <summary>Empty slot: frame only, no icon or text.</summary>
         public bool Blank;
+        /// <summary>A spell / ability / item: its description is shown beside the radial (<see cref="RadialInfo"/>).</summary>
+        public AbilityWheel.Entry Info;
     }
 
     /// <summary>What <see cref="UI.RadialView"/> needs from a radial (General Radial on LT, Combat Radial on RT).</summary>

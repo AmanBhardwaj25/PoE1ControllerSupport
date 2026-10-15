@@ -50,6 +50,10 @@ namespace PoEController.Schemes
         // Not used by Console style (RT is the Combat Radial); kept for IWorldScheme, never opened.
         private readonly AbilityWheel m_Wheel = new AbilityWheel();
         private readonly CombatRadial m_Combat = new CombatRadial();
+        /// <summary>The Combat Radial closed for Examine (Y): reopened there once the card is closed.</summary>
+        private CombatRadial.Place m_ExamineReturn;
+        /// <summary>The radial had paused the game when Examine closed it: that pause is ours until it reopens.</summary>
+        private bool m_ExaminePausedByUs;
         private readonly ActiveEffectsPanel m_Effects = new ActiveEffectsPanel();
         private readonly CombatLogPanel m_Log = new CombatLogPanel();
         private bool m_PendingLog;
@@ -145,6 +149,10 @@ namespace PoEController.Schemes
 
         public override void HandleInput(in SchemeContext ctx, Gamepad pad, float dt)
         {
+            if (m_ExamineReturn != null)
+            {
+                ReturnFromExamine();
+            }
             if (m_PendingEffects != null && !m_Radial.IsOpen)
             {
                 CharacterStats who = m_PendingEffects;
@@ -840,9 +848,34 @@ namespace PoEController.Schemes
                     m_Combat.Close();
                 }
             }
+            else if (pad.GetButtonDown(PadButton.North) && m_Combat.CanExamine)
+            {
+                m_ExamineReturn = m_Combat.Examine(out m_ExaminePausedByUs);
+            }
             else if (pad.GetButtonDown(PadButton.East) && m_Combat.Back())
             {
                 m_Combat.Close();
+            }
+        }
+
+        /// <summary>
+        /// Back in the world after Examine's card (closed with B or the mouse): the Combat Radial opens again on the
+        /// same ring and slot, keeping the pause it had. Not on the controller any more, or it can't open now: the
+        /// pause it had taken is given back.
+        /// </summary>
+        private void ReturnFromExamine()
+        {
+            CombatRadial.Place place = m_ExamineReturn;
+            bool paused = m_ExaminePausedByUs;
+            m_ExamineReturn = null;
+            m_ExaminePausedByUs = false;
+            if (OnGamepad && m_Combat.Reopen(place, paused))
+            {
+                return;
+            }
+            if (paused && TimeController.Instance != null && TimeController.Instance.Paused)
+            {
+                TimeController.Instance.Paused = false;
             }
         }
 
@@ -919,7 +952,7 @@ namespace PoEController.Schemes
 
         private static bool CanDelayTurn(AIController actor)
         {
-            return actor != null && TacticalModeManager.Instance != null && TacticalModeManager.Instance.GetCanDelayTurn(actor);
+            return World.TurnChecks.CanDelayTurn(actor);
         }
 
         /// <summary>
@@ -1420,6 +1453,10 @@ namespace PoEController.Schemes
                 if (alt != null)
                 {
                     into.Add(new Prompt("west", alt));
+                }
+                if (m_Combat.CanExamine)
+                {
+                    into.Add(new Prompt("north", "Examine"));
                 }
                 into.Add(new Prompt("east", m_Combat.InSubRing ? "Back" : "Close"));
                 if (!TurnBased)

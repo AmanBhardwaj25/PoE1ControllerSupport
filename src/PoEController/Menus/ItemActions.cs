@@ -126,11 +126,20 @@ namespace PoEController.Menus
             }
         }
 
-        /// <summary>
-        /// Runs <paramref name="e"/>. Returns false if it must wait a frame (equip on another member: the window is
-        /// switched to them first so the equipment panel shows their slots); call again next frame.
-        /// </summary>
-        public static bool Run(Entry e, UIInventoryGridItem source)
+        /// <summary>What <see cref="Run"/> did, judged by the inventories afterwards (never by the game call's return).</summary>
+        public enum Outcome
+        {
+            /// <summary>Must wait a frame (equip on another member: the window switches to them first); call again next frame.</summary>
+            Pending,
+            Done,
+            /// <summary>Some of the stack moved, the rest stayed where it was.</summary>
+            Partly,
+            /// <summary>Nothing changed (the game refused, or there was no room).</summary>
+            Refused,
+        }
+
+        /// <summary>Runs <paramref name="e"/>; see <see cref="Outcome"/>.</summary>
+        public static Outcome Run(Entry e, UIInventoryGridItem source)
         {
             UIInventoryManager inv = UIInventoryManager.Instance;
             switch (e.Kind)
@@ -138,12 +147,7 @@ namespace PoEController.Menus
                 case Kind.SendTo:
                 {
                     UIInventoryPlayerRow row = inv.RowPanel.RowForPartyMember(e.Member);
-                    UIInventoryGridItem target = row != null ? row.ItemGrid.FirstEmptyGridItem() : null;
-                    if (target != null)
-                    {
-                        target.TrySwap(source, splitStack: false);
-                    }
-                    return true;
+                    return row != null ? SendTo(source, row.ItemGrid, e.Member) : Outcome.Refused;
                 }
                 case Kind.Equip:
                 {
@@ -151,27 +155,28 @@ namespace PoEController.Menus
                     if (inv.SelectedCharacter != stats)
                     {
                         inv.SelectPartyMember(e.Member);
-                        return false;
+                        return Outcome.Pending;
                     }
                     Equipment eq = e.Member.GetComponent<Equipment>();
                     if (eq == null || inv.Equipment.SelectedEquipment != eq)
                     {
-                        return false; // the panel hasn't caught up yet
+                        return Outcome.Pending; // the panel hasn't caught up yet
                     }
                     Equippable equippable = source.InvItem.baseItem as Equippable;
                     UIInventoryGridItem slot = equippable != null ? inv.Equipment.GetGridItemForSlot(equippable.GetPreferredSlot()) : null;
                     if (slot == null || !slot.gameObject.activeSelf || !ClearForEquip(slot, equippable, source, e.Member, out bool moved))
                     {
-                        return true;
+                        return Outcome.Refused;
                     }
                     if (moved)
                     {
                         // The slot only shows as empty from the next frame: equipping now is refused. Run again then.
-                        return false;
+                        return Outcome.Pending;
                     }
-                    // TrySwap shows the game's own message if it refuses.
+                    // TrySwap shows the game's own message if it refuses. (Equipment never stacks, so the whole item moves.)
+                    InventoryItem equipping = source.InvItem;
                     slot.TrySwap(source, splitStack: false);
-                    return true;
+                    return slot.InvItem == equipping ? Outcome.Done : Outcome.Refused;
                 }
                 case Kind.Examine:
                 {
@@ -186,7 +191,7 @@ namespace PoEController.Menus
                     {
                         UIItemInspectManager.Examine(source.InvItem.BaseItem, source.Owner.OwnerGameObject);
                     }
-                    return true;
+                    return Outcome.Done;
                 }
                 case Kind.Use:
                 {
@@ -196,76 +201,131 @@ namespace PoEController.Menus
                     CharacterStats selected = inv.SelectedCharacter;
                     if (consumable == null || selected == null || GameState.InCombat || consumable.GetComponent<AttackBase>() != null)
                     {
-                        return true;
+                        return Outcome.Refused;
                     }
                     if (consumable.CanUse(selected))
                     {
                         Item baseItem = consumable;
                         consumable.UseImmediately(selected.gameObject);
                         GlobalAudioPlayer.Instance.Play(baseItem, GlobalAudioPlayer.UIInventoryAction.UseItem);
+                        return Outcome.Done;
                     }
-                    else
-                    {
-                        UIGlobalInventory.Instance.PostMessage(consumable.WhyCannotUse(selected), source.Icon);
-                    }
-                    return true;
+                    UIGlobalInventory.Instance.PostMessage(consumable.WhyCannotUse(selected), source.Icon);
+                    return Outcome.Refused;
                 }
                 case Kind.QuickSlot:
                 {
-                    // UIInventoryGridItem.Activate's consumable branch.
+                    // UIInventoryGridItem.Activate's consumable branch. (The quick bar's Add takes any amount: it fills
+                    // stacks and slots itself and returns what didn't fit, which stays here.)
                     if (UIInventoryGridItem.ItemTransferValid(source.InvItem, source, inv.QuickItemsGrid, out string err))
                     {
-                        int left = inv.QuickItemsGrid.Add(source.InvItem.baseItem, source.InvItem.stackSize, null);
+                        int before = source.InvItem.stackSize;
+                        int left = inv.QuickItemsGrid.Add(source.InvItem.baseItem, before, null);
                         if (source.InvItem.baseItem == null || left <= 0)
                         {
                             source.RemoveItem();
+                            return Outcome.Done;
                         }
-                        else
-                        {
-                            source.InvItem.SetStackSize(left);
-                        }
+                        source.InvItem.SetStackSize(left);
+                        return left < before ? Outcome.Partly : Outcome.Refused;
                     }
-                    else
-                    {
-                        UIGlobalInventory.Instance.PostMessage(err, source.Icon);
-                    }
-                    return true;
+                    UIGlobalInventory.Instance.PostMessage(err, source.Icon);
+                    return Outcome.Refused;
                 }
                 case Kind.OpenStash:
                     if (UIStashManager.Instance != null)
                     {
                         UIStashManager.Instance.ShowWindow();
                     }
-                    return true;
+                    return Outcome.Done;
                 case Kind.Split:
                 {
                     // Double-click on a stack = the game's amount dialog, then the part is carried on the cursor.
                     source.Activate();
-                    return true;
+                    return Outcome.Done;
                 }
                 case Kind.Stash:
                 {
-                    // Shift-click: UIInventoryGridItem.DoClick.
+                    // Shift-click: UIInventoryGridItem.DoClick. (The stash takes stacks of any size.)
                     if (UIInventoryGridItem.ItemPlayerTakeValid(source.InvItem, source, out string error))
                     {
                         StashInventory stash = Stash();
                         if (stash != null && !Contains(stash, source.InvItem))
                         {
                             InventoryItem item = source.RemoveItem();
-                            if (!stash.PutItem(item))
+                            if (stash.PutItem(item))
                             {
-                                source.PutItem(item);
+                                return Outcome.Done;
                             }
+                            source.PutItem(item);
                         }
                     }
                     else
                     {
                         UIGlobalInventory.Instance.PostMessage(error, source.Icon);
                     }
-                    return true;
+                    return Outcome.Refused;
                 }
             }
-            return true;
+            return Outcome.Done;
+        }
+
+        /// <summary>
+        /// Moves the stack in <paramref name="source"/> into empty slots of <paramref name="pack"/>. A stack that fits
+        /// one slot moves the way unequipping moves an item (the empty slot's <c>TrySwap</c>). <c>TrySwap</c> can't take
+        /// a bigger one (the stash and the crafting inventory hold stacks of any size): it moves one slot's worth and
+        /// then takes the whole source out of its slot, so the rest would be lost. A bigger stack is split first, one
+        /// slot's worth at a time, the way the game splits a stack into an empty cell (<c>UIInventoryGridItem.Swap</c>:
+        /// Remove from the old inventory, Add into the cell); whatever doesn't fit stays where it was.
+        /// </summary>
+        private static Outcome SendTo(UIInventoryGridItem source, UIInventoryItemGrid pack, PartyMemberAI member)
+        {
+            InventoryItem item = source.InvItem;
+            int before = item.stackSize;
+            int max = Mathf.Max(1, item.baseItem.MaxStackSize);
+            bool refused = false;
+            // Each pass fills one empty slot, so this ends when the pack is full at the latest.
+            for (UIInventoryGridItem target = pack.FirstEmptyGridItem(); target != null; target = pack.FirstEmptyGridItem())
+            {
+                // TrySwap's own check, before anything moves (shows the game's message if it refuses).
+                if (!UIInventoryGridItem.ItemSwapValid(source, target, out string error))
+                {
+                    UIGlobalInventory.Instance.PostMessage(error, source.Icon);
+                    refused = true;
+                    break;
+                }
+                if (item.stackSize <= max || pack.InfiniteStacking)
+                {
+                    target.TrySwap(source, splitStack: false);
+                    break;
+                }
+                Item part = source.Owner.Remove(item.baseItem, max);
+                if (part == null)
+                {
+                    break;
+                }
+                // Into a given empty slot one slot's worth always fits; if the pack still refuses, it goes back.
+                int left = target.Owner.Add(part, max, target);
+                if (left > 0)
+                {
+                    source.Owner.Add(part, left, null);
+                    break;
+                }
+            }
+            int stayed = source.InvItem == item ? item.stackSize : 0;
+            if (stayed == before)
+            {
+                return Outcome.Refused;
+            }
+            if (stayed > 0)
+            {
+                if (!refused)
+                {
+                    UIGlobalInventory.Instance.PostMessage($"{CharacterStats.Name(member)}'s pack is full: {stayed} stayed", source.Icon);
+                }
+                return Outcome.Partly;
+            }
+            return Outcome.Done;
         }
 
         /// <summary>
