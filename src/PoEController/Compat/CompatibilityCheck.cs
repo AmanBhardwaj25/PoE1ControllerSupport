@@ -136,6 +136,8 @@ namespace PoEController.Compat
             F(Features.CombatRadial, "PartyMemberAI", "InstructionSet"),
             F(Features.CombatRadial, "PartyMemberInstructionSetList", "InstructionSetList"),
             M(Features.CombatRadial, "PartyMemberInstructionSetList", "GetClassSpellList"),
+            F(Features.CombatRadial, "Player", "IsInForceAttackMode"),
+            M(Features.CombatRadial, "PartyMemberAI", "NumSelectedMembers"),
             // Name card over the A target (the game's mouse-hover card)
             M(Features.TargetName, "UIMapTooltipManager", "Show"),
             M(Features.TargetName, "UIMapTooltipManager", "Hide"),
@@ -147,6 +149,36 @@ namespace PoEController.Compat
             // B closes an open dropdown list first
             F(Features.MenuBack, "UIDropdownMenu", "m_DropdownOpen"),
             M(Features.MenuBack, "UIDropdownMenu", "OnBoxClicked"),
+            // World map zones (LB / RB, tab row)
+            F(Features.WorldMap, "UIWorldMapManager", "m_IconManagers"),
+            F(Features.WorldMap, "UIWorldMapManager", "TitleLabel"),
+            F(Features.WorldMap, "UIWorldMapIcons", "MapTitle"),
+            F(Features.WorldMap, "UIWorldMapIcons", "MapTag"),
+            F(Features.WorldMap, "UIWorldMapIcon", "VirtualForTag"),
+            M(Features.WorldMap, "UIWorldMapIcon", "OnClick"),
+            // Save / load (Console)
+            M(Features.ConsoleMenus, "UISaveLoadSave", "OnButtonClicked"),
+            M(Features.ConsoleMenus, "UISaveLoadSave", "OnDeleteClicked"),
+            F(Features.ConsoleMenus, "UISaveLoadSave", "Collider"),
+            F(Features.ConsoleMenus, "UISaveLoadSave", "IsNew"),
+            F(Features.ConsoleMenus, "UISaveLoadSave", "MetaData"),
+            F(Features.ConsoleMenus, "UISaveLoadPlaythroughGroup", "Collapsed"),
+            F(Features.ConsoleMenus, "UISaveLoadPlaythroughGroup", "ExpandHitbox"),
+            F(Features.ConsoleMenus, "UISaveLoadManager", "SaveMode"),
+            // Rest box (Console)
+            M(Features.ConsoleMenus, "UIRestConfirmBox", "OnRest"),
+            M(Features.ConsoleMenus, "UIRestConfirmBox", "OnStash"),
+            M(Features.ConsoleMenus, "UIRestConfirmBox", "OnCloseWindow"),
+            F(Features.ConsoleMenus, "UIRestConfirmBox", "PartyMemberGrid"),
+            F(Features.ConsoleMenus, "UIRestConfirmBox", "CampingOnlyContent"),
+            F(Features.ConsoleMenus, "UIRestConfirmBox", "StashButton"),
+            F(Features.ConsoleMenus, "UIRestConfirmBox", "RestButton"),
+            F(Features.ConsoleMenus, "UIRestBoxPartyMember", "DropdownTriggerButton"),
+            F(Features.ConsoleMenus, "UIRestBoxPartyMember", "SelectedCharacter"),
+            // Store: hold X = Trade
+            M(Features.ConsoleMenus, "UIStoreStorePage", "OnDoTrade"),
+            F(Features.ConsoleMenus, "UIStoreStorePage", "TradeIsPending"),
+            F(Features.ConsoleMenus, "UIStoreManager", "StorePage"),
             // Message box amount (buy / sell / split) and tick box
             F(Features.MessageBoxInput, "UIMessageBox", "NumericParent"),
             F(Features.MessageBoxInput, "UIMessageBox", "NumericValue"),

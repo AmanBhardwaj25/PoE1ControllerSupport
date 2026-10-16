@@ -91,6 +91,7 @@ namespace PoEController.Schemes
                 Switch(next, pad);
             }
             StuckWatch.Update(Active, dt);
+            PartyWindowReport.Update(dt);
 
             if (Active != null && pad.Connected && Application.isFocused)
             {

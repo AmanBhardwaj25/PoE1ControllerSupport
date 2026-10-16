@@ -338,26 +338,39 @@ namespace PoEController.World
             };
         }
 
-        /// <summary>The character's AI on/off, as the ability bar's AI button (PartyMemberAI.UseInstructionSet).</summary>
+        /// <summary>
+        /// The character's AI script on / off, as the ability bar's AI button (PartyMemberAI.UseInstructionSet);
+        /// X opens the game's AI customizer for them. A party setting, so here rather than in the Combat Radial
+        /// (whose slot holds force attack).
+        /// </summary>
         private static Entry AiEntry(CharacterStats owner)
         {
             PartyMemberAI pm = owner != null ? owner.GetComponent<PartyMemberAI>() : null;
             if (pm == null)
             {
-                return new Entry { Name = "AI", Icon = "ICO_attack", Usable = false, Status = "No character selected" };
+                return new Entry { Name = "AI", Icon = "ICO_ai_off", Usable = false, Status = "No AI for this character" };
             }
             bool on = pm.UseInstructionSet;
             return new Entry
             {
-                Name = on ? "AI: on" : "AI: off",
-                Icon = "ICO_attack",
+                Name = "AI: " + CombatRadial.ScriptName(owner, pm),
+                Icon = on ? "ICO_ai_on" : "ICO_ai_off",
                 Active = on,
-                Status = owner.Name(),
+                Status = on ? "AI script is active" : "AI script is off",
                 KeepOpen = true,
                 Run = () =>
                 {
                     pm.UseInstructionSet = !pm.UseInstructionSet;
                     pm.UpdateAggressionOfSummonedCreatures(includeCompanion: true);
+                },
+                AltLabel = "Customize",
+                Alt = () =>
+                {
+                    if (UIAiCustomizerManager.Instance != null)
+                    {
+                        UIAiCustomizerManager.Instance.SelectedCharacter = owner;
+                        UIAiCustomizerManager.Instance.ShowWindow();
+                    }
                 },
             };
         }

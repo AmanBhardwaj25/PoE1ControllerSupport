@@ -128,6 +128,10 @@ namespace PoEController.Schemes
             { typeof(UIFormationsManager), ConsoleScreen("Formations (Console)", null, null) },
             { typeof(UIStrongholdManager), ConsoleScreen("Stronghold (Console)", null, null) },
             { typeof(UIStoreManager), new ConsoleStoreScheme(Close, StartCloses) },
+            // Rest box: bonus section as one stop / edit bonuses per character, hold X Rest, Y Stash, B Cancel / back.
+            { typeof(UIRestConfirmBox), new ConsoleRestScheme() },
+            // Save / load: A on a row loads / saves, hold X deletes, Y opens / closes the playthrough.
+            { typeof(UISaveLoadManager), new ConsoleSaveLoadScheme(Close, StartCloses) },
             // Level-up and character creation (one window): its own buttons only, B = Quit (asks), Start = Done.
             { typeof(UICharacterCreationManager), new ConsoleLevelUpScheme() },
             { typeof(UIInventoryManager), new ConsoleInventoryScheme("Inventory (Console)", false, PrevScreenLT, NextScreenRT, Close, StartCloses) },

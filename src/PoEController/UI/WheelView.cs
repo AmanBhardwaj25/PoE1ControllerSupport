@@ -60,6 +60,10 @@ namespace PoEController.UI
                 {
                     GUI.DrawTexture(r, e.Icon, ScaleMode.ScaleToFit);
                 }
+                else if (GameIcons.TryGet(e.IconName, out Texture atlas, out Rect uv))
+                {
+                    GUI.DrawTextureWithTexCoords(r, atlas, uv);
+                }
                 else
                 {
                     m_Text.DrawText(r, Abbrev(e.Name), 0.9f, TextAnchor.MiddleCenter, null);

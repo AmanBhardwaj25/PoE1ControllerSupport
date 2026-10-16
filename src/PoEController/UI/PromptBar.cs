@@ -315,6 +315,20 @@ namespace PoEController.UI
             DrawShadowedLabel(new Rect(x + gw + LabelGap * s, midY - size.y * 0.5f, size.x + 2f, size.y), m_Content);
         }
 
+        /// <summary>One glyph, its left edge at <paramref name="x"/>, centred on <paramref name="midY"/> (GUI coordinates); returns its width.</summary>
+        public float DrawGlyph(GlyphFamily family, float x, float midY, string glyph)
+        {
+            float s = Screen.height / RefHeight * Scale;
+            Texture2D tex = m_Glyphs.Get(family, glyph);
+            float gw = GlyphWidth(tex, s);
+            float gh = GlyphHeight * s;
+            if (tex != null && Event.current.type == EventType.Repaint)
+            {
+                GUI.DrawTexture(new Rect(x, midY - gh * 0.5f, gw, gh), tex, ScaleMode.ScaleToFit);
+            }
+            return gw;
+        }
+
         /// <summary>Soft dark strip behind on-screen prompts (the HUD bar art), GUI coordinates.</summary>
         public void DrawHudStrip(Rect r)
         {

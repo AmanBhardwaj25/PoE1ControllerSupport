@@ -83,7 +83,15 @@ namespace PoEController.Schemes
         bool IWorldScheme.CursorActive => m_Cursor.Active;
         bool IWorldScheme.EastIsFree => EastIsFree;
 
-        private static bool IsCasting =>GameState.s_playerCharacter != null && GameState.s_playerCharacter.IsCasting();
+        /// <summary>
+        /// The game is waiting for a target: a spell / ability being aimed, or force attack (the wheel's Attack, the
+        /// HUD's sword button). Both are picked with the cursor, A confirms, B cancels.
+        /// </summary>
+        private static bool IsCasting => GameState.s_playerCharacter != null
+            && (GameState.s_playerCharacter.IsCasting() || GameState.s_playerCharacter.IsInForceAttackMode);
+
+        /// <summary>A spell / ability is being aimed (not force attack).</summary>
+        private static bool IsSpellCasting => GameState.s_playerCharacter != null && GameState.s_playerCharacter.IsCasting();
 
         public override void HandleInput(in SchemeContext ctx, Gamepad pad, float dt)
         {
@@ -483,7 +491,7 @@ namespace PoEController.Schemes
                 case GameCursor.CursorType.Attack:
                 case GameCursor.CursorType.SpecialAttack:
                 case GameCursor.CursorType.AttackAdvantage:
-                    return IsCasting ? "Cast" : "Attack";
+                    return IsSpellCasting ? "Cast" : "Attack";
                 case GameCursor.CursorType.Walk:
                     return PartyMemberAI.NumSelectedMembers() > 0 ? "Move" : null;
                 case GameCursor.CursorType.Disengage:

@@ -35,6 +35,8 @@ namespace PoEController.Schemes
         public static void PageChanged() => s_PageChanged = true;
 
         private bool m_TooltipMode;
+        /// <summary>Tooltip mode scrolled the text to reveal more words: step on in this direction next frame.</summary>
+        private Vector2 m_RepickDir;
         private Vector2 m_TooltipReturn;
 
         /// <summary>Tooltip mode is on: the d-pad steps between the highlighted words and tooltip-only elements.</summary>
@@ -207,31 +209,71 @@ namespace PoEController.Schemes
             return true;
         }
 
+        /// <summary>
+        /// The description the right stick scrolls: the one whose text the cursor is on; else (the cursor is on a list
+        /// entry, a button...) the one nearest the cursor, never the list the cursor is in. With two item cards side by
+        /// side (comparing) that is the card being looked at, never the other one. A description = glossary words or a
+        /// good amount of text, not a list.
+        /// </summary>
         private static UIDraggablePanel FindTextPanel(Transform root)
         {
-            Collider focus = FocusNavigator.ColliderAt(MouseEmulator.Position);
-            UIDraggablePanel best = null;
-            int bestText = 0;
+            Vector2 at = MouseEmulator.Position;
+            Collider focus = FocusNavigator.ColliderAt(at);
+            Vector2 gui = new Vector2(at.x, Screen.height - at.y);
+            UIDraggablePanel nearest = null;
+            float nearestDist = float.MaxValue;
             foreach (UIDraggablePanel p in root.GetComponentsInChildren<UIDraggablePanel>(false))
             {
-                if (p == null || !p.enabled || (focus != null && focus.transform.IsChildOf(p.transform)))
+                if (p == null || !p.enabled || !IsTextPanel(p))
                 {
                     continue;
                 }
-                int text = 0;
-                bool glossary = p.GetComponentInChildren<UIGlossaryEnabledLabel>() != null;
-                foreach (UILabel l in p.GetComponentsInChildren<UILabel>(false))
+                if (focus != null && focus.transform.IsChildOf(p.transform))
                 {
-                    text += l.text != null ? l.text.Length : 0;
+                    // On the text itself: this one. On a list entry inside it (journal list): the text elsewhere.
+                    if (OnText(focus))
+                    {
+                        return p;
+                    }
+                    continue;
                 }
-                // A description (glossary words or a good amount of text), not a list of short entries.
-                if ((glossary || text > 200) && text > bestText)
+                float dist = UI.WorldTextAvoid.TryScreenRect(p.transform, out Rect r) ? DistanceTo(r, gui) : float.MaxValue - 1f;
+                if (dist < nearestDist)
                 {
-                    best = p;
-                    bestText = text;
+                    nearest = p;
+                    nearestDist = dist;
                 }
             }
-            return best;
+            return nearest;
+        }
+
+        /// <summary>The cursor is on text (a label, highlighted words), not on a button or list entry.</summary>
+        private static bool OnText(Collider focus)
+        {
+            return focus.GetComponent<UILabel>() != null || focus.GetComponentInParent<UIGlossaryEnabledLabel>() != null
+                || focus.GetComponent<UIGlossaryEnabledLabel>() != null;
+        }
+
+        private static bool IsTextPanel(UIDraggablePanel p)
+        {
+            if (p.GetComponentInChildren<UIGlossaryEnabledLabel>() != null)
+            {
+                return true;
+            }
+            int text = 0;
+            foreach (UILabel l in p.GetComponentsInChildren<UILabel>(false))
+            {
+                text += l.text != null ? l.text.Length : 0;
+            }
+            return text > 200;
+        }
+
+        /// <summary>Distance from a point to a rectangle (0 inside it).</summary>
+        private static float DistanceTo(Rect r, Vector2 p)
+        {
+            float dx = Mathf.Max(r.xMin - p.x, 0f, p.x - r.xMax);
+            float dy = Mathf.Max(r.yMin - p.y, 0f, p.y - r.yMax);
+            return Mathf.Sqrt(dx * dx + dy * dy);
         }
 
         /// <summary>
@@ -450,6 +492,17 @@ namespace PoEController.Schemes
             }
 
             MovedThisFrame = false;
+            if (m_RepickDir != Vector2.zero)
+            {
+                // The text was scrolled last frame: the next word that came into view that way.
+                Vector2 again = m_RepickDir;
+                m_RepickDir = Vector2.zero;
+                if (m_TooltipMode && FocusNavigator.TryPick(CollectPoints(root, ExtraNavigationRoot), MouseEmulator.Position, again, out Vector2 next))
+                {
+                    MouseEmulator.MoveTo(next);
+                    MovedThisFrame = true;
+                }
+            }
             if (dir != Vector2.zero)
             {
                 m_SnapPending = false;
@@ -463,6 +516,12 @@ namespace PoEController.Schemes
                         MouseEmulator.MoveTo(target);
                         m_FreeCursorValid = false;
                         MovedThisFrame = true;
+                    }
+                    else if (m_TooltipMode && dir.y != 0f && ScrollForMoreWords(root, dir.y))
+                    {
+                        // No more words on screen that way in a long text (a soulbound item's card): scrolled; next frame
+                        // picks the next word.
+                        m_RepickDir = dir;
                     }
                 }
             }
@@ -664,6 +723,40 @@ namespace PoEController.Schemes
             }
         }
 
+        /// <summary>
+        /// Tooltip mode, no further word on screen up / down: the text it is in (or the description nearest the cursor)
+        /// scrolls about half its height that way, so the words below / above come into view. False when it can't
+        /// move any further (the end of the text).
+        /// </summary>
+        private bool ScrollForMoreWords(Transform root, float dirY)
+        {
+            UIDraggablePanel panel = m_TooltipScope != null ? m_TooltipScope.GetComponent<UIDraggablePanel>() : null;
+            if (panel == null && root != null)
+            {
+                panel = FindTextPanel(root);
+            }
+            if (panel == null || panel.panel == null || !panel.gameObject.activeInHierarchy)
+            {
+                return false;
+            }
+            float visible = panel.panel.clipRange.w;
+            if (visible <= 0f)
+            {
+                return false;
+            }
+            Vector3 before = panel.transform.localPosition;
+            panel.DisableSpring();
+            // Down = further down the text: the content moves up (as the right stick scrolls it).
+            panel.MoveRelative(new Vector3(0f, (dirY < 0f ? 1f : -1f) * visible * 0.5f, 0f));
+            panel.RestrictWithinBounds(true);
+            bool moved = (panel.transform.localPosition - before).sqrMagnitude > 0.25f;
+            if (moved)
+            {
+                Plugin.Log.LogInfo($"Tooltip mode: text scrolled {(dirY < 0f ? "down" : "up")} for more words");
+            }
+            return moved;
+        }
+
         /// <summary>Tooltip mode on (the nearest word / tooltip element) or off (back where the cursor was).</summary>
         protected void ToggleTooltipMode(Transform root)
         {
@@ -727,6 +820,7 @@ namespace PoEController.Schemes
             }
             m_TooltipMode = false;
             m_TooltipScope = null;
+            m_RepickDir = Vector2.zero;
             MouseEmulator.MoveTo(m_TooltipReturn);
             GlobalAudioPlayer.SPlay(UIAudioList.UIAudioType.ButtonUp);
             Plugin.Log.LogInfo("Tooltip mode: off");

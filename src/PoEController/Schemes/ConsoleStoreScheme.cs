@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Reflection;
+using HarmonyLib;
 using PoEController.Compare;
 using PoEController.Input;
 using PoEController.Menus;
@@ -17,9 +19,15 @@ namespace PoEController.Schemes
     {
         private static readonly UIStorePageType[] s_Order = { UIStorePageType.Store, UIStorePageType.Inn, UIStorePageType.Recruit, UIStorePageType.Respec };
 
+        private static readonly MethodInfo s_DoTrade = AccessTools.Method(typeof(UIStoreStorePage), "OnDoTrade");
+
         private Equippable m_Compare;
         private bool m_CompareIsStore;
         private bool m_OverItem;
+        /// <summary>X: tap = quick compare (on release), hold = Trade (as the window's Trade button).</summary>
+        private readonly HoldButton m_X = new HoldButton(PadButton.West);
+        private Equippable m_PressCompare;
+        private bool m_PressCompareIsStore;
 
         public ConsoleStoreScheme(params Binding[] bindings)
             : base("Store (Console)", bindings)
@@ -37,6 +45,8 @@ namespace PoEController.Schemes
             base.Activate();
             m_Compare = null;
             m_OverItem = false;
+            m_X.Reset();
+            m_PressCompare = null;
         }
 
         public override void HandleInput(in SchemeContext ctx, Gamepad pad, float dt)
@@ -51,7 +61,7 @@ namespace PoEController.Schemes
             {
                 return;
             }
-            Compat.Features.Run(Compat.Features.ConsoleMenus, () => HandleConsole(pad));
+            Compat.Features.Run(Compat.Features.ConsoleMenus, () => HandleConsole(pad, dt));
         }
 
         public override void GetPrompts(in SchemeContext ctx, List<Prompt> into)
@@ -60,7 +70,7 @@ namespace PoEController.Schemes
             StoreStash.RelabelBack(into);
         }
 
-        private void HandleConsole(Gamepad pad)
+        private void HandleConsole(Gamepad pad, float dt)
         {
             UIStoreManager store = UIStoreManager.Instance;
             if (store == null || !store.WindowActive())
@@ -72,17 +82,39 @@ namespace PoEController.Schemes
             {
                 MouseEmulator.SetRight(true); // one right-click; MenuScheme lets go next frame
             }
-            if (pad.GetButtonDown(PadButton.West) && m_Compare != null)
+            bool pending = TradePending(store);
+            HoldButton.Result x = m_X.Update(pad, dt, pending);
+            if (m_X.PressedNow)
             {
-                bool ok = false;
-                Equippable item = m_Compare;
-                bool isStore = m_CompareIsStore;
-                CompareSession.Safe(() => ok = CompareSession.QuickCompare(item, isStore), "Quick compare");
-                Plugin.Log.LogInfo($"Quick compare {item.name}: {(ok ? "shown" : "nothing to compare")}");
-                if (!ok)
+                // What a tap compares: the item under the cursor when X went down.
+                m_PressCompare = m_Compare;
+                m_PressCompareIsStore = m_CompareIsStore;
+            }
+            if (x == HoldButton.Result.Held)
+            {
+                // The window's own Trade button (UIStoreStorePage.OnDoTrade): its checks and messages apply.
+                Plugin.Log.LogInfo("Store: trade (hold X)");
+                s_DoTrade.Invoke(store.StorePage, new object[] { store.StorePage.gameObject });
+            }
+            else if (x == HoldButton.Result.Tapped)
+            {
+                if (m_PressCompare != null)
                 {
-                    GlobalAudioPlayer.SPlay(UIAudioList.UIAudioType.Error);
+                    bool ok = false;
+                    Equippable item = m_PressCompare;
+                    bool isStore = m_PressCompareIsStore;
+                    CompareSession.Safe(() => ok = CompareSession.QuickCompare(item, isStore), "Quick compare");
+                    Plugin.Log.LogInfo($"Quick compare {item.name}: {(ok ? "shown" : "nothing to compare")}");
+                    if (!ok)
+                    {
+                        GlobalAudioPlayer.SPlay(UIAudioList.UIAudioType.Error);
+                    }
                 }
+                else if (pending)
+                {
+                    UI.Toast.Show("Hold to trade");
+                }
+                m_PressCompare = null;
             }
             if (pad.GetButtonDown(PadButton.LeftShoulder))
             {
@@ -92,6 +124,12 @@ namespace PoEController.Schemes
             {
                 StepTab(store, 1);
             }
+        }
+
+        /// <summary>Something is in the buy or sell area of the store page (the Trade button would do something).</summary>
+        private static bool TradePending(UIStoreManager store)
+        {
+            return store.Page == UIStorePageType.Store && store.StorePage != null && store.StorePage.TradeIsPending;
         }
 
         private void UpdateHovered(UIStoreManager store)
@@ -167,6 +205,10 @@ namespace PoEController.Schemes
             if (m_Compare != null)
             {
                 into.Add(new Prompt("west", "Quick compare"));
+            }
+            if (Compat.Features.Get(Compat.Features.ConsoleMenus, () => TradePending(store), false))
+            {
+                into.Add(new Prompt("west", "Trade (hold)", m_X.Progress));
             }
             if (Compat.Features.Get(Compat.Features.ConsoleMenus, () => Tabs(store).Count, 0) >= 2)
             {

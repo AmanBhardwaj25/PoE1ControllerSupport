@@ -43,7 +43,7 @@ namespace PoEController
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string Guid = "poe.controller";
-        public const string Version = "0.47.0";
+        public const string Version = "0.48.0";
 
         private ConfigEntry<ControlStyle> m_ControlStyle;
         private ConfigEntry<bool> m_ConsoleShortBar;
@@ -189,6 +189,7 @@ namespace PoEController
             Mode.Changed += _ => TextGlyphs.Refresh();
             Glyphs = new GlyphLibrary(Path.Combine(pluginDir, "glyphs"), Log);
             ScreenTracker.TopChanged += w => Log.LogInfo($"Screen -> {(w != null ? w.GetType().Name : "World")}");
+            Context.PartyWindowReport.Init();
             Router = new SchemeRouter();
             Router.Changed += s => Log.LogInfo($"Scheme -> {(s != null ? s.Name : "none")}");
             m_Transitions = new DeviceTransitions(this);
@@ -558,6 +559,14 @@ namespace PoEController
                     {
                         Compat.Features.Run(Compat.Features.Compare, choosing.DrawGreyed);
                     }
+                    if (active is ConsoleRestScheme rest)
+                    {
+                        Compat.Features.Run(Compat.Features.ConsoleMenus, rest.DrawDimmed);
+                    }
+                    if (active is ConsoleWorldMapScheme worldMap)
+                    {
+                        Compat.Features.Run(Compat.Features.WorldMap, () => worldMap.DrawZones(m_PromptBar, family));
+                    }
                     // Under the bar, so a focused element behind it never hides the prompts.
                     if (Router.Active is MenuScheme menu && menu.TryGetFocusRect(out Rect menuFocus))
                     {
@@ -601,6 +610,11 @@ namespace PoEController
                             m_PromptBar.DrawFocusFrame(focus);
                         }
                     }
+                }
+                // The mod's own short messages, over everything (full-screen windows hide the game's message line).
+                if (Mode.Active == InputDevice.Gamepad)
+                {
+                    UI.Toast.Draw(m_PromptBar);
                 }
                 if (m_ShowDebug)
                 {

@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Reflection;
+using HarmonyLib;
 using PoEController.Input;
 using PoEController.Menus;
 using UnityEngine;
@@ -27,6 +29,27 @@ namespace PoEController.Schemes
         private const float CenterSeconds = 0.6f;
         /// <summary>The chosen location is re-centred once it leaves the middle part of the map area (fraction of its size).</summary>
         private const float SafeAreaFraction = 0.6f;
+
+        /// <summary>A map zone (one of the window's maps: Dyrwood, White March...), for LB / RB and the tab row.</summary>
+        private sealed class Zone
+        {
+            public string Tag;
+            public string Name;
+            public bool Current;
+            public bool Unlocked;
+            /// <summary>The current map's own switch icon to this zone (its click is what LB / RB do).</summary>
+            public UIWorldMapIcon Switch;
+        }
+
+        private const string OdNuaTag = "odnua";
+        private static readonly FieldInfo s_Managers = AccessTools.Field(typeof(UIWorldMapManager), "m_IconManagers");
+        private static readonly MethodInfo s_IconClick = AccessTools.Method(typeof(UIWorldMapIcon), "OnClick");
+        private static readonly Color ZoneCurrent = Color.white;
+        private static readonly Color ZoneOpen = new Color(0.78f, 0.74f, 0.64f);
+        private static readonly Color ZoneLocked = new Color(0.45f, 0.43f, 0.4f);
+
+        private readonly List<Zone> m_Zones = new List<Zone>();
+        private float m_ZonesAt = -100f;
 
         private UIWorldMapIcons m_Manager;
         private UIWorldMapIcon m_Selected;
@@ -79,6 +102,208 @@ namespace PoEController.Schemes
             if (On && Plugin.Instance.Mode.Active == InputDevice.Gamepad)
             {
                 Compat.Features.Run(Compat.Features.WorldMap, () => Step(pad, dt));
+                bool lb = pad.GetButtonDown(PadButton.LeftShoulder);
+                bool rb = pad.GetButtonDown(PadButton.RightShoulder);
+                if (lb != rb)
+                {
+                    Compat.Features.Run(Compat.Features.WorldMap, () => SwitchZone(rb ? 1 : -1));
+                }
+            }
+        }
+
+        // ---- map zones ----
+
+        /// <summary>
+        /// The window's maps as zones, the current one marked. Od Nua (the Endless Paths' own map, only while inside)
+        /// is not a zone to switch to: inside it the list is just Od Nua. A zone is unlocked when the current map shows
+        /// its switch icon (what a mouse player could click). Looked up a few times a second.
+        /// </summary>
+        private List<Zone> Zones()
+        {
+            if (Time.unscaledTime - m_ZonesAt < 0.25f)
+            {
+                return m_Zones;
+            }
+            m_ZonesAt = Time.unscaledTime;
+            m_Zones.Clear();
+            UIWorldMapManager map = UIWorldMapManager.Instance;
+            UIWorldMapIcons current = map != null ? map.CurrentIconManager : null;
+            if (current == null || !(s_Managers.GetValue(map) is UIWorldMapIcons[] managers))
+            {
+                return m_Zones;
+            }
+            if (current.MapTag == OdNuaTag)
+            {
+                m_Zones.Add(new Zone { Tag = OdNuaTag, Name = TitleOf(current), Current = true, Unlocked = true });
+                return m_Zones;
+            }
+            foreach (UIWorldMapIcons m in managers)
+            {
+                if (m == null || string.IsNullOrEmpty(m.MapTag) || m.MapTag == OdNuaTag || m.MapTag == "all"
+                    || m_Zones.Exists(z => z.Tag == m.MapTag))
+                {
+                    continue;
+                }
+                var zone = new Zone { Tag = m.MapTag, Name = TitleOf(m), Current = m == current };
+                if (!zone.Current)
+                {
+                    foreach (UIWorldMapIcon icon in current.GetIcons())
+                    {
+                        if (icon != null && icon.VirtualForTag == m.MapTag && IsStop(current, icon))
+                        {
+                            zone.Switch = icon;
+                            break;
+                        }
+                    }
+                }
+                zone.Unlocked = zone.Current || zone.Switch != null;
+                m_Zones.Add(zone);
+            }
+            LogZones(managers, current);
+            return m_Zones;
+        }
+
+        private string m_LoggedZones;
+
+        /// <summary>Diagnostics: the window's maps and the current map's switch icons, when they change.</summary>
+        private void LogZones(UIWorldMapIcons[] managers, UIWorldMapIcons current)
+        {
+            var maps = new List<string>();
+            foreach (UIWorldMapIcons m in managers)
+            {
+                if (m != null)
+                {
+                    maps.Add($"{m.MapTag}{(m == current ? "*" : "")} '{TitleOf(m)}'");
+                }
+            }
+            var switches = new List<string>();
+            foreach (UIWorldMapIcon icon in current.GetIcons())
+            {
+                if (icon != null && !string.IsNullOrEmpty(icon.VirtualForTag))
+                {
+                    switches.Add($"{icon.name}->{icon.VirtualForTag} ({(IsStop(current, icon) ? "available" : "hidden")})");
+                }
+            }
+            string line = $"World map zones: maps [{string.Join(", ", maps.ToArray())}], switch icons on this map [{string.Join(", ", switches.ToArray())}], zones {m_Zones.Count}";
+            if (line != m_LoggedZones)
+            {
+                m_LoggedZones = line;
+                // In release builds too: the maps players' logs need to show (White March stepping reports).
+                Plugin.Log.Report(line);
+            }
+        }
+
+        /// <summary>
+        /// A zone's name. The game titles both the Dyrwood and the White March maps "World Map", so those two get their
+        /// region names; any other map keeps the game's own title (Od Nua's is "The Endless Paths of Od Nua").
+        /// </summary>
+        private static string TitleOf(UIWorldMapIcons m)
+        {
+            switch (m.MapTag)
+            {
+                case "world": return "Dyrwood";
+                case "px1": return "White March";
+            }
+            string title = m.MapTitle != null ? m.MapTitle.GetText() : null;
+            return string.IsNullOrEmpty(title) ? m.MapTag : title;
+        }
+
+        /// <summary>LB / RB: the previous / next zone, through the current map's own switch icon.</summary>
+        private void SwitchZone(int dir)
+        {
+            m_ZonesAt = -100f;
+            List<Zone> zones = Zones();
+            int at = zones.FindIndex(z => z.Current);
+            string refusal = null;
+            Zone target = null;
+            if (at >= 0 && zones[at].Tag == OdNuaTag)
+            {
+                refusal = "Can't change maps inside Od Nua";
+            }
+            else if (at < 0 || zones.Count < 2)
+            {
+                refusal = "No other map available yet";
+            }
+            else
+            {
+                target = zones[(at + dir + zones.Count) % zones.Count];
+                if (!target.Unlocked)
+                {
+                    refusal = "Not unlocked yet";
+                }
+            }
+            if (refusal != null)
+            {
+                GlobalAudioPlayer.SPlay(UIAudioList.UIAudioType.Error);
+                UI.Toast.Show(refusal);
+                return;
+            }
+            Plugin.Log.LogInfo($"World map: zone {target.Name} (LB / RB)");
+            GlobalAudioPlayer.SPlay(UIAudioList.UIAudioType.ButtonUp);
+            s_IconClick.Invoke(target.Switch, new object[] { target.Switch.gameObject });
+            m_ZonesAt = -100f;
+        }
+
+        /// <summary>
+        /// The zone tabs under the map title (controller only): "[LB] Dyrwood · White March [RB]", the current one bright
+        /// and underlined, locked ones greyed. Nothing when there is only one map (no expansion); in Od Nua just its name.
+        /// </summary>
+        public void DrawZones(UI.PromptBar bar, GlyphFamily family)
+        {
+            UIWorldMapManager map = UIWorldMapManager.Instance;
+            if (!On || Event.current.type != EventType.Repaint || map == null || !map.IsVisible)
+            {
+                return;
+            }
+            List<Zone> zones = Zones();
+            bool odNua = zones.Count == 1 && zones[0].Tag == OdNuaTag;
+            if (zones.Count < 2 && !odNua)
+            {
+                return;
+            }
+            float s = Screen.height / 1080f * bar.Scale;
+            Rect title = map.TitleLabel != null && UI.WorldTextAvoid.TryScreenRect(map.TitleLabel.transform, out Rect t)
+                ? t : new Rect(Screen.width * 0.5f - 100f * s, 40f * s, 200f * s, 40f * s);
+            const float size = 0.95f;
+            float gap = 22f * s;
+            float sepW = bar.MeasureText("·", size);
+            float total = 0f;
+            foreach (Zone z in zones)
+            {
+                total += bar.MeasureText(z.Name, size);
+            }
+            total += (zones.Count - 1) * (sepW + gap * 2f);
+            float glyphRoom = odNua ? 0f : 60f * s;
+            float x = title.center.x - total * 0.5f;
+            float midY = title.yMax + 26f * s;
+            float lineH = 32f * s;
+            if (!odNua)
+            {
+                bar.DrawGlyph(family, x - glyphRoom, midY, "lb");
+            }
+            for (int i = 0; i < zones.Count; i++)
+            {
+                Zone z = zones[i];
+                float w = bar.MeasureText(z.Name, size);
+                Color c = z.Current ? ZoneCurrent : (z.Unlocked ? ZoneOpen : ZoneLocked);
+                bar.DrawText(new Rect(x, midY - lineH * 0.5f, w + 4f, lineH), z.Name, size, TextAnchor.MiddleLeft, c);
+                if (z.Current)
+                {
+                    Color old = GUI.color;
+                    GUI.color = ZoneCurrent;
+                    GUI.DrawTexture(new Rect(x, midY + lineH * 0.45f, w, Mathf.Max(2f, 2f * s)), Texture2D.whiteTexture);
+                    GUI.color = old;
+                }
+                x += w;
+                if (i < zones.Count - 1)
+                {
+                    bar.DrawText(new Rect(x + gap, midY - lineH * 0.5f, sepW + 4f, lineH), "·", size, TextAnchor.MiddleLeft, ZoneOpen);
+                    x += sepW + gap * 2f;
+                }
+            }
+            if (!odNua)
+            {
+                bar.DrawGlyph(family, x + glyphRoom - 34f * s, midY, "rb");
             }
         }
 
@@ -91,10 +316,17 @@ namespace PoEController.Schemes
                 return;
             }
             UIWorldMapIcons manager = map.CurrentIconManager;
-            UIDraggablePanel drag = manager != null ? NGUITools.FindInParents<UIDraggablePanel>(manager.gameObject) : null;
-            if (manager == null || drag == null)
+            if (manager == null)
             {
+                ReportOnce("none", "no map content (CurrentIconManager is null)");
                 return;
+            }
+            // Maps that scroll sit in a draggable panel; a map that fits the screen (the White March) may have none:
+            // then stepping works the same, only panning and re-centring are skipped.
+            UIDraggablePanel drag = FindDrag(manager);
+            if (drag == null)
+            {
+                ReportOnce(manager.MapTag, "no scroll area, stepping without panning");
             }
             if (manager != m_Manager)
             {
@@ -106,10 +338,10 @@ namespace PoEController.Schemes
             {
                 m_Selected = null;
             }
-            Rect area = MapArea(cam, drag);
+            Rect area = drag != null ? MapArea(cam, drag) : new Rect(0f, 0f, Screen.width, Screen.height);
 
             Vector2 rs = pad.RightStick;
-            bool panning = rs.magnitude > PanDeadzone;
+            bool panning = drag != null && rs.magnitude > PanDeadzone;
             if (panning)
             {
                 m_Centering = false;
@@ -134,8 +366,12 @@ namespace PoEController.Schemes
             if (m_Selected == null)
             {
                 m_Selected = Here(map, manager) ?? Nearest(manager, cam, area.center);
-                m_Centering = m_Selected != null;
+                m_Centering = m_Selected != null && drag != null;
                 m_CenterTimer = 0f;
+                if (m_Selected == null)
+                {
+                    ReportOnce(manager.MapTag, "no location to step to");
+                }
             }
             if (!panning && m_Panned)
             {
@@ -153,7 +389,7 @@ namespace PoEController.Schemes
                 if (here != null)
                 {
                     m_Selected = here;
-                    m_Centering = true;
+                    m_Centering = drag != null;
                     m_CenterTimer = 0f;
                     GlobalAudioPlayer.SPlay(UIAudioList.UIAudioType.ButtonUp);
                     Plugin.Log.LogInfo("World map: back to the current location (R3)");
@@ -168,7 +404,7 @@ namespace PoEController.Schemes
                 {
                     m_Selected = next;
                     Vector2 p = ScreenPoint(cam, next);
-                    if (!SafeArea(area).Contains(p))
+                    if (drag != null && !SafeArea(area).Contains(p))
                     {
                         m_Centering = true;
                         m_CenterTimer = 0f;
@@ -184,7 +420,7 @@ namespace PoEController.Schemes
             {
                 Plugin.Log.LogInfo($"World map: {NameOf(m_Selected)}");
             }
-            if (m_Centering)
+            if (m_Centering && drag != null)
             {
                 m_CenterTimer += dt;
                 Vector2 delta = area.center - ScreenPoint(cam, m_Selected);
@@ -381,6 +617,31 @@ namespace PoEController.Schemes
         // ---- the map panel ----
 
         /// <summary>The visible map area on screen (Unity coordinates): the draggable panel's clip rectangle.</summary>
+        /// <summary>
+        /// The map's draggable panel: above the icons, or else anywhere in this map's part of the window (its
+        /// DisableParent). Null = the map doesn't scroll.
+        /// </summary>
+        private static UIDraggablePanel FindDrag(UIWorldMapIcons manager)
+        {
+            UIDraggablePanel drag = NGUITools.FindInParents<UIDraggablePanel>(manager.gameObject);
+            if (drag == null && manager.DisableParent != null)
+            {
+                drag = manager.DisableParent.GetComponentInChildren<UIDraggablePanel>(false);
+            }
+            return drag;
+        }
+
+        private static readonly HashSet<string> s_Reported = new HashSet<string>();
+
+        /// <summary>A map whose stepping can't work as usual: once per map and problem, in every build (players' logs).</summary>
+        private static void ReportOnce(string mapTag, string problem)
+        {
+            if (s_Reported.Add(mapTag + "|" + problem))
+            {
+                Plugin.Log.Report($"World map '{mapTag}': {problem}");
+            }
+        }
+
         private static Rect MapArea(Camera cam, UIDraggablePanel drag)
         {
             UIPanel panel = drag.panel;
@@ -450,6 +711,23 @@ namespace PoEController.Schemes
             }
             into.Add(new Prompt("rstick", "Pan map"));
             into.Add(new Prompt("rstick_click", "Current location"));
+            string next = Compat.Features.Get(Compat.Features.WorldMap, () => NextZoneName(), null);
+            if (next != null)
+            {
+                into.Add(new Prompt(new[] { "lb", "rb" }, next));
+            }
+        }
+
+        /// <summary>The zone LB / RB would go to (for the prompt), or null when there is none to switch to.</summary>
+        private string NextZoneName()
+        {
+            List<Zone> zones = Zones();
+            int at = zones.FindIndex(z => z.Current);
+            if (at < 0 || zones.Count < 2)
+            {
+                return null;
+            }
+            return zones[(at + 1) % zones.Count].Name;
         }
 
         /// <summary>What A does on the chosen location: travel (with the game's travel time), open a sub-map, or nothing here.</summary>

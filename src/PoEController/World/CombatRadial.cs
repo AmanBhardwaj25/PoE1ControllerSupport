@@ -37,7 +37,8 @@ namespace PoEController.World
             public string PinKey;
             public List<Node> Children;
             public Action Run;
-            public bool KeepOpen;
+            /// <summary>Starts something that waits for a target (force attack): the pause goes to the aiming.</summary>
+            public bool NeedsTarget;
             public string ConfirmLabel;
             public string AltLabel;
             /// <summary>X. Returns true if the radial should close.</summary>
@@ -308,13 +309,9 @@ namespace PoEController.World
             }
             if (n.Run != null)
             {
+                LastNeedsTarget = n.NeedsTarget;
                 Features.Run(Features.CombatRadial, n.Run);
                 GlobalAudioPlayer.SPlay(UIAudioList.UIAudioType.ButtonUp);
-                if (n.KeepOpen)
-                {
-                    Rebuild();
-                    return false;
-                }
                 return true;
             }
             return false;
@@ -482,7 +479,7 @@ namespace PoEController.World
             var top = new List<Node>(RadialLayout.Holes)
             {
                 QuickItemsNode(owner),
-                AiNode(owner),
+                AttackNode(),
             };
             for (int k = 0; k < CustomSlotStore.Count; k++)
             {
@@ -599,43 +596,29 @@ namespace PoEController.World
             };
         }
 
-        /// <summary>AI script on/off (as the ability bar's AI button); X opens the game's AI customizer for this character.</summary>
-        private static Node AiNode(CharacterStats owner)
+        /// <summary>
+        /// Force attack: the HUD's sword button (UIActionBarOnClick.HandleAttack, keyboard A). The game's attack cursor
+        /// then attacks whatever is picked, also characters it doesn't count as enemies (charmed / dominated ones) and
+        /// objects meant to be attacked. As a spell: the radial closes, the pointer picks the target, A attacks, B
+        /// cancels back to the radial. Who attacks = the selected party, as with the mouse.
+        /// </summary>
+        private static Node AttackNode()
         {
-            PartyMemberAI pm = owner.GetComponent<PartyMemberAI>();
-            if (pm == null)
-            {
-                return new Node { Name = "AI", IconName = "ICO_ai_off", Usable = false, Status = "No AI for this character" };
-            }
-            bool on = pm.UseInstructionSet;
+            bool anyone = GameState.s_playerCharacter != null && PartyMemberAI.NumSelectedMembers() > 0;
             return new Node
             {
-                Name = "AI: " + ScriptName(owner, pm),
-                IconName = on ? "ICO_ai_on" : "ICO_ai_off",
-                Active = on,
-                Status = on ? "AI script is active" : "AI script is off",
-                KeepOpen = true,
-                ConfirmLabel = on ? "Turn off" : "Turn on",
-                Run = () =>
-                {
-                    pm.UseInstructionSet = !pm.UseInstructionSet;
-                    pm.UpdateAggressionOfSummonedCreatures(includeCompanion: true);
-                },
-                AltLabel = "Customize",
-                Alt = () =>
-                {
-                    if (UIAiCustomizerManager.Instance == null)
-                    {
-                        return false;
-                    }
-                    UIAiCustomizerManager.Instance.SelectedCharacter = owner;
-                    UIAiCustomizerManager.Instance.ShowWindow();
-                    return true;
-                },
+                Name = "Attack",
+                IconName = "ICO_attack",
+                Usable = anyone,
+                Status = anyone ? "Any target, even a friendly-looking one" : "Select a character first",
+                ConfirmLabel = "Attack",
+                NeedsTarget = true,
+                Run = () => GameState.s_playerCharacter.IsInForceAttackMode = true,
             };
         }
 
-        private static string ScriptName(CharacterStats owner, PartyMemberAI pm)
+        /// <summary>The name of the character's AI script (also shown by the General Radial's AI slot).</summary>
+        internal static string ScriptName(CharacterStats owner, PartyMemberAI pm)
         {
             int index = pm.InstructionSetIndex;
             if (index >= 0 && pm.InstructionSet != null && PartyMemberInstructionSetList.InstructionSetList != null)

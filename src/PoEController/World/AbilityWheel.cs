@@ -29,6 +29,8 @@ namespace PoEController.World
             Ability,
             Item,
             WeaponSwitch,
+            /// <summary>Force attack (the HUD's sword button): the next pick is attacked, whoever it is.</summary>
+            ForceAttack,
         }
 
         public sealed class Entry
@@ -36,6 +38,8 @@ namespace PoEController.World
             public EntryKind Kind;
             public string Name;
             public Texture Icon;
+            /// <summary>An icon from the game's HUD atlas by name, when there is no <see cref="Icon"/>.</summary>
+            public string IconName;
             public string Badge;
             public GenericAbility Ability;
             public InventoryItem Item;
@@ -217,6 +221,10 @@ namespace PoEController.World
                     }
                     consumable.StartUse(owner.gameObject);
                     return true;
+                case EntryKind.ForceAttack:
+                    // The HUD's sword button (UIActionBarOnClick.HandleAttack, keyboard A).
+                    GameState.s_playerCharacter.IsInForceAttackMode = true;
+                    return true;
                 case EntryKind.WeaponSwitch:
                     Equipment equipment = owner.GetComponent<Equipment>();
                     if (equipment == null)
@@ -308,6 +316,8 @@ namespace PoEController.World
                         return "Open";
                     case EntryKind.WeaponSwitch:
                         return "Switch";
+                    case EntryKind.ForceAttack:
+                        return "Attack";
                     case EntryKind.Ability:
                         return e.Ability.Modal && e.Ability.UiActivated ? "Turn off" : (e.NeedsTarget ? "Aim" : "Use");
                     default:
@@ -347,6 +357,8 @@ namespace PoEController.World
             if (Owner != null)
             {
                 BuildTop(Owner, m_Top);
+                // PC layout's way to force attack (Console style has it in the Combat Radial).
+                m_Top.Add(ForceAttackEntry());
             }
             m_Shown = m_Top;
             if (m_OpenGroup != null)
@@ -364,6 +376,24 @@ namespace PoEController.World
         }
 
         // ---- Contents (mirrors UIAbilityBarButtonSet) ----
+
+        /// <summary>
+        /// Force attack: the next character or object picked with the pointer is attacked, also ones the game doesn't
+        /// count as enemies (charmed / dominated characters). By the selected party, as with the mouse.
+        /// </summary>
+        private static Entry ForceAttackEntry()
+        {
+            bool anyone = GameState.s_playerCharacter != null && PartyMemberAI.NumSelectedMembers() > 0;
+            return new Entry
+            {
+                Kind = EntryKind.ForceAttack,
+                Name = "Attack",
+                IconName = "ICO_attack",
+                Usable = anyone,
+                NeedsTarget = true,
+                Status = anyone ? "Any target, even a friendly-looking one" : "Select a character first",
+            };
+        }
 
         internal static void BuildTop(CharacterStats stats, List<Entry> top)
         {
