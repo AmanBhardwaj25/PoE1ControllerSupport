@@ -384,6 +384,11 @@ namespace PoEController.Schemes
                 ExitTooltipMode();
                 pad.SuppressHeldButtons();
             }
+            else if (pad.GetButtonDown(PadButton.East) && OpenDropdowns.CloseOne())
+            {
+                // B closes an open dropdown list first (a mouse click anywhere does); the window stays.
+                pad.SuppressHeldButtons();
+            }
             if (TooltipsOnR3 && TooltipModeOn && pad.GetButtonDown(PadButton.RightStick))
             {
                 if (m_TooltipMode)
@@ -516,6 +521,16 @@ namespace PoEController.Schemes
                 }
             }
             base.GetPrompts(ctx, into);
+            if (OpenDropdowns.Find() != null)
+            {
+                for (int i = 0; i < into.Count; i++)
+                {
+                    if (into[i].Glyphs != null && into[i].Glyphs.Length == 1 && into[i].Glyphs[0] == "east")
+                    {
+                        into[i] = new Prompt("east", "Close list");
+                    }
+                }
+            }
         }
 
         /// <summary>The cursor prompts before the screen's bindings; Console-style screens replace them with their own.</summary>

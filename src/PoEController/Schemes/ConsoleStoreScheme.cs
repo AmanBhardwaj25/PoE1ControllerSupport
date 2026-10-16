@@ -41,12 +41,23 @@ namespace PoEController.Schemes
 
         public override void HandleInput(in SchemeContext ctx, Gamepad pad, float dt)
         {
+            // B on the stash view: back to the party first (before the window's own B, which closes the shop).
+            if (!InTooltipMode)
+            {
+                StoreStash.HandleBack(pad);
+            }
             base.HandleInput(ctx, pad, dt);
             if (!On)
             {
                 return;
             }
             Compat.Features.Run(Compat.Features.ConsoleMenus, () => HandleConsole(pad));
+        }
+
+        public override void GetPrompts(in SchemeContext ctx, List<Prompt> into)
+        {
+            base.GetPrompts(ctx, into);
+            StoreStash.RelabelBack(into);
         }
 
         private void HandleConsole(Gamepad pad)

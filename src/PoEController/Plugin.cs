@@ -43,7 +43,7 @@ namespace PoEController
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string Guid = "poe.controller";
-        public const string Version = "0.46.0";
+        public const string Version = "0.47.0";
 
         private ConfigEntry<ControlStyle> m_ControlStyle;
         private ConfigEntry<bool> m_ConsoleShortBar;
@@ -465,6 +465,9 @@ namespace PoEController
                 Router.Update(Pad, dt);
                 VirtualControls.EndFrame(dt);
                 m_Transitions.UpdateCursor();
+                // The A target's name card (the game's mouse-hover card) while the pad plays the world with the cursor hidden.
+                World.TargetNameTip.Update(Mode.Active == InputDevice.Gamepad && Pad.Connected && Router.Active is IWorldScheme ws && !ws.CursorActive
+                    ? ws.Targeting : null, dt);
                 m_TrimHud = Style == ControlStyle.Console && m_ConsoleHideActionBar.Value && Mode.Active == InputDevice.Gamepad
                     && Pad.Connected && GameState.s_playerCharacter != null && !GameState.IsLoading;
                 bool trimHud = m_TrimHud;
@@ -508,7 +511,7 @@ namespace PoEController
             catch (Exception e)
             {
                 // Never take the game down with us: log once and fall back to vanilla input.
-                Log.LogError($"Controller update failed, disabling controller support: {e}");
+                Log.Report($"Controller update failed, disabling controller support: {e}");
                 Mode?.Set(InputDevice.KeyboardMouse);
                 VirtualControls.Reset();
                 CameraPan.Input = Vector2.zero;
@@ -591,7 +594,7 @@ namespace PoEController
                         }
                         if (!world.Wheel.IsOpen && world.Targeting.TryGetMarkerPosition(out Vector3 marker))
                         {
-                            m_PromptBar.DrawWorldPrompt(ActiveGlyphFamily, marker, "south", TargetLabelToShow(world.Targeting));
+                            DrawTargetPrompt(world.Targeting, marker);
                         }
                         if (world.PartySelect.TryGetFocusRect(out Rect focus))
                         {
@@ -610,6 +613,33 @@ namespace PoEController
                 Log.LogError($"Prompt drawing failed, hiding prompts: {e}");
                 m_GuiFailed = true;
             }
+        }
+
+        /// <summary>
+        /// The A prompt over the world target. It stays off the game's own text there: above the target's name card
+        /// when it has one, and above any floating text it would cover (an examined object's description, a spoken line).
+        /// </summary>
+        private void DrawTargetPrompt(InteractionTargeting targeting, Vector3 marker)
+        {
+            string label = TargetLabelToShow(targeting);
+            GlyphFamily family = ActiveGlyphFamily;
+            GameObject targetGo = targeting.Target?.Go;
+            Rect? card = Compat.Features.Get(Compat.Features.TargetName, () => World.TargetNameTip.TryGetCardRect(targetGo, out Rect r) ? (Rect?)r : null, null);
+            float centreX;
+            float bottomY;
+            if (card.HasValue)
+            {
+                centreX = card.Value.center.x;
+                bottomY = card.Value.yMin - 4f * Screen.height / 1080f;
+            }
+            else if (!m_PromptBar.TryWorldPromptPlace(marker, out centreX, out bottomY))
+            {
+                return;
+            }
+            float cx = centreX;
+            bottomY = Compat.Features.Get(Compat.Features.PromptAvoidsText,
+                () => WorldTextAvoid.Lift(bottomY, y => m_PromptBar.WorldPromptRect(family, cx, y, "south", label), card), bottomY);
+            m_PromptBar.DrawWorldPromptAt(family, centreX, bottomY, "south", label);
         }
 
         /// <summary>Re-applies the Console HUD fade after the game's own Updates (some HUD code re-colours buttons every frame).</summary>

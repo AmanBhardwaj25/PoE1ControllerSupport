@@ -136,6 +136,28 @@ namespace PoEController.Compat
             F(Features.CombatRadial, "PartyMemberAI", "InstructionSet"),
             F(Features.CombatRadial, "PartyMemberInstructionSetList", "InstructionSetList"),
             M(Features.CombatRadial, "PartyMemberInstructionSetList", "GetClassSpellList"),
+            // Name card over the A target (the game's mouse-hover card)
+            M(Features.TargetName, "UIMapTooltipManager", "Show"),
+            M(Features.TargetName, "UIMapTooltipManager", "Hide"),
+            F(Features.TargetName, "Faction", "CanShowTooltip"),
+            F(Features.TargetName, "Health", "ShowDead"),
+            F(Features.TargetName, "InGameHUD", "ShowHUD"),
+            // A prompt stays off the game's floating text (barks)
+            M(Features.PromptAvoidsText, "UIBarkstringManager", "GetActiveBarks"),
+            // B closes an open dropdown list first
+            F(Features.MenuBack, "UIDropdownMenu", "m_DropdownOpen"),
+            M(Features.MenuBack, "UIDropdownMenu", "OnBoxClicked"),
+            // Message box amount (buy / sell / split) and tick box
+            F(Features.MessageBoxInput, "UIMessageBox", "NumericParent"),
+            F(Features.MessageBoxInput, "UIMessageBox", "NumericValue"),
+            F(Features.MessageBoxInput, "UIMessageBox", "m_NumericMin"),
+            F(Features.MessageBoxInput, "UIMessageBox", "m_NumericMax"),
+            M(Features.MessageBoxInput, "UIMessageBox", "OnNumericUp"),
+            M(Features.MessageBoxInput, "UIMessageBox", "OnNumericDown"),
+            M(Features.MessageBoxInput, "UIMessageBox", "SetNumericValue"),
+            F(Features.MessageBoxInput, "UIMessageBox", "CheckboxParent"),
+            F(Features.MessageBoxInput, "UIMessageBox", "CheckboxComponent"),
+            F(Features.MessageBoxInput, "UICheckbox", "isChecked"),
             // Spell / item details in the radials
             M(Features.RadialInfo, "GenericAbility", "GetTooltipContent"),
             M(Features.RadialInfo, "Item", "GetTooltipContent"),

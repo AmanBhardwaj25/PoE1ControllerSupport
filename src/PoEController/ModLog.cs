@@ -31,5 +31,12 @@ namespace PoEController
 
         [Conditional("MOD_LOGGING")]
         public void LogDebug(object message) => m_Source.LogDebug(message);
+
+        /// <summary>
+        /// The one exception: written in every build, release included, for the few rare events a player's log must
+        /// show when they send it in (controls that got stuck or failed, a feature switched off, the rescue cursor).
+        /// Never call it per frame or for normal play.
+        /// </summary>
+        public void Report(object message) => m_Source.LogWarning(message);
     }
 }

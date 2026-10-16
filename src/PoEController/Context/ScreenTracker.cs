@@ -69,10 +69,15 @@ namespace PoEController.Context
 
         private static void Prune()
         {
-            // Windows are destroyed on level unload without a WindowHidden call.
+            // Windows are destroyed on level unload without a WindowHidden call. Only gone or invisible windows are
+            // dropped: WindowActive() is also false while a window is in the middle of hiding, and several windows
+            // (store with a pending trade, options with changes, crafting, party, item card) open an "are you sure?"
+            // box from inside their hide; answered No, they stay open with no new WindowShown, so dropping them then
+            // would leave the pad on the world under an open window. Suspended windows are reported through
+            // WindowHidden / WindowShown by the game itself.
             for (int i = s_Stack.Count - 1; i >= 0; i--)
             {
-                if (s_Stack[i] == null || !s_Stack[i].WindowActive())
+                if (s_Stack[i] == null || !s_Stack[i].IsVisible)
                 {
                     s_Stack.RemoveAt(i);
                 }

@@ -43,14 +43,16 @@ namespace PoEController.Schemes
             };
             Context = ctx;
             bool onGamepad = Plugin.Instance.Mode.Active == InputDevice.Gamepad;
-            bool padInput = onGamepad && pad.Connected && Application.isFocused && !GameState.IsLoading && !OnScreenKeyboard.IsOpen;
+            RescueScheme.UpdateToggle(pad, ctx.TopWindow != null ? ctx.TopWindow.GetType().Name : "World");
+            bool padInput = onGamepad && pad.Connected && Application.isFocused && !GameState.IsLoading && !OnScreenKeyboard.IsOpen
+                && !RescueScheme.On;
             TutorialFlow.Update(pad, ctx, dt, padInput, onGamepad);
             CompareSession.Safe(CompareSession.Validate, "Compare check");
 
             ControlScheme next;
             try
             {
-                next = Pick(ctx);
+                next = RescueScheme.On ? SchemeTable.Rescue : Pick(ctx);
             }
             catch (Exception e)
             {
@@ -88,6 +90,7 @@ namespace PoEController.Schemes
             {
                 Switch(next, pad);
             }
+            StuckWatch.Update(Active, dt);
 
             if (Active != null && pad.Connected && Application.isFocused)
             {
@@ -223,11 +226,11 @@ namespace PoEController.Schemes
             m_Errors[key] = ++seen;
             if (seen == 1)
             {
-                Plugin.Log.LogError($"Controls '{scheme?.Name ?? "router"}' failed ({stage}); only they stop, retrying in {RetrySeconds} s or on the next screen: {e}");
+                Plugin.Log.Report($"Controls '{scheme?.Name ?? "router"}' failed ({stage}); only they stop, retrying in {RetrySeconds} s or on the next screen: {e}");
             }
             else if (seen % RepeatLogEvery == 0)
             {
-                Plugin.Log.LogWarning($"Controls '{scheme?.Name ?? "router"}' failed ({stage}) again ({seen} times): {e.GetType().Name}: {e.Message}");
+                Plugin.Log.Report($"Controls '{scheme?.Name ?? "router"}' failed ({stage}) again ({seen} times): {e.GetType().Name}: {e.Message}");
             }
         }
 

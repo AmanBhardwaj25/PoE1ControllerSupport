@@ -61,6 +61,9 @@ namespace PoEController.Schemes
         /// <summary>Any window without its own entry: cursor navigation, B closes.</summary>
         public static readonly ControlScheme GenericMenu = new MenuScheme("Menu", Close, StartCloses);
 
+        /// <summary>Hold View on any screen: the pad as a plain mouse, above every other scheme (the way out).</summary>
+        public static readonly ControlScheme Rescue = new RescueScheme();
+
         private static ControlScheme Screen(string name, params Binding[] extra)
         {
             var bindings = new List<Binding>(extra) { PrevScreen, NextScreen, Close, StartCloses };
@@ -70,7 +73,8 @@ namespace PoEController.Schemes
         public static readonly Dictionary<Type, ControlScheme> ByWindow = new Dictionary<Type, ControlScheme>
         {
             {
-                typeof(UIMessageBox), new BindingScheme("Message box",
+                // Also the amount (buy / sell / split) and the tick box, which only the mouse could reach.
+                typeof(UIMessageBox), new MessageBoxScheme(
                     new Binding(PadButton.South, MappedControl.MB_CONFIRM, "Confirm"),
                     new Binding(PadButton.East, MappedControl.CLOSE_WINDOW, "Cancel"))
             },

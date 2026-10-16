@@ -26,6 +26,8 @@ namespace PoEController.UI
         private const float FontSize = 20f;
         private const float GlyphGap = 2f;
         private const float LabelGap = 8f;
+        /// <summary>The in-world prompt (A over the target) relative to the prompt bar: glyph, text and bar alike.</summary>
+        private const float WorldPromptSize = 0.75f;
         /// <summary>Space between wrapped rows of prompts.</summary>
         private const float RowGap = 4f;
         private const float ItemGap = 28f;
@@ -212,36 +214,45 @@ namespace PoEController.UI
         }
 
         /// <summary>
-        /// A single glyph + label centred above a point in the world (the A prompt over the highlighted target).
+        /// The in-world prompt (A over the target) for a point in the world: centred on it, its bottom edge where the
+        /// prompt has always sat (the bar reaches a quarter glyph below the point). False when the point is behind the camera.
         /// </summary>
-        public void DrawWorldPrompt(GlyphFamily family, Vector3 world, string glyph, string label)
+        public bool TryWorldPromptPlace(Vector3 world, out float centreX, out float bottomY)
+        {
+            centreX = bottomY = 0f;
+            Camera cam = Camera.main;
+            if (cam == null)
+            {
+                return false;
+            }
+            Vector3 sp = cam.WorldToScreenPoint(world);
+            if (sp.z <= 0f)
+            {
+                return false;
+            }
+            centreX = sp.x;
+            bottomY = Screen.height - sp.y + GlyphHeight * WorldScale * 0.25f;
+            return true;
+        }
+
+        /// <summary>The space the in-world prompt takes with its bottom edge at <paramref name="bottomY"/> (GUI coordinates).</summary>
+        public Rect WorldPromptRect(GlyphFamily family, float centreX, float bottomY, string glyph, string label)
+        {
+            MeasureWorld(family, glyph, label, out float total, out float gh, out _, out _, out _);
+            return new Rect(centreX - total * 0.5f - gh * 0.6f, bottomY - gh * 1.5f, total + gh * 1.2f, gh * 1.5f);
+        }
+
+        /// <summary>The in-world prompt centred on <paramref name="centreX"/>, its bottom edge at <paramref name="bottomY"/> (GUI coordinates).</summary>
+        public void DrawWorldPromptAt(GlyphFamily family, float centreX, float bottomY, string glyph, string label)
         {
             if (Event.current.type != EventType.Repaint)
             {
                 return;
             }
-            Camera cam = Camera.main;
-            if (cam == null)
-            {
-                return;
-            }
-            Vector3 sp = cam.WorldToScreenPoint(world);
-            if (sp.z <= 0f)
-            {
-                return;
-            }
-            float s = Screen.height / RefHeight * Scale;
-            EnsureStyles(Mathf.RoundToInt(FontSize * s));
-            Texture2D tex = m_Glyphs.Get(family, glyph);
-            float gw = GlyphWidth(tex, s);
-            float gh = GlyphHeight * s;
-            // No label = glyph only (Prompts.TargetLabel).
-            bool hasLabel = !string.IsNullOrEmpty(label);
-            m_Content.text = hasLabel ? label : "";
-            Vector2 size = hasLabel ? m_LabelStyle.CalcSize(m_Content) : Vector2.zero;
-            float total = hasLabel ? gw + LabelGap * s + size.x : gw;
-            float x = sp.x - total * 0.5f;
-            float midY = Screen.height - sp.y - gh * 0.5f;
+            MeasureWorld(family, glyph, label, out float total, out float gh, out float gw, out Vector2 size, out Texture2D tex);
+            float s = WorldScale;
+            float x = centreX - total * 0.5f;
+            float midY = bottomY - gh * 0.75f;
             if (m_HudBar != null)
             {
                 GUI.DrawTexture(new Rect(x - gh * 0.6f, midY - gh * 0.75f, total + gh * 1.2f, gh * 1.5f), m_HudBar, ScaleMode.StretchToFill);
@@ -250,10 +261,28 @@ namespace PoEController.UI
             {
                 GUI.DrawTexture(new Rect(x, midY - gh * 0.5f, gw, gh), tex, ScaleMode.ScaleToFit);
             }
-            if (hasLabel)
+            if (size.x > 0f)
             {
                 DrawShadowedLabel(new Rect(x + gw + LabelGap * s, midY - size.y * 0.5f, size.x + 2f, size.y), m_Content);
             }
+        }
+
+        /// <summary>Size factor of the in-world prompt (screen height, Prompts.Scale, and its own smaller size).</summary>
+        private float WorldScale => Screen.height / RefHeight * Scale * WorldPromptSize;
+
+        /// <summary>Glyph and label sizes of the in-world prompt; leaves the label in <see cref="m_Content"/> for drawing.</summary>
+        private void MeasureWorld(GlyphFamily family, string glyph, string label, out float total, out float gh, out float gw, out Vector2 size, out Texture2D tex)
+        {
+            float s = WorldScale;
+            EnsureStyles(Mathf.RoundToInt(FontSize * s));
+            tex = m_Glyphs.Get(family, glyph);
+            gw = GlyphWidth(tex, s);
+            gh = GlyphHeight * s;
+            // No label = glyph only (Prompts.TargetLabel).
+            bool hasLabel = !string.IsNullOrEmpty(label);
+            m_Content.text = hasLabel ? label : "";
+            size = hasLabel ? m_LabelStyle.CalcSize(m_Content) : Vector2.zero;
+            total = hasLabel ? gw + LabelGap * s + size.x : gw;
         }
 
         /// <summary>Width of a glyph + label pair as <see cref="DrawPromptAt"/> draws it.</summary>
